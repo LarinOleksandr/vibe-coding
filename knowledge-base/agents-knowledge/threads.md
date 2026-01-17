@@ -1,0 +1,107 @@
+# knowledge-base/agents-knowledge/threads.md
+
+## Agent summary
+
+- Scope threads to avoid context bleed and unintended coupling
+
+---
+
+## Thread rules
+
+- One thread = one coherent task or change set.
+- Start a new thread when switching feature/bug, changing layer focus, or moving to review/analysis.
+- Each thread must have a clear goal and completion condition.
+- Each thread must begin with the thread name on the first line.
+- If the agent starts a new thread, it must use a compliant thread name.
+- If the first user line is non-compliant, propose a corrected thread name and ask the user to start a new thread with it.
+- If scope expands materially, stop and plan.
+- If planning for coding work, include an implementation plan with step-by-step verification.
+- Planning belongs to the thread that executes it.
+- Threads do not share context automatically; restate critical decisions when referencing others.
+- If you would open a new PR, start a new thread.
+
+---
+
+## Default delivery approach
+
+- For feature work, default to the simplest solution that meets the confirmed acceptance criteria.
+- If cleanup is desired after shipping, open a separate `refactor` thread (`RF-###`) with explicit "must not change" constraints.
+
+---
+
+## Thread naming
+
+Format:
+
+`<project> | <code>: <short-goal>`
+
+If no code exists, omit it:
+
+`<project> | <short-goal>`
+
+Types:
+
+- feature
+- bug
+- refactor
+- experiment
+- architecture
+- planning
+- docs
+- code-review
+- design-review
+- other
+
+Code prefixes:
+
+- feature: `F-###`
+- bug: `B-###`
+- refactor: `RF-###`
+- experiment: `E-###`
+- architecture: `A-###`
+- planning: `P-###`
+- docs: `D-###`
+- code-review: `CR-###`
+- design-review: `DR-###`
+- other: no code
+
+Examples:
+
+- `vibe-coding | F-042: pdf export`
+- `vibe-coding | B-17: duplicate list`
+- `vibe-coding | RF-03: auth cleanup`
+- `vibe-coding | E-02: rag vs fine-tuning`
+- `vibe-coding | A-02: agent artifacts`
+- `vibe-coding | P-03: onboarding flow`
+- `vibe-coding | D-08: cookbook update`
+- `vibe-coding | CR-11: api pagination`
+- `vibe-coding | DR-05: export pipeline`
+- `vibe-coding | misc cleanup`
+
+---
+
+## Artifact references
+
+If a thread is based on an existing plan or architecture review, include the artifact path in the request:
+
+- `knowledge-base/agents-artifacts/plans/<task-slug>.plan.md`
+- `knowledge-base/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
+
+---
+
+## Close trigger
+
+The agent should treat any clear "we are done" intent as a close request.
+Examples of intent: "Close the thread", "We are done", "Wrap up", "That is all".
+If the intent is ambiguous, ask once for confirmation.
+
+When closing, invoke `$close-thread`.
+
+---
+
+## Closure checklist
+
+- Artifact produced and validated for the goal.
+- Goal met.
+- Definition of done validated.
+- No unfinished decisions left implicit.

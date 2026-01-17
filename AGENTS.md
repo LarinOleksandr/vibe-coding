@@ -1,0 +1,103 @@
+# AGENTS.md
+
+## Title
+
+Rules, Constraints and Routing for Coding Agent.
+
+---
+
+Canonical path aliases: see `KB_ROOTS`.
+
+## Hard rules (non-negotiable)
+
+## Security & Data Safety
+
+- Never commit secrets; only `.env.example` and variable names.
+- Validate all external/client input before use.
+- Supabase RLS must remain enforced; never disable as a workaround.
+
+## Config & Architecture
+
+- Follow `KB_REPOSITORY_RULES` for repo structure, runtime boundaries, and configuration layering.
+
+## Repository Rules
+
+- Repository rules are canonical in `KB_REPOSITORY_RULES`.
+
+## Scope & Assumptions
+
+- Assume inputs are incomplete unless stated otherwise; make minimal assumptions and state them explicitly.
+- If scope, affected areas, risks, or tests are unclear, propose and confirm before implementation.
+
+## Agent State & Outputs
+
+- Structured outputs must follow `KB_SCHEMAS_OUTPUTS`.
+- Agents are stateless by default; persistence must be explicit.
+
+---
+
+## Routing rules
+
+Consult routed docs before changes when applicable:
+
+- Architecture boundaries and placement -> `KB_ARCHITECTURE_PRINCIPLES`
+- Runtime topology, ports, dependencies -> `KB_RUNTIME`
+- Schemas, validation, outputs -> `KB_SCHEMAS_OUTPUTS`
+- Supabase usage, migrations, policies -> `KB_SUPABASE`
+- Testing strategy and smoke paths -> `KB_TESTING`
+- Tools and canonical commands -> `KB_TOOLS`
+- Threading rules -> `KB_THREADS`
+- Error handling patterns -> `KB_ERROR_HANDLING`
+- API conventions (REST, pagination, errors) -> `KB_API_CONVENTIONS`
+- External specs and doc resolution -> `KB_EXTERNAL_SPECS`
+- Feature development template (required for feature work) -> `KB_FEATURE_TEMPLATE`
+- Context maintenance -> `KB_CONTEXT_MAINTENANCE`
+
+---
+
+## Automatic agentic invocation
+
+Agent may automatically invoke additional steps when risk or complexity is detected:
+
+- `$create-plan` for large or complex changes (multiple components, schema/contract changes, new agent/service/workflow, or shared/core refactors). Plans are written to `ROOT_AGENTS_ARTIFACTS/plans/<task-slug>.plan.md`.
+- `$architecture-review` for cross-boundary changes, new services/workflows, or likely architecture conflicts.
+- `/test <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; produce a test plan aligned with `KB_TESTING` before implementation.
+- `$context-maintenance` when changes touch documentation, routed knowledge, skills, slash commands, or any AGENTS rules/routes; resolve routing and duplication and update project docs when needed.
+
+When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs.
+
+---
+
+## Definition of done
+
+- Tests and validations pass; no TypeScript errors.
+- If tests are not added or run, state why.
+- Schemas/validators updated where behavior changed.
+- DB changes include migrations + contract/schema updates.
+- Planning artifact updated when required.
+- Generated artifacts handled via product flow, not committed.
+- Instruction docs or skills updated if workflow or constraints changed.
+
+---
+
+## Agents Instruction scope
+
+- Nearest `AGENTS.md` applies to modified files.
+- Expected scoped locations:
+  - `AGENTS_FRONTEND`
+  - `AGENTS_AI_ORCHESTRATOR`
+  - `AGENTS_AI_EMBEDDINGS`
+  - `AGENTS_SUPABASE`
+  - `AGENTS_INFRA` (if applicable)
+
+---
+
+## Skills (procedural)
+
+Skill list and descriptions live in `DOC_SKILLS_LIST`.
+
+---
+
+## Project Documentation
+
+Project documentation rules are defined in `KB_PROJECT_DOC_MAINTENANCE`.

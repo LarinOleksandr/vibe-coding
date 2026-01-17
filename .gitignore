@@ -1,0 +1,7 @@
+# Ignore Excel/binary spreadsheet artifacts (do not commit)
+*.xlsx
+*.xls
+*.xlsm
+*.xlsb
+~$*.xlsx
+
