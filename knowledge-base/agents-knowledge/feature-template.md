@@ -14,11 +14,12 @@
 - The agent classifies feature complexity and selects required sections.
 - The agent drafts a feature brief from repo context, then asks the user to confirm or fill gaps.
 - Ask only for missing required fields, in one pass, before planning or implementation.
+- If feature research is warranted, incorporate the outcomes into the feature brief before asking the user to confirm scope and acceptance criteria (see `KB_FEATURE_RESEARCH`). Use a separate research brief artifact only when it adds value.
 - If a required field is unknown, write "Unknown" and confirm with the user.
 - If scope/areas/risks/tests are unclear, propose them and confirm before implementation.
 - Default delivery approach: ship the simplest solution that meets acceptance criteria.
 - Proactively highlight likely issues, risks, and edge cases (including failure modes) before implementation.
-- If the validation plan is unclear, invoke `/test <short feature description>` (or just `/test` if the thread context is sufficient) to draft a minimal, repo-consistent test plan before implementation.
+- If the validation plan is unclear, propose generating a test plan (`/test-plan <short feature description>`) and ask the user to confirm before doing so.
 
 ---
 
@@ -37,7 +38,7 @@ Required sections: Goal, Scope, Out of scope, Acceptance criteria, Affected area
 - Multiple components or API surface changes
 - Behavior changes across boundaries
 
-Required sections: Small + Existing behavior, Data models, Edge cases, User impact, Dependencies/owners.
+Required sections: Small + Existing behavior, Data models, Edge cases, User impact, Dependencies/owners, Research brief (when applicable).
 
 **Large**
 
@@ -45,7 +46,7 @@ Required sections: Small + Existing behavior, Data models, Edge cases, User impa
 - New agents/services/workflows
 - Broad refactors
 
-Required sections: Full template + Risks + References + Rollout/rollback.
+Required sections: Full template + Risks + References + Rollout/rollback + Research brief.
 Also invoke `$architecture-review` before implementation.
 
 ---
@@ -103,6 +104,10 @@ Known special cases or failure modes specific to this feature.
 ## Validation plan
 
 Tests to add/update and any required smoke paths.
+
+## Research brief (timeboxed; when applicable)
+
+Pointer to the research brief artifact and any decisions/defaults it proposes.
 
 ## Dependencies/owners
 

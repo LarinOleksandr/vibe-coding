@@ -33,10 +33,12 @@ Invoke maintenance when any apply:
 3. Verify routing and scope
    - root routes point to existing docs
    - scoped AGENTS remain smaller than root
-4. Prune and normalize
+4. Keep repository layout current
+   - ensure `KB_REPOSITORY_LAYOUT` matches the current repo shape (top-level folders, runtime boundaries, artifact categories)
+5. Prune and normalize
    - remove redundant rules
    - prefer references over repeats
-5. Record changes
+6. Record changes
    - list edits applied
    - list follow-ups if needed
 

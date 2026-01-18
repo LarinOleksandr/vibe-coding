@@ -107,7 +107,7 @@ If the API is internal-only and changes in lockstep with the UI, versioning may 
 
 Do not redefine request/response shapes ad hoc per caller.
 
-- Use explicit request/response schemas (see `$add-api-endpoint` and `KB_SCHEMAS_OUTPUTS` for schema discipline).
+- Use explicit request/response schemas (see `$api-endpoind-development` and `KB_SCHEMAS_OUTPUTS` for schema discipline).
 - Keep changes additive where possible; breaking changes require an explicit versioning decision.
 
 ---

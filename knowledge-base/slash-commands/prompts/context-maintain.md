@@ -1,8 +1,8 @@
-# /maintain-context
+# /context-maintain
 
 ---
 
-title: maintain-context
+title: context-maintain
 
 ---
 
@@ -14,4 +14,5 @@ Run a documentation + knowledge + methodology maintenance pass for the instructi
 
 1. Ask for (or infer) the trigger: what decision/change prompted the maintenance run.
 2. Invoke `$context-maintenance` and follow its procedure.
+   - Ensure `KB_REPOSITORY_LAYOUT` is updated when repo shape changed (folders, runtime boundaries, artifact categories).
 3. Summarize what changed and why, and list any follow-ups.

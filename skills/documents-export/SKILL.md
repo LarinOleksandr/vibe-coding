@@ -1,13 +1,13 @@
 ---
-name: export-doc
+name: documents-export
 description: Export validated agent outputs into user-facing documents (PDF, DOCX, JSON, MD) in a reproducible and safe way.
 ---
 
-# skills/export-doc/SKILL.md
+# skills/documents-export/SKILL.md
 
 ## Name
 
-$export-doc
+$documents-export
 
 ## Purpose
 

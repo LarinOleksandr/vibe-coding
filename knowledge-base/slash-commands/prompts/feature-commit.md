@@ -1,8 +1,8 @@
-# /commit-feature
+# /feature-commit
 
 ---
 
-title: commit-feature
+title: feature-commit
 
 ---
 
@@ -14,6 +14,7 @@ Save the current working state into Git as a single feature commit.
 
 1. Check if there are any changes (tracked or untracked).
 2. If there are changes:
+   - Update the canonical project docs (context/plan/insights) with the minimum edits required to keep them accurate.
    - Stage everything.
    - Generate a commit message that starts with `feat:` and summarizes the change.
    - Create the commit.

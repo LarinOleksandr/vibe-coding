@@ -1,8 +1,8 @@
-# /start-feature
+# /feature-start
 
 ---
 
-title: start-feature
+title: feature-start
 
 ---
 
@@ -22,4 +22,4 @@ Provide context, insights, and the current plan before feature implementation.
 
 - If the selected feature has subfeatures, include them in the new thread message after the feature name.
 - If a feature is already marked `Completed`, inform the user and ask how to proceed.
-- If `DOC_PROJECT_FEATURE_PLAN` is missing or malformed, stop and ask the user to fix it.
+- If `DOC_PROJECT_FEATURE_PLAN` is missing or malformed, suggest running `/project-setup`, then stop.

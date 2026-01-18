@@ -14,15 +14,10 @@ Canonical path aliases: see `KB_ROOTS`.
 
 - Never commit secrets; only `.env.example` and variable names.
 - Validate all external/client input before use.
-- Supabase RLS must remain enforced; never disable as a workaround.
 
-## Config & Architecture
+## Repository Rules (Config & Architecture)
 
-- Follow `KB_REPOSITORY_RULES` for repo structure, runtime boundaries, and configuration layering.
-
-## Repository Rules
-
-- Repository rules are canonical in `KB_REPOSITORY_RULES`.
+- `KB_REPOSITORY_RULES` is canonical for repo structure, runtime boundaries, and configuration layering.
 
 ## Scope & Assumptions
 
@@ -41,17 +36,20 @@ Canonical path aliases: see `KB_ROOTS`.
 Consult routed docs before changes when applicable:
 
 - Architecture boundaries and placement -> `KB_ARCHITECTURE_PRINCIPLES`
+- Repo layout and placement ("where to find/put things") -> `KB_REPOSITORY_LAYOUT`
 - Runtime topology, ports, dependencies -> `KB_RUNTIME`
 - Schemas, validation, outputs -> `KB_SCHEMAS_OUTPUTS`
 - Supabase usage, migrations, policies -> `KB_SUPABASE`
 - Testing strategy and smoke paths -> `KB_TESTING`
 - Tools and canonical commands -> `KB_TOOLS`
 - Threading rules -> `KB_THREADS`
-- Error handling patterns -> `KB_ERROR_HANDLING`
-- API conventions (REST, pagination, errors) -> `KB_API_CONVENTIONS`
-- External specs and doc resolution -> `KB_EXTERNAL_SPECS`
-- Feature development template (required for feature work) -> `KB_FEATURE_TEMPLATE`
-- Context maintenance -> `KB_CONTEXT_MAINTENANCE`
+  - Error handling patterns -> `KB_ERROR_HANDLING`
+  - API conventions (REST, pagination, errors) -> `KB_API_CONVENTIONS`
+  - External specs and doc resolution -> `KB_EXTERNAL_SPECS`
+  - Feature development template (required for feature work) -> `KB_FEATURE_TEMPLATE`
+  - Feature research brief (pre-planning) -> `KB_FEATURE_RESEARCH`
+  - Context maintenance -> `KB_CONTEXT_MAINTENANCE`
+  - Deployment and CI/CD -> `KB_DEPLOYMENT_CICD`
 
 ---
 
@@ -59,9 +57,12 @@ Consult routed docs before changes when applicable:
 
 Agent may automatically invoke additional steps when risk or complexity is detected:
 
-- `$create-plan` for large or complex changes (multiple components, schema/contract changes, new agent/service/workflow, or shared/core refactors). Plans are written to `ROOT_AGENTS_ARTIFACTS/plans/<task-slug>.plan.md`.
+- `/project-setup` when the user provides an idea/PRD and the project foundation docs are missing, empty, or clearly outdated.
+- `$plan-creation` for large or complex changes (multiple components, schema/contract changes, new agent/service/workflow, or shared/core refactors). Plans are written to `ROOT_AGENTS_ARTIFACTS/plans/<task-slug>.plan.md`.
 - `$architecture-review` for cross-boundary changes, new services/workflows, or likely architecture conflicts.
-- `/test <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; produce a test plan aligned with `KB_TESTING` before implementation.
+- `/test-plan <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; propose it and ask the user to confirm before generating the plan.
+- `/test-in-browser` when UI behavior changes require manual verification; propose it and ask the user to confirm before running it.
+- `/feature-commit` when feature scope is complete and validation is acceptable; propose it and ask the user to confirm before committing.
 - `$context-maintenance` when changes touch documentation, routed knowledge, skills, slash commands, or any AGENTS rules/routes; resolve routing and duplication and update project docs when needed.
 
 When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs.

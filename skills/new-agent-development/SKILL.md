@@ -1,13 +1,13 @@
 ---
-name: new-agent
+name: new-agent-development
 description: Add or modify an orchestrator agent/node/workflow with schema-first outputs, explicit state, and test coverage.
 ---
 
-# skills/new-agent/SKILL.md
+# skills/new-agent-development/SKILL.md
 
 ## Name
 
-$new-agent
+$new-agent-development
 
 ## Purpose
 

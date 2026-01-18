@@ -1,8 +1,8 @@
-# /test
+# /test-plan
 
 ---
 
-title: test
+title: test-plan
 
 ---
 
@@ -20,10 +20,11 @@ Generate a comprehensive, repo-consistent test plan for the requested feature or
    - Embeddings service
    - Supabase (schema/RLS)
 3. Propose a minimal test suite using `KB_TESTING` expectations:
+   - Use stack-defined frameworks and existing repo tooling (see `KB_TECH_STACK`); do not add new test dependencies without explicit approval (see `KB_REPOSITORY_RULES`)
    - Unit tests for core functions/validators used by the change
    - Integration tests for any new/changed API endpoints
    - Error-handling cases aligned with `KB_ERROR_HANDLING` and HTTP mapping from `KB_API_CONVENTIONS`
-   - Edge cases and failure modes (per boundary touched)
+   - Edge cases and failure modes (per boundary touched); include at least one happy-path and one failure-path test per boundary, and include schema-validation failure cases when schemas are involved
 4. Include mobile compatibility verification when UI/layout is involved:
    - manual mobile responsiveness check (small viewport, no clipped controls, no horizontal scrolling)
 5. For each proposed test, include:

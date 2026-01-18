@@ -25,7 +25,7 @@
 ## Default delivery approach
 
 - For feature work, default to the simplest solution that meets the confirmed acceptance criteria.
-- If cleanup is desired after shipping, open a separate `refactor` thread (`RF-###`) with explicit "must not change" constraints.
+- If cleanup is desired after shipping, open a separate code refactor thread (`RF-###`) with explicit "must not change" constraints.
 
 ---
 
@@ -41,28 +41,30 @@ If no code exists, omit it:
 
 Types:
 
-- feature
-- bug
-- refactor
+- project-planning
+- feature-development
+- bug-fix
+- code-refactor
 - experiment
-- architecture
-- planning
-- docs
+- architecture-review-decision
+- docs-update
 - code-review
 - design-review
+- deploy-publish
 - other
 
 Code prefixes:
 
-- feature: `F-###`
-- bug: `B-###`
-- refactor: `RF-###`
+- project-planning: `P-###`
+- feature-development: `F-###`
+- bug-fix: `B-###`
+- code-refactor: `RF-###`
 - experiment: `E-###`
-- architecture: `A-###`
-- planning: `P-###`
-- docs: `D-###`
+- architecture-review-decision: `A-###`
+- docs-update: `D-###`
 - code-review: `CR-###`
 - design-review: `DR-###`
+- deploy-publish: `DP-###`
 - other: no code
 
 Examples:
@@ -76,6 +78,7 @@ Examples:
 - `vibe-coding | D-08: cookbook update`
 - `vibe-coding | CR-11: api pagination`
 - `vibe-coding | DR-05: export pipeline`
+- `vibe-coding | DP-01: initial go-live`
 - `vibe-coding | misc cleanup`
 
 ---
@@ -86,6 +89,7 @@ If a thread is based on an existing plan or architecture review, include the art
 
 - `knowledge-base/agents-artifacts/plans/<task-slug>.plan.md`
 - `knowledge-base/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
+- `knowledge-base/agents-artifacts/design-reviews/<task-slug>.design-review.md`
 
 ---
 
@@ -95,7 +99,7 @@ The agent should treat any clear "we are done" intent as a close request.
 Examples of intent: "Close the thread", "We are done", "Wrap up", "That is all".
 If the intent is ambiguous, ask once for confirmation.
 
-When closing, invoke `$close-thread`.
+When closing, invoke `$thread-closing`.
 
 ---
 

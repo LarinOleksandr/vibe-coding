@@ -33,7 +33,7 @@ Invoke when any apply:
 
 1. Classify change
    - additive/backward-compatible preferred
-   - breaking or destructive -> require `$create-plan`
+   - breaking or destructive -> require `$plan-creation`
 2. Update contracts first (if core entities)
    - `shared/types/` (source of truth)
    - `shared/validation/` schemas for structured payloads

@@ -36,11 +36,14 @@
 - `KB_ARCHITECTURE_PRINCIPLES` -> `./knowledge-base/agents-knowledge/architecture-principles.md` - Architecture boundaries and placement.
 - `KB_BEHAVIOUR_ARCHITECTURE` -> `./knowledge-base/agents-knowledge/agent-behaviour-architecture.md` - Blueprint for agent behaviour instructions framework design.
 - `KB_CLEAN_ARCHITECTURE_DDD` -> `./knowledge-base/agents-knowledge/clean-architecture-ddd-guidelines.md` - Deep Clean Architecture and DDD guidance.
+- `KB_DEPLOYMENT_CICD` -> `./knowledge-base/agents-knowledge/deployment-and-cicd.md` - Deployment and CI/CD DNA-level rules.
 - `KB_ERROR_HANDLING` -> `./knowledge-base/agents-knowledge/error-handling.md` - Canonical error taxonomy, normalization, and boundary translation rules.
 - `KB_EXTERNAL_SPECS` -> `./knowledge-base/agents-knowledge/external-specs.md` - External specs and resolution rules.
 - `KB_FEATURE_TEMPLATE` -> `./knowledge-base/agents-knowledge/feature-template.md` - Required feature brief template.
+- `KB_FEATURE_RESEARCH` -> `./knowledge-base/agents-knowledge/feature-research.md` - Timeboxed feature research brief before planning.
 - `KB_CONTEXT_MAINTENANCE` -> `./knowledge-base/agents-knowledge/context-maintenance.md` - Context, knowledge, and methodology maintenance guidance.
 - `KB_PROJECT_DOC_MAINTENANCE` -> `./knowledge-base/agents-knowledge/project-doc-maintenance.md` - Project documentation rules and templates.
+- `KB_REPOSITORY_LAYOUT` -> `./knowledge-base/agents-knowledge/repository-layout.md` - Repo layout and placement index ("where to find/put things").
 - `KB_REPOSITORY_RULES` -> `./knowledge-base/agents-knowledge/repository_rules.md` - Repo hygiene and governance rules.
 - `KB_ROOTS` -> `./knowledge-base/agents-knowledge/roots.md` - Canonical path alias index.
 - `KB_RUNTIME` -> `./knowledge-base/agents-knowledge/runtime.md` - Runtime topology, ports, dependencies.
@@ -55,4 +58,3 @@
 ## Project Docs (human-oriented)
 
 - `ROOT_DOCS` -> `./docs/` - Human-facing documentation root.
-- `DOC_COOKBOOK` -> `./docs/developer-docs/vibe-coding-cookbook.md` - Human-facing vibe-coding cookbook.

@@ -1,13 +1,13 @@
 ---
-name: add-api-endpoint
+name: api-endpoind-development
 description: Add or modify an API / Edge Function endpoint with explicit contracts, validation, and safe integration.
 ---
 
-# skills/add-api-endpoint/SKILL.md
+# skills/api-endpoind-development/SKILL.md
 
 ## Name
 
-$add-api-endpoint
+$api-endpoind-development
 
 ## Purpose
 

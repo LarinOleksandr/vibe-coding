@@ -17,6 +17,7 @@
 ## RLS policy design
 
 - RLS is assumed on all user-scoped tables; treat missing RLS as a violation.
+- Supabase RLS must remain enforced; never disable as a workaround.
 - Policies must be explicit, minimal, and testable.
 - Prefer deny-by-default with explicit allow rules.
 

@@ -1,13 +1,13 @@
 ---
-name: create-plan
+name: plan-creation
 description: Create a concrete, executable plan file for large or risky changes.
 ---
 
-# skills/create-plan/SKILL.md
+# skills/plan-creation/SKILL.md
 
 ## Name
 
-$create-plan
+$plan-creation
 
 ## Purpose
 

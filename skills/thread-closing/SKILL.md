@@ -1,13 +1,13 @@
 ---
-name: close-thread
+name: thread-closing
 description: Close a thread reliably with validation status, documentation updates, and a final summary.
 ---
 
-# skills/close-thread/SKILL.md
+# skills/thread-closing/SKILL.md
 
 ## Name
 
-$close-thread
+$thread-closing
 
 ## Purpose
 

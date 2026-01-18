@@ -8,6 +8,13 @@
 
 ---
 
+## Tooling constraints
+
+- Use stack-defined frameworks and existing repo tooling (see `KB_TECH_STACK`).
+- Do not add new test dependencies without explicit approval (see `KB_REPOSITORY_RULES`).
+
+---
+
 ## Testing levels
 
 - **Unit**: isolated logic (UI components, pure functions, validators)
@@ -34,6 +41,16 @@
   - validation errors
   - external dependency failure (LLM, service)
 - Schema validation failures explicitly tested
+
+---
+
+## Validation gate (workflow)
+
+When a change is close to "done" (feature scope implemented or bug fix applied), the agent should:
+
+- propose generating a test plan (`/test-plan`) if it's not already clear
+- ask the user to confirm before doing it
+- propose `/test-in-browser` when UI behavior needs manual verification and ask the user to confirm before running it
 
 When proposing a validation plan for new/changed features, suggest a minimal set of tests that includes at least:
 

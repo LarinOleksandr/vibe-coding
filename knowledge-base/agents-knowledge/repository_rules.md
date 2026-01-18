@@ -4,6 +4,7 @@
 
 - Canonical repository constraints and practices.
 - Rule priorities determine how strictly to follow each rule.
+- For placement (“where should this go?”), consult `KB_REPOSITORY_LAYOUT`.
 
 ---
 

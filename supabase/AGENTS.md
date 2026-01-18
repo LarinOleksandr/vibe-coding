@@ -12,4 +12,4 @@ Applies to `supabase/**`.
 - All schema changes are migration-driven; no direct edits.
 - Edge Functions are adapters only; no domain logic.
 - Review `KB_SUPABASE` before changes.
-- Data model changes or destructive migrations require `$create-plan`.
+- Data model changes or destructive migrations require `$plan-creation`.

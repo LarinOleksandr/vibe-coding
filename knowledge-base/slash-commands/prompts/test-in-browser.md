@@ -1,8 +1,8 @@
-# /test-browser
+# /test-in-browser
 
 ---
 
-title: test-browser
+title: test-in-browser
 
 ---
 

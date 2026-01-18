@@ -1,13 +1,13 @@
 ---
-name: refactor
+name: code-refactoring
 description: Perform a structural change without altering external behavior.
 ---
 
-# skills/refactor/SKILL.md
+# skills/code-refactoring/SKILL.md
 
 ## Name
 
-$refactor
+$code-refactoring
 
 ## Purpose
 

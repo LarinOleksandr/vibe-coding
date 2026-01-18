@@ -15,6 +15,8 @@
    - `DOC_PROJECT_FEATURE_PLAN`
    - `DOC_PROJECT_INSIGHTS`
 
+If the project is starting from an idea/PRD and these docs are missing, empty, or clearly outdated, run `/project-setup` to draft them before feature work.
+
 2. **Before any substantial work**, memory compaction, refactor, or feature development:
 
    - Review `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_INSIGHTS` and `DOC_PROJECT_FEATURE_PLAN` to ensure alignment with how we work and the latest project state.
@@ -29,6 +31,10 @@ Update documentation immediately when any of the following occur:
 2. An essential code or architectural change is made
 3. A significant decision is made or approved
 4. The user explicitly requests an update
+
+If the change also affects the repository shape (new/renamed top-level folders, new runtime boundary, new artifact category), update `KB_REPOSITORY_LAYOUT` via `/context-maintain`.
+
+In normal feature work, doc updates are part of finishing the change: update the docs automatically before proposing a feature commit.
 
 For each event, determine which files require updates and modify them to reflect:
 

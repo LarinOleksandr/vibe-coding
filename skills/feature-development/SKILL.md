@@ -31,15 +31,24 @@ Invoke when any apply:
 
 1. Classify complexity
    - small, medium, or large using `KB_FEATURE_TEMPLATE`
-2. Draft the feature brief
+2. Assess risk and unknowns
+   - if risk/unknowns are likely, do a timeboxed research pass and incorporate the outcomes into the feature brief (see `KB_FEATURE_RESEARCH`)
+   - if a separate, persisted research brief is needed, propose `$feature-research`
+3. Draft the feature brief
    - fill required sections from repo context first
-3. Ask only for missing required fields
+   - include any research outcomes as constraints/defaults and edge cases
+4. Ask only for missing required fields
    - single pass, clear questions
-4. Confirm before changes
+5. Confirm before changes
    - confirm scope, out of scope, and acceptance criteria
-5. Trigger follow-ups
+6. Trigger follow-ups
    - invoke `$architecture-review` for large or cross-boundary changes
-   - invoke `$create-plan` when change complexity requires it
+   - invoke `$plan-creation` when change complexity requires it
+7. Validation gate (when near done)
+   - propose `/test-plan` (and `/test-in-browser` when UI is involved) and ask the user to confirm before running them
+8. Finish gate (when done)
+   - update project docs (equivalent to `/project-docs-update`)
+   - propose `/feature-commit` and ask the user to confirm before committing
 
 ## Acceptance checks
 
