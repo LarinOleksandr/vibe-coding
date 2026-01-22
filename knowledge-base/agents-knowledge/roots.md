@@ -28,8 +28,8 @@
 - `ROOT_AGENTS_KNOWLEDGE` -> `./knowledge-base/agents-knowledge/` - Routed reference docs.
 - `ROOT_AGENTS_ARTIFACTS` -> `./knowledge-base/agents-artifacts/` - Generated plans, reviews, and artifacts.
 - `DOC_PROJECT_CONTEXT` -> `./knowledge-base/project-context.md` - Canonical project overview.
-- `DOC_PROJECT_FEATURE_PLAN` -> `./knowledge-base/project-feature-plan.md` - Feature breakdown and status tracking.
-- `DOC_PROJECT_INSIGHTS` -> `./knowledge-base/project-insights.md` - Chronological decisions and changes.
+- `DOC_PRODUCT_DEVELOPMENT_ROADMAP` -> `./knowledge-base/product-development-roadmap.md` - Product development roadmap and status tracking.
+- `DOC_PROJECT_INSIGHTS` -> `./knowledge-base/project-insights.md` - Durable insights, decisions, and lessons learned.
 
 ## Knowledge routes
 
@@ -50,6 +50,8 @@
 - `KB_SCHEMAS_OUTPUTS` -> `./knowledge-base/agents-knowledge/schemas-and-outputs.md` - Schemas, validation, structured outputs.
 - `KB_SUPABASE` -> `./knowledge-base/agents-knowledge/supabase.md` - Supabase usage, migrations, policies.
 - `KB_TESTING` -> `./knowledge-base/agents-knowledge/testing.md` - Test strategy and smoke paths.
+- `KB_UI_BASELINE` -> `./knowledge-base/agents-knowledge/ui-baseline.md` - UI baseline invariants and guidelines (framework-level; not product-specific tokens).
+- `KB_UX_BASELINE` -> `./knowledge-base/agents-knowledge/ux-baseline.md` - UX baseline invariants and guidelines (framework-level; not product-specific flows).
 - `KB_THREADS` -> `./knowledge-base/agents-knowledge/threads.md` - Threading rules and templates.
 - `KB_TOOLS` -> `./knowledge-base/agents-knowledge/tools.md` - Canonical tools and commands.
 - `KB_TECH_STACK` -> `./knowledge-base/agents-knowledge/tech_stack.md` - Tech stack source of truth.

@@ -15,7 +15,8 @@
 | `knowledge-base/` | Agent knowledge, prompts, artifacts, and project docs | any agent workflow, prompt, artifact, or project state |
 | `skills/` | Procedural skills | a repeatable multi-step procedure (`$<skill>`) |
 | `docs/` | Human-facing docs | application development guidance and collaboration docs |
-| `frontend/` | Frontend runtime boundary (placeholder) | the user-facing web/mobile client code (when it exists) |
+| `frontend/` | Frontend runtime boundary | the user-facing web/mobile client code (`frontend/web`, when it exists) |
+| `frontend/web` | Web application | primary React UI runtime boundary |
 | `ai/` | AI runtime boundaries (placeholders) | orchestrator/embeddings services (when they exist) |
 | `supabase/` | Supabase boundary (placeholder) | DB migrations, Edge Functions, RLS policies (when adopted) |
 | `infra/` | Infrastructure boundary (placeholder) | deploy templates, local stack definitions (when adopted) |
@@ -30,6 +31,7 @@
 | Where does X belong? (routing) | `knowledge-base/agents-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
 | Thread naming + codes | `knowledge-base/agents-knowledge/threads.md` | canonical thread rules |
+| UI/UX baseline invariants and guidelines | `knowledge-base/agents-knowledge/ui-baseline.md`, `knowledge-base/agents-knowledge/ux-baseline.md` | framework-level defaults for consistent UI behavior |
 | Feature brief template | `knowledge-base/agents-knowledge/feature-template.md` | used by `/feature-start` |
 | Feature research expectations | `knowledge-base/agents-knowledge/feature-research.md` | timeboxed research brief |
 | Testing strategy and gates | `knowledge-base/agents-knowledge/testing.md` | no new deps without approval |
@@ -41,7 +43,7 @@
 | Architecture review artifacts | `knowledge-base/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
 | Design review artifacts | `knowledge-base/agents-artifacts/design-reviews/` | created by `$design-review` |
 | Research brief artifacts | `knowledge-base/agents-artifacts/research-briefs/` | created by `$feature-research` |
-| Project context/plan/insights | `knowledge-base/project-*.md` | maintained by `/project-setup` and `/project-docs-update` |
+| Project context/roadmap/insights | `knowledge-base/project-context.md`, `knowledge-base/product-development-roadmap.md`, `knowledge-base/project-insights.md` | maintained by `/project-setup` and `/project-docs-update` |
 | Archived legacy docs | `knowledge-base/old/` | non-canonical reference only |
 
 ---
@@ -54,7 +56,7 @@
 | A new slash command prompt | `knowledge-base/slash-commands/prompts/` | `design-review.md` |
 | A new skill | `skills/<skill-name>/SKILL.md` | `skills/design-review/SKILL.md` |
 | A new agent artifact type | `knowledge-base/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/` |
-| A new project "memory" doc | `knowledge-base/` | `project-context.md`, `project-feature-plan.md` |
+| A new project "memory" doc | `knowledge-base/` | `project-context.md`, `product-development-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |
 

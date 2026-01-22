@@ -3,7 +3,7 @@
 ## Agent summary
 
 - Rules for required project documentation files
-- When and how to update project context, plan, and insights
+- When and how to update project context, roadmap, and insights
 
 ---
 
@@ -12,14 +12,14 @@
 1. A `/knowledge-base` folder **must always have** three Markdown files:
 
    - `DOC_PROJECT_CONTEXT`
-   - `DOC_PROJECT_FEATURE_PLAN`
+   - `DOC_PRODUCT_DEVELOPMENT_ROADMAP`
    - `DOC_PROJECT_INSIGHTS`
 
-If the project is starting from an idea/PRD and these docs are missing, empty, or clearly outdated, run `/project-setup` to draft them before feature work.
+If the project is starting from an idea/PRD and these docs are missing, empty, or clearly outdated, run `/project-setup` to draft them before any feature work.
 
 2. **Before any substantial work**, memory compaction, refactor, or feature development:
 
-   - Review `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_INSIGHTS` and `DOC_PROJECT_FEATURE_PLAN` to ensure alignment with how we work and the latest project state.
+   - Review `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_INSIGHTS` and `DOC_PRODUCT_DEVELOPMENT_ROADMAP` to ensure alignment with how we work and the latest project state.
 
 ---
 
@@ -27,7 +27,7 @@ If the project is starting from an idea/PRD and these docs are missing, empty, o
 
 Update documentation immediately when any of the following occur:
 
-1. A feature is developed or completed
+1. A work item (foundation/capability/feature/release task) is developed or completed
 2. An essential code or architectural change is made
 3. A significant decision is made or approved
 4. The user explicitly requests an update
@@ -39,13 +39,13 @@ In normal feature work, doc updates are part of finishing the change: update the
 For each event, determine which files require updates and modify them to reflect:
 
 - Updated context
-- Plan changes
-- New insights or lessons learned
+- Roadmap changes (including progress/status)
+- New insights or lessons learned (only when durable; avoid routine progress notes)
 
 Files to consider:
 
 - `DOC_PROJECT_CONTEXT`
-- `DOC_PROJECT_FEATURE_PLAN`
+- `DOC_PRODUCT_DEVELOPMENT_ROADMAP`
 - `DOC_PROJECT_INSIGHTS`
 
 ---
@@ -65,34 +65,46 @@ Files to consider:
 
 ---
 
-### project-feature-plan.md
+### product-development-roadmap.md
 
-**Purpose:** Work breakdown and progress tracking.
+**Purpose:** Full-scope product development roadmap and progress tracking.
 
 **Rules:**
 
-- Features are listed as numbered top-level headings
-- Subfeatures use hierarchical numbering (e.g., 1.1, 1.2)
-- Every feature and subfeature must include a status:
+- The roadmap may contain multiple sections (foundations, capabilities, features, release, etc.) and must remain extensible.
+- Every tracked item must include a status:
   - `Not Started`
   - `In Progress`
   - `Completed`
-- Decompose features further as clarity increases
-- Ordering format: number, status, then item name
+- Keep **Feature Development** tracked feature-by-feature (feature threads remain consistent).
+- Decompose items further as clarity increases.
 
 ---
 
 ### project-insights.md
 
-**Purpose:** Chronological decision and change log.
+**Purpose:** Durable "lessons learned" log.
+
+Use this file to capture decisions, constraints, and debugging learnings that will prevent repeat mistakes. Do **not** use it for routine progress, task completion, or status updates (those belong in `DOC_PRODUCT_DEVELOPMENT_ROADMAP`).
 
 **Rules:**
 
 - Append-only; ordered from oldest to newest
-- Each entry must include:
-  - A concise summary of the change or insight
-  - Supporting details when relevant (architecture, tooling, design, content, integrations)
-- Reference the related feature or subfeature number
+- Add an entry only when it includes at least one:
+  - Decision (architecture/tooling/process) that future work must follow
+  - Lesson learned (root cause, constraint, gotcha) likely to recur
+  - Guardrail (test/validation/check) added to prevent regression
+- Each entry must reference either:
+  - related feature/subfeature identifier (preferred), or
+  - thread name / short identifier when not tied to a feature
+- Keep each entry short (3-6 bullets). If details are long, write a separate artifact and link it.
+
+**Suggested entry template (keep it simple):**
+
+- Why it matters (one line)
+- Root cause / constraint (one line)
+- Fix / decision (one line)
+- Prevention (test/validation/guardrail) (one line)
 
 ---
 
@@ -115,15 +127,19 @@ Brief description of the application and its purpose.
 - Other critical high-level details
 </pre>
 
-### project-feature-plan.md
+### product-development-roadmap.md
 
 <pre>
-# Project Plan
+# Product Development Roadmap
 
-## Features
-- 1. [In Progress] Feature Name
-  - 1.1 [Not Started] Subfeature Name
-  - 1.2 [Completed] Subfeature Name
+## Roadmap
+
+### Foundations
+- [In Progress] Work item
+  - [Completed] Sub-item
+
+### Feature Development
+- 1. [Not Started] Feature name
 </pre>
 
 ### project-insights.md
@@ -131,12 +147,11 @@ Brief description of the application and its purpose.
 <pre>
 # Project Insights Log
 
-## [1.1]
-- Added authentication module and updated project structure.
-
-## [2]
-- Selected PostgreSQL as the primary database.
-- Documented deployment strategy.
+## [1]
+- Why it matters: <one line>
+- Root cause / constraint: <one line>
+- Fix / decision: <one line>
+- Prevention: <test/guardrail/check>
 </pre>
 
 ---
@@ -146,4 +161,4 @@ Brief description of the application and its purpose.
 - Be concise and factual
 - Avoid redundancy
 - Prefer clarity over completeness
-- Follow the specified Markdown structure exactly
+- Follow the specified Markdown structure

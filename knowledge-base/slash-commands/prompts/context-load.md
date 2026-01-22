@@ -24,7 +24,7 @@ Load only the general, cross-cutting project/repo context and provide a routing 
    - `skills/skills.md`
    - `knowledge-base/slash-commands/README.md`
    - `knowledge-base/project-context.md`
-   - `knowledge-base/project-feature-plan.md`
+   - `knowledge-base/product-development-roadmap.md`
    - `knowledge-base/project-insights.md`
 2. Produce a concise **Context Snapshot** using the format below.
 3. Ask exactly one question and stop: `What should we do next?`
@@ -63,6 +63,8 @@ List the most relevant routes and when to consult them (do not read them now):
 - `KB_SUPABASE`: when touching DB schema, RLS, policies, or Edge Functions
 - `KB_ARCHITECTURE_PRINCIPLES`: when changes span layers or risk boundary violations
 - `KB_RUNTIME`: when changing services, ports, or dependencies
+- `KB_UI_BASELINE`: when building consistent UI components and styling rules
+- `KB_UX_BASELINE`: when defining UI behavior for loading/empty/error states and feedback
 - `KB_TOOLS`: when choosing canonical commands and scripts
 - `KB_THREADS`: when starting a new thread or naming one
 - `KB_CONTEXT_MAINTENANCE`: when modifying rules/routes/skills/slash commands or detecting duplication/conflicts

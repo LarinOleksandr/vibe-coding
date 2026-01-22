@@ -18,7 +18,7 @@ Save the current working state into Git as a single feature commit.
    - Stage everything.
    - Generate a commit message that starts with `feat:` and summarizes the change.
    - Create the commit.
-3. In all cases (commit succeeds, fails, or nothing to commit), show the full feature list and statuses from `DOC_PROJECT_FEATURE_PLAN`, including subfeatures, in this format:
+3. In all cases (commit succeeds, fails, or nothing to commit), show the full feature list and statuses from `DOC_PRODUCT_DEVELOPMENT_ROADMAP` (Feature Development section), including subfeatures, in this format:
    - `1. [In Progress] Project setup and deployment`
    - `1.1 [Not Started] Rename repo folder to ideabrowser-clone`
 4. Ask what feature should be developed next and require the user to enter a feature number (top-level or subfeature).

@@ -11,7 +11,9 @@ $plan-creation
 
 ## Purpose
 
-Create a concrete, executable plan file for large or risky changes. If the plan includes coding, include an implementation plan with step-by-step instructions and verification per step.
+Create a short, executable plan file for large or risky changes.
+
+Keep plans right-sized: if a step cannot be implemented and verified safely, split it.
 
 ## When to use
 
@@ -43,20 +45,27 @@ Invoke when any apply:
    - list touched components/layers
    - list contracts/schemas/data affected
    - if scope/areas/risks are unclear, propose and confirm before finalizing the plan
-2. Define implementation steps (ordered)
-   - smallest viable sequence
-   - include dependency ordering
-3. If coding is involved, include an implementation plan
-   - small, specific steps with no code
-   - each step includes a verification method (test/check/inspection)
-   - focus on the base application, not full feature expansion
-4. Define validation plan
-   - tests to add/update
+2. Add design system initialization steps when UI is involved
+   - If the plan touches `frontend/web/**` or includes UI work:
+     - include an early step: “Confirm design preset (keep current or switch)”
+     - include the execution step: “Initialize or update design system” via `/app-design-setup`
+     - include verification: basic UI loads + baseline focus/validation/loading behaviors
+   - Do not paste preset URLs into the plan; reference `frontend/web/config/app-design-preset.json`.
+3. Write ordered steps (small, integrated, verifiable)
+   - smallest viable sequence; include dependency ordering
+   - for each step, include only:
+     - Deliverable: what changes
+     - Integration: where it is wired in (avoid orphan code)
+     - Verify: how to confirm it works (1–3 bullets)
+4. If coding is involved, add an implementation plan
+   - mirror the steps above, phrased as “do X, then verify Y”
+   - avoid deep test enumeration or UI review checklists; reference `/test-plan` or `/design-review` instead
+5. Add a validation section (high-signal only)
+   - tests to add/update (names/locations, not full suites)
    - smoke path(s)
-   - schema validation points
-   - if not provided, propose validation with brief rationale
-5. Define rollback notes (only if data/schema involved)
-6. Write or update the plan file
+   - schema validation points (if any)
+6. Add rollback notes (only if data/schema involved)
+7. Write or update the plan file
    - minimal and executable
    - reflects current intended approach
 
@@ -65,8 +74,8 @@ Invoke when any apply:
 - Goal
 - Scope / Non-scope
 - Affected areas
-- Steps (ordered)
-- Implementation plan (coding only; each step includes verification)
+- Steps (ordered; each step has Deliverable + Integration + Verify)
+- Implementation plan (coding only; “do X, then verify Y”)
 - Risks
 - Validation (tests + smoke path)
 - References (optional; existing plans or architecture reviews)
@@ -77,7 +86,10 @@ Invoke when any apply:
 - Planning triggers applied correctly
 - Plan file exists in `ROOT_AGENTS_ARTIFACTS/plans/`
 - Steps are ordered and implementable
-- Implementation plan included for coding tasks with verification per step
+- Steps are right-sized (small + verifiable)
+- No orphan work (each step includes Integration)
+- Implementation plan included for coding tasks
 - Validation is concrete and testable
 - Schema/contract impacts are explicit
 - Rollback included when data/schema is affected
+

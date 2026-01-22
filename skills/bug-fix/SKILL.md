@@ -46,6 +46,8 @@ Invoke when any apply:
    - run agreed tests or state why not
 7. Summarize
    - root cause, fix, and validation status
+   - if there is a durable lesson learned or guardrail that will prevent repeat mistakes, add a short entry to `DOC_PROJECT_INSIGHTS` (otherwise do not)
+     - keep it 3–6 bullets and focus on why it matters, the root cause/constraint, the fix/decision, and the prevention
 
 ## Acceptance checks
 

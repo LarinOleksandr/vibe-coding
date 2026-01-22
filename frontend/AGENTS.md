@@ -16,6 +16,12 @@ Applies to `frontend/**`.
 - Server/async state via TanStack Query only.
 - Validate user input and agent outputs with Zod before render.
 - Prefer shadcn/ui + Tailwind; avoid parallel UI systems.
+- UI baseline invariants + guidelines: consult `KB_UI_BASELINE`.
+- UX baseline invariants + guidelines: consult `KB_UX_BASELINE`.
+- Application design preset (shadcn):
+  - Preset source of truth: `frontend/web/config/app-design-preset.json`.
+  - Apply/update preset via: `frontend/web/scripts/app-design-init.ps1`.
+  - Plans that create or modify `frontend/web` must include an early step: “Initialize design system (preset)”, executed by the agent via `/app-design-setup`.
 - Mobile-first responsive design by default; use Tailwind breakpoints to progressively enhance for larger screens.
 - Rich text editing via TipTap; workflow/agent graphs via React Flow.
 - Reuse shared contracts:

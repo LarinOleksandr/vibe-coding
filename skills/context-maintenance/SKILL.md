@@ -60,7 +60,7 @@ Invoke when any apply:
    - if the same rule appears in multiple layers, keep it in the correct layer and replace others with a reference
    - if guidance conflicts, pick a single source of truth and update references accordingly
 7. Update project documents when the decision/change affects project state
-   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_FEATURE_PLAN`, and append to `DOC_PROJECT_INSIGHTS`
+   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PRODUCT_DEVELOPMENT_ROADMAP`, and append to `DOC_PROJECT_INSIGHTS`
 8. Ensure indices remain accurate
    - `DOC_SKILLS_LIST` reflects the current skills
    - `knowledge-base/slash-commands/README.md` lists existing commands and brief purpose lines

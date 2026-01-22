@@ -10,6 +10,7 @@
 ## Skills
 
 - `$plan-creation` - Create a concrete, executable plan for large or risky changes.
+- `$app-design-setup` - Initialize and apply the frontend design system preset (shadcn) for `frontend/web`.
 - `$db-migration` - Evolve Supabase schema/data safely with migrations and RLS intact.
 - `$new-agent-development` - Add or modify an orchestrator agent/workflow with explicit state and tests.
 - `$api-endpoind-development` - Add or modify an API / Edge Function endpoint with explicit contracts, validation, and safe integration.

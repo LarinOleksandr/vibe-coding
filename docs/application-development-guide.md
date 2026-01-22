@@ -31,16 +31,17 @@ Run:
 
 What you should expect from the agent:
 
+- If the agent detects the project foundation is still uninitialized (project docs are empty/generic), it will first ask for the minimal product inputs (Product, Users, Problem, Success, Constraints, Out of scope) and then proceed with `/project-setup`.
 - The agent turns your idea/PRD into a first draft of the project foundation docs
-- The agent asks you to confirm only key foundations (scope, success criteria, initial feature list)
-- After confirmation, the agent proposes the first feature and suggests a correct feature thread name
+- The agent asks you to confirm only key foundations (scope, success criteria, initial roadmap)
+- After confirmation, the agent proposes the next roadmap item and suggests a correct thread name for it
 
 ### 1.3 Project "foundation" outputs (what gets drafted/updated)
 
 During `/project-setup`, the agent drafts/updates:
 
 - `knowledge-base/project-context.md` (what the product is)
-- `knowledge-base/project-feature-plan.md` (what we'll build, ordered)
+- `knowledge-base/product-development-roadmap.md` (what we'll do next, ordered)
 - `knowledge-base/project-insights.md` (key decisions and why)
 
 Use `/context-load` later when you want a quick "where are we and what are the rules?" snapshot without changing any docs.
@@ -51,7 +52,7 @@ You must explicitly confirm:
 
 - **Scope**: what is included and excluded (for now)
 - **Success criteria**: what "done" looks like for the near term
-- **Initial feature list**: a first-pass feature plan the agent can execute one item at a time
+- **Initial roadmap**: a first-pass ordered roadmap (foundations/capabilities first, then Feature Development)
 
 When you confirm, the next work can start.
 
@@ -104,8 +105,8 @@ Thread codes (use what matches the task):
 Use this workflow when:
 
 - you finished `/project-setup` and want to confirm priorities
-- you want to reorder, split, merge, or clarify items in `knowledge-base/project-feature-plan.md`
-- you learned something and need to adjust the plan before building
+- you want to reorder, split, merge, or clarify items in `knowledge-base/product-development-roadmap.md`
+- you learned something and need to adjust the roadmap before building
 
 Start a project planning thread:
 
@@ -113,15 +114,17 @@ Start a project planning thread:
 
 Do this:
 
-1. Open `knowledge-base/project-feature-plan.md`
-2. Confirm which feature is next (topmost **[Not Started]** item)
-3. If the plan needs changes (reorder/split/merge), tell the agent what to change and why
-4. After the plan is confirmed, proceed with the next feature by starting a feature thread and running `/feature-start`
+1. Open `knowledge-base/product-development-roadmap.md`
+2. Confirm which roadmap item is next (topmost **[Not Started]** item)
+3. If the roadmap needs changes (reorder/split/merge), tell the agent what to change and why
+4. Proceed with the next item:
+   - If it is a foundation/capability item: stay in the planning thread or start a new `P-###` thread for that work
+   - If it is under **Feature Development**: start a feature thread and run `/feature-start`
 
 What you should expect:
 
-- A clear "next feature" choice
-- A thread name suggestion for the next feature (`F-###`)
+- A clear "next item" choice
+- A thread name suggestion that matches the item type (`P-###` for non-features; `F-###` for features)
 
 ---
 
@@ -195,7 +198,7 @@ What you should expect:
 ### 5.1 Start the feature
 
 1. Start a new feature thread named like: `<project name> | F-###: <feature name>`.
-   Exact feature number and name can be found in `knowledge-base/project-feature-plan.md`.
+   Exact feature number and name can be found in `knowledge-base/product-development-roadmap.md` (Feature Development section).
 2. Run:
    - `/feature-start`
 
@@ -269,6 +272,18 @@ If the feature affects the UI, also run:
 - `/test-in-browser`
 
 In the same way, the agent should propose `/test-in-browser` when UI behavior changed or needs manual verification. You approve, then the agent runs it.
+
+### 5.6.1 Design system (frontend/web)
+
+When work involves `frontend/web` UI design (initial setup or a style change), the agent should run `/app-design-setup`.
+
+What happens during `/app-design-setup`:
+
+- The agent asks whether to keep the current design preset (default) or switch to a new one.
+- If switching, the agent points you to `https://ui.shadcn.com/create` and asks you to return the generated `https://ui.shadcn.com/init?...` URL (and template if needed).
+- The agent updates `frontend/web/config/app-design-preset.json` (single source of truth) and applies it.
+
+You can switch the design preset again at any time by rerunning `/app-design-setup`.
 
 ### 5.7 Finish the feature (always do these)
 

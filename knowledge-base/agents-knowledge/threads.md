@@ -69,12 +69,12 @@ Code prefixes:
 
 Examples:
 
+- `vibe-coding | P-03: onboarding flow`
 - `vibe-coding | F-042: pdf export`
 - `vibe-coding | B-17: duplicate list`
 - `vibe-coding | RF-03: auth cleanup`
 - `vibe-coding | E-02: rag vs fine-tuning`
 - `vibe-coding | A-02: agent artifacts`
-- `vibe-coding | P-03: onboarding flow`
 - `vibe-coding | D-08: cookbook update`
 - `vibe-coding | CR-11: api pagination`
 - `vibe-coding | DR-05: export pipeline`

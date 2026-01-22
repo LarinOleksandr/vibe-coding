@@ -17,7 +17,7 @@ Run a focused Codex code review in a dedicated code-review thread.
 
 ### `project-setup.md`
 
-Turn an idea/notes/PRD into a confirmed project foundation (context + feature plan + insights).
+Turn an idea/notes/PRD into a confirmed project foundation (context + product development roadmap + insights).
 
 ### `context-load.md`
 
@@ -42,6 +42,10 @@ Produce a timeboxed feature research brief to surface risks, constraints, and de
 ### `design-review.md`
 
 Run a focused design review in a dedicated `DR-###` thread and produce a short design review artifact.
+
+### `app-design-setup.md`
+
+Initialize the `frontend/web` design system using the canonical shadcn preset.
 
 ### `context-maintain.md`
 

@@ -57,7 +57,8 @@ Consult routed docs before changes when applicable:
 
 Agent may automatically invoke additional steps when risk or complexity is detected:
 
-- `/project-setup` when the user provides an idea/PRD and the project foundation docs are missing, empty, or clearly outdated.
+- `/project-setup` when the user provides an idea/PRD and the project foundation docs are missing, empty, clearly outdated, or still generic placeholders.
+  - If the agent detects the project has not been initialized yet (no real product info in `DOC_PROJECT_CONTEXT`, `DOC_PRODUCT_DEVELOPMENT_ROADMAP`, `DOC_PROJECT_INSIGHTS`), it must first ask for the PRD or minimal product inputs (Product, Users, Problem, Success, Constraints, Out of scope) and then propose running `/project-setup`.
 - `$plan-creation` for large or complex changes (multiple components, schema/contract changes, new agent/service/workflow, or shared/core refactors). Plans are written to `ROOT_AGENTS_ARTIFACTS/plans/<task-slug>.plan.md`.
 - `$architecture-review` for cross-boundary changes, new services/workflows, or likely architecture conflicts.
 - `/test-plan <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; propose it and ask the user to confirm before generating the plan.
