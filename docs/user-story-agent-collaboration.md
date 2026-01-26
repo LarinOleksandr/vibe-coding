@@ -10,7 +10,7 @@ I start a project-planning thread:
 
 `vibe-coding | P-001: project foundation`
 
-Before we do anything else, the agent checks the project foundation docs and realizes they still contain generic placeholder content (no real product details yet). It tells me we should start with `/project-setup`, but first it needs the minimal product inputs.
+Before we do anything else, the agent checks the project foundation docs and realizes they still contain generic placeholder content (no real product details yet). It tells me we should start with `$project-setup`, but first it needs the minimal product inputs.
 
 I provide the minimum inputs:
 
@@ -21,17 +21,17 @@ I provide the minimum inputs:
 - Constraints: "Keep the process strict; don't add random dependencies."
 - Out of scope: "No public marketing site yet."
 
-Now the agent replies: it will run `/project-setup`.
+Now the agent replies: it will run `$project-setup`.
 
 I run:
 
-`/project-setup`
+`$project-setup`
 
 The agent reads the existing project docs, then drafts/updates the canonical foundation files:
 
-- `knowledge-base/project-context.md`
-- `knowledge-base/product-development-roadmap.md`
-- `knowledge-base/project-insights.md`
+- `knowledge-base/project-knowledge/project-context.md`
+- `knowledge-base/project-knowledge/project-roadmap.md`
+- `knowledge-base/project-knowledge/project-insights.md`
 
 Then the agent asks me to confirm only the important gates:
 
@@ -49,7 +49,7 @@ Later, I feel lost ("what are the rules again?").
 
 Instead of opening random files, I run:
 
-`/context-load`
+`$context-load`
 
 The agent gives me a concise snapshot:
 
@@ -61,7 +61,7 @@ This prevents me from guessing or inventing structure.
 
 ## 3) I do roadmap items first (then features)
 
-I pick the topmost **[Not Started]** item in `knowledge-base/product-development-roadmap.md`.
+I pick the topmost **[Not Started]** item in `knowledge-base/project-knowledge/project-roadmap.md`.
 
 If it is a foundation/capability item, I start a project planning thread for that item:
 
@@ -71,13 +71,13 @@ In that thread, the agent keeps me focused on finishing the next item, then comi
 
 Later, when the next item is a feature under **Feature Development**, I start a feature thread and run:
 
-`/feature-start`
+`$feature-start`
 
 The agent reads:
 
-- `knowledge-base/project-context.md`
-- `knowledge-base/project-insights.md`
-- `knowledge-base/product-development-roadmap.md`
+- `knowledge-base/project-knowledge/project-context.md`
+- `knowledge-base/project-knowledge/project-insights.md`
+- `knowledge-base/project-knowledge/project-roadmap.md`
 
 Then it asks: "Starting feature: web UI foundation. Proceed?"
 
@@ -87,8 +87,8 @@ I say "Proceed."
 
 When the feature includes UI work under `frontend/web`, the agent routes itself to the existing UI/UX baselines:
 
-- `knowledge-base/agents-knowledge/ui-baseline.md`
-- `knowledge-base/agents-knowledge/ux-baseline.md`
+- `knowledge-base/agents-core-knowledge/ui-baseline.md`
+- `knowledge-base/agents-core-knowledge/ux-baseline.md`
 
 It explains (briefly) what that means in practice:
 
@@ -102,7 +102,7 @@ This is where I notice a useful constraint: we're trying to prevent "random CSS 
 
 At the start of design work, the agent proposes running:
 
-`/app-design-setup`
+`$app-design-setup`
 
 The agent looks at the single source of truth for the design preset:
 
@@ -136,7 +136,7 @@ Another day, I decide I want a different style.
 
 I rerun:
 
-`/app-design-setup`
+`$app-design-setup`
 
 This time I answer: "No."
 
@@ -157,7 +157,7 @@ If the preset implies new dependencies beyond what I approved before, the agent 
 
 Finally, the agent records the durable decision (without duplicating the preset URL all over the repo) in:
 
-- `knowledge-base/project-insights.md`
+- `knowledge-base/project-knowledge/project-insights.md`
 
 It references the config path rather than scattering copies of the URL in multiple docs.
 
@@ -171,7 +171,7 @@ As we build screens, I notice the agent keeps changes small and keeps asking for
 
 If requirements are unclear or risky, the agent proposes a research pass using:
 
-`/feature-research`
+`$feature-research`
 
 If I approve, it produces a timeboxed research brief and then folds the conclusions back into the feature's plan.
 
@@ -181,28 +181,33 @@ When we're close to done, the agent asks whether to create a test plan.
 
 If I approve, it runs:
 
-`/test-plan`
+`$test-plan`
 
 If the change affects UI behavior, the agent proposes:
 
-`/test-in-browser`
+`$testing-in-browser`
 
 If I approve, it runs the browser verification workflow and fixes any obvious issues found.
 
 ## 8) Finish: docs and memory stay correct
 
-When the feature feels complete, the agent updates the project docs automatically (equivalent to running `/project-docs-update`).
+When the feature feels complete, the agent updates the project docs automatically (equivalent to running `$project-docs-update`).
 
 If the work changed the framework itself (skills, commands, routing, AGENTS rules), the agent also performs the required framework maintenance updates in the same change set so the repo stays internally consistent.
 
 Finally, the agent proposes committing and asks for my approval to run:
 
-`/feature-commit`
+`$feature-commit`
 
-I approve by running `/feature-commit`. The agent commits, and then I close the thread.
+I approve by running `$feature-commit`. The agent commits, and then I close the thread.
 
 ## What I notice (observations)
 
 - The workflow is strong at preventing "random UI decisions," because UI/UX baselines + the preset config enforce consistency early.
 - Dependency approval is a required checkpoint; the smooth path is a single approval for the baseline bundle, recorded in `frontend/web/config/deps-approved.json`.
 - The smoothest experience is when the agent keeps the preset URL in exactly one place (`frontend/web/config/app-design-preset.json`) and references it everywhere else.
+
+
+
+
+

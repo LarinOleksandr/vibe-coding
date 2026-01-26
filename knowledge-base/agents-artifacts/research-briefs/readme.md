@@ -11,3 +11,6 @@ This folder stores timeboxed feature research briefs.
 ## Purpose
 
 Research briefs capture risks, constraints, and default decisions before planning (`$plan-creation`).
+
+
+

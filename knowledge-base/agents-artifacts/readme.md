@@ -6,8 +6,8 @@ This folder stores agent-generated artifacts.
 
 - `plans/` contains planning files created by `$plan-creation`
 - `architectural-reviews/` contains architecture review artifacts from `$architecture-review`
-- `design-reviews/` contains design review artifacts from `$design-review` or `/design-review`
-- `research-briefs/` contains research briefs created by `$feature-research` or `/feature-research`
+- `design-reviews/` contains design review artifacts from `$design-review`
+- `research-briefs/` contains research briefs created by `$feature-research`
 
 ## Rules
 
@@ -18,3 +18,7 @@ This folder stores agent-generated artifacts.
   - design reviews: `<task-slug>.design-review.md`
   - research briefs: `<task-slug>.research.md`
 - Do not delete or overwrite old artifacts.
+
+
+
+

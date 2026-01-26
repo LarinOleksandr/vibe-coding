@@ -21,3 +21,6 @@ Applies to `ai/embeddings/**`.
 
 - Validate vector shape and type.
 - Include a smoke test for the public API endpoint.
+
+
+

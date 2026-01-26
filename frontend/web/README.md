@@ -14,3 +14,6 @@ At any time, you can switch the design preset:
 1. Create a new preset at `https://ui.shadcn.com/create`
 2. Provide the generated `https://ui.shadcn.com/init?...` URL to the agent when prompted by `/app-design-setup`
 3. The agent updates `frontend/web/config/app-design-preset.json` and applies it
+
+
+

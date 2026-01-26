@@ -27,24 +27,24 @@ Recommended minimum (copy/paste and fill):
 
 Run:
 
-- `/project-setup`
+- `$project-setup`
 
 What you should expect from the agent:
 
-- If the agent detects the project foundation is still uninitialized (project docs are empty/generic), it will first ask for the minimal product inputs (Product, Users, Problem, Success, Constraints, Out of scope) and then proceed with `/project-setup`.
+- If the agent detects the project foundation is still uninitialized (project docs are empty/generic), it will first ask for the minimal product inputs (Product, Users, Problem, Success, Constraints, Out of scope) and then proceed with `$project-setup`.
 - The agent turns your idea/PRD into a first draft of the project foundation docs
 - The agent asks you to confirm only key foundations (scope, success criteria, initial roadmap)
 - After confirmation, the agent proposes the next roadmap item and suggests a correct thread name for it
 
 ### 1.3 Project "foundation" outputs (what gets drafted/updated)
 
-During `/project-setup`, the agent drafts/updates:
+During `$project-setup`, the agent drafts/updates:
 
-- `knowledge-base/project-context.md` (what the product is)
-- `knowledge-base/product-development-roadmap.md` (what we'll do next, ordered)
-- `knowledge-base/project-insights.md` (key decisions and why)
+- `knowledge-base/project-knowledge/project-context.md` (what the product is)
+- `knowledge-base/project-knowledge/project-roadmap.md` (what we'll do next, ordered)
+- `knowledge-base/project-knowledge/project-insights.md` (key decisions and why)
 
-Use `/context-load` later when you want a quick "where are we and what are the rules?" snapshot without changing any docs.
+Use `$context-load` later when you want a quick "where are we and what are the rules?" snapshot without changing any docs.
 
 ### 1.4 Confirmation gates (what you must approve)
 
@@ -104,8 +104,8 @@ Thread codes (use what matches the task):
 
 Use this workflow when:
 
-- you finished `/project-setup` and want to confirm priorities
-- you want to reorder, split, merge, or clarify items in `knowledge-base/product-development-roadmap.md`
+- you finished `$project-setup` and want to confirm priorities
+- you want to reorder, split, merge, or clarify items in `knowledge-base/project-knowledge/project-roadmap.md`
 - you learned something and need to adjust the roadmap before building
 
 Start a project planning thread:
@@ -114,12 +114,12 @@ Start a project planning thread:
 
 Do this:
 
-1. Open `knowledge-base/product-development-roadmap.md`
+1. Open `knowledge-base/project-knowledge/project-roadmap.md`
 2. Confirm which roadmap item is next (topmost **[Not Started]** item)
 3. If the roadmap needs changes (reorder/split/merge), tell the agent what to change and why
 4. Proceed with the next item:
    - If it is a foundation/capability item: stay in the planning thread or start a new `P-###` thread for that work
-   - If it is under **Feature Development**: start a feature thread and run `/feature-start`
+   - If it is under **Feature Development**: start a feature thread and run `$feature-start`
 
 What you should expect:
 
@@ -149,7 +149,7 @@ What you should expect:
 
 - A timebox (so the spike does not turn into a feature)
 - A recommendation and concrete next steps (what to build next, and what not to do)
-- A short update in `knowledge-base/project-insights.md` if a decision was made
+- A short update in `knowledge-base/project-knowledge/project-insights.md` if a decision was made
 
 ### 4.2 Architecture Review & Decision Workflow (A-###)
 
@@ -184,7 +184,7 @@ Start a design review thread:
 
 Then run:
 
-- `/design-review`
+- `$design-review`
 
 What you should expect:
 
@@ -198,9 +198,9 @@ What you should expect:
 ### 5.1 Start the feature
 
 1. Start a new feature thread named like: `<project name> | F-###: <feature name>`.
-   Exact feature number and name can be found in `knowledge-base/product-development-roadmap.md` (Feature Development section).
+   Exact feature number and name can be found in `knowledge-base/project-knowledge/project-roadmap.md` (Feature Development section).
 2. Run:
-   - `/feature-start`
+   - `$feature-start`
 
 What you should expect:
 
@@ -208,11 +208,11 @@ What you should expect:
 
 ### 5.2 Agent produces the feature brief (with research when needed)
 
-After you run `/feature-start`, the agent returns a **feature brief draft**.
+After you run `$feature-start`, the agent returns a **feature brief draft**.
 
 - For low-risk features: the brief is short (scope + acceptance criteria).
 - For riskier features (uploads, permissions, external integrations, data retention/privacy): the agent includes the needed research outcomes directly in the draft (recommended limits/defaults + blocking questions).
-- If you want a separate, deeper research brief artifact, run `/feature-research`.
+- If you want a separate, deeper research brief artifact, run `$feature-research`.
 
 ### 5.3 Confirm the feature brief (required)
 
@@ -255,11 +255,11 @@ When the agent believes the feature scope is implemented (or you are close to "d
 
 - "Should I create a test plan now?"
 
-If you approve, the agent produces it by running `/test-plan`. You can also ask for it directly in plain language ("create a test plan") without typing the command.
+If you approve, the agent produces it by running `$test-plan`. You can also ask for it directly in plain language ("create a test plan") without typing the command.
 
 If you are not prompted, run:
 
-- `/test-plan`
+- `$test-plan`
 
 What you should expect:
 
@@ -269,21 +269,21 @@ What you should expect:
 
 If the feature affects the UI, also run:
 
-- `/test-in-browser`
+- `$testing-in-browser`
 
-In the same way, the agent should propose `/test-in-browser` when UI behavior changed or needs manual verification. You approve, then the agent runs it.
+In the same way, the agent should propose `$testing-in-browser` when UI behavior changed or needs manual verification. You approve, then the agent runs it.
 
 ### 5.6.1 Design system (frontend/web)
 
-When work involves `frontend/web` UI design (initial setup or a style change), the agent should run `/app-design-setup`.
+When work involves `frontend/web` UI design (initial setup or a style change), the agent should run `$app-design-setup`.
 
-What happens during `/app-design-setup`:
+What happens during `$app-design-setup`:
 
 - The agent asks whether to keep the current design preset (default) or switch to a new one.
 - If switching, the agent points you to `https://ui.shadcn.com/create` and asks you to return the generated `https://ui.shadcn.com/init?...` URL (and template if needed).
 - The agent updates `frontend/web/config/app-design-preset.json` (single source of truth) and applies it.
 
-You can switch the design preset again at any time by rerunning `/app-design-setup`.
+You can switch the design preset again at any time by rerunning `$app-design-setup`.
 
 ### 5.7 Finish the feature (always do these)
 
@@ -291,12 +291,12 @@ When the agent believes the feature scope is complete and validation was success
 
 What the agent will do:
 
-- Update project docs automatically (equivalent to `/project-docs-update`).
+- Update project docs automatically (equivalent to `$project-docs-update`).
 - Propose committing the feature and ask for your approval.
 
 What you do:
 
-- Approve the commit by running `/feature-commit` (you can also run it proactively).
+- Approve the commit by running `$feature-commit` (you can also run it proactively).
 - Close the thread.
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
@@ -342,7 +342,7 @@ Start a code review thread:
 
 Then run:
 
-- `/code-review`
+- `$code-review`
 
 What you should expect:
 
@@ -363,21 +363,23 @@ Start a dedicated deploy thread:
 
 ### 8.1 Default branch policy
 
-- Work happens on branches via PRs
+- Work happens on branches via PRs (no direct pushes to `main`)
+- Branch names are derived from the active thread name (see `KB_THREADS`)
+- The agent uses `scripts/git-task-start.ps1` to create/switch branches and `scripts/git-pr-create.ps1` to push/open PRs when possible
 - Publishing happens from `main` after required checks pass
 
 ### 8.2 Choose Netlify vs Vercel (rule-based)
 
 Use the project's deployment rules:
 
-- `KB_DEPLOYMENT_CICD` (see `knowledge-base/agents-knowledge/deployment-and-cicd.md`)
+- `KB_DEPLOYMENT_CICD` (see `knowledge-base/agents-core-knowledge/deployment-and-cicd.md`)
 
 ### 8.3 Minimum go-live checklist
 
 - Required environment variables are documented (names only) in `.env.example`
 - Deployment target is configured (Netlify or Vercel)
 - A minimal smoke check passes (app loads and core flow works)
-- The decision and any operational notes are recorded via `/project-docs-update`
+- The decision and any operational notes are recorded via `$project-docs-update`
 
 ---
 
@@ -413,17 +415,17 @@ Always:
 
 ### 9.4 Validate and finish
 
-If validation is unclear, the agent should propose running `/test-plan` and ask for your approval. You can also request it directly.
+If validation is unclear, the agent should propose running `$test-plan` and ask for your approval. You can also request it directly.
 
 Run:
 
-- `/test-plan`
+- `$test-plan`
 
 Then:
 
 - Agent fixes the bug
-- Run `/project-docs-update` if user-facing behavior/usage changed
-- Run `/feature-commit`
+- Run `$project-docs-update` if user-facing behavior/usage changed
+- Run `$feature-commit`
 
 ---
 
@@ -448,9 +450,9 @@ State the constraints clearly:
 
 ### 10.3 Validate and finish
 
-- If validation is unclear or multiple areas are touched, the agent should propose running `/test-plan` and ask for your approval (you can also request it directly).
-- Run `/feature-commit`
-- Run `/project-docs-update` only if the refactor changes how future work should be done (workflow/rules/important structure)
+- If validation is unclear or multiple areas are touched, the agent should propose running `$test-plan` and ask for your approval (you can also request it directly).
+- Run `$feature-commit`
+- Run `$project-docs-update` only if the refactor changes how future work should be done (workflow/rules/important structure)
 
 ---
 
@@ -464,15 +466,15 @@ If you need to update docs outside the current task thread, start a docs update 
 
 After any completed feature/bug/refactor that changes behavior or decisions, run:
 
-- `/project-docs-update`
+- `$project-docs-update`
 
-Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `/feature-commit`).
+Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$feature-commit`).
 
 ### 11.2 Framework maintenance (only when framework itself changes)
 
 If you change rules, routes, skills, or commands, run:
 
-- `/context-maintain`
+- `$context-maintenance`
 
 ---
 
@@ -483,7 +485,7 @@ If you change rules, routes, skills, or commands, run:
 The agent should ask you to confirm only high-impact decisions:
 
 - Scope and acceptance criteria
-- Constraints/defaults uncovered during `/feature-research`
+- Constraints/defaults uncovered during `$feature-research`
 - Plan steps and validation approach (when planning is required)
 - Approval for any new external dependency
 
@@ -492,3 +494,8 @@ The agent should ask you to confirm only high-impact decisions:
 - Answer only what blocks progress.
 - Prefer short confirmations: "Yes", "No", "Out of scope", "Do option B".
 - If you want speed: explicitly say which trade-off you accept (fast vs safe vs minimal scope).
+
+
+
+
+
