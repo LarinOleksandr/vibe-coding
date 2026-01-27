@@ -202,6 +202,8 @@ Finally, the agent proposes committing and asks for my approval to run:
 
 I approve by running `$commit-push-create-pr`. The agent commits, and then I close the thread.
 
+During this step, the agent may ask whether to create a PR. If I work solo, I can answer "No".
+
 ## What I notice (observations)
 
 - The workflow is strong at preventing "random UI decisions," because UI/UX baselines + the preset config enforce consistency early.

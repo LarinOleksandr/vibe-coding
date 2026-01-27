@@ -1,6 +1,6 @@
 ﻿---
 name: commit-push-create-pr
-description: Use when work is complete and you want to commit it, push it to GitHub, and create a PR.
+description: Use when work is complete and you want to commit it and publish it to GitHub (push, optional PR).
 ---
 
 # .codex/skills/commit-push-create-pr/SKILL.md
@@ -11,13 +11,13 @@ description: Use when work is complete and you want to commit it, push it to Git
 
 ## Purpose
 
-Commit current work, push it to GitHub, create a PR, and guide the next feature selection.
+Commit current work, push it to GitHub, optionally create a PR, and guide the next roadmap item selection.
 
 ## When to use
 
 Invoke when any apply:
 
-- feature work is complete and ready to commit
+- work is complete and ready to commit (feature, bug fix, refactor, or docs change)
 - user requests a commit
 
 ## Inputs
@@ -39,12 +39,18 @@ Invoke when any apply:
      - `docs/*` -> `docs: ...`
      - otherwise -> `chore: ...`
    - Create the commit.
-4. If a commit was created, push the branch and create a PR into `main` (prefer scripts in `scripts/`).
-5. In all cases (commit succeeds, fails, or nothing to commit), show the feature list and statuses from `DOC_PROJECT_ROADMAP` (Feature Development section), including subfeatures.
-   - If `DOC_PROJECT_ROADMAP` is missing, fall back to `DOC_PROJECT_FEATURE_PLAN` if present.
-6. Ask what feature should be developed next and require a feature number.
-7. If the selection is `In Progress` or `Completed`, inform the user and ask for another number.
-8. After a valid selection, return a compliant thread name suggestion (`KB_THREADS`).
+4. If a commit was created, publish it to GitHub (push).
+   - Ask: "Create a PR too? (Yes/No)"
+   - If Yes: push and attempt PR creation.
+   - If No: push only.
+5. In all cases (commit succeeds, fails, or nothing to commit), show the overall roadmap from `DOC_PROJECT_ROADMAP` with statuses.
+6. Ask: "Pick the next roadmap item now? (Yes/No)"
+7. If Yes:
+   - Ask what roadmap item should be developed next.
+   - Require the user to pick one item (paste the exact item line).
+   - If the selection is `In Progress` or `Completed`, inform the user and ask for another item.
+   - After a valid selection, return a compliant thread name suggestion (`KB_THREADS`) for the selected item.
+8. If No: stop after showing the roadmap.
 
 ## Commands
 
@@ -53,7 +59,8 @@ Invoke when any apply:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<current thread name>"` (only if on main/master)
 - `git add .`
 - `git commit -m "<type>: <AUTO_SUMMARY_OF_COMPLETED_WORK>"`
-- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
+- Push + PR (if user says Yes): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
+- Push only (if user says No): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1 -SkipGh` (only if a commit was created)
 
 ## Rules
 
@@ -75,8 +82,9 @@ User: "Commit the feature."
 You:
 - Ensure branch
 - Update docs
-- Commit, push, and create a PR
-- Ask for next feature number
+- Commit
+- Ask whether to create a PR
+- Show roadmap and ask for the next roadmap item
 
 ## Acceptance checks
 
@@ -84,5 +92,6 @@ You:
 - Docs updated
 - Commit created or explicitly noted as nothing to commit
 - Branch pushed (when a commit exists)
-- PR created (when possible)
-- Next feature selection requested
+- PR created only if the user chose Yes and it was possible
+- Roadmap shown with statuses
+- Next roadmap item selection requested (or explicitly deferred by the user)

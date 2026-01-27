@@ -16,7 +16,7 @@
 - `$bug-fix` - Diagnose and fix bugs or regressions. Use when a user reports broken or incorrect behavior, tests fail due to a defect, or a bug fix is requested.
 - `$code-refactoring` - Perform a structural change without altering external behavior.
 - `$code-review` - Perform a focused Codex review of the PR diff (token-efficient) and report blockers, important risks, and missing tests.
-- `$commit-push-create-pr` - Commit work, push it to GitHub, and create a PR.
+- `$commit-push-create-pr` - Commit work, push it to GitHub, and optionally create a PR.
 - `$coding-standards-check` - Use when reviewing changes for coding standards, consistency, and basic maintainability.
 - `$context-maintenance` - Maintain project documentation, agent knowledge, and methodology; keep routes consistent and remove duplication.
 - `$context-load` - Use when a quick, baseline repo context snapshot and routing map are needed before deeper work.

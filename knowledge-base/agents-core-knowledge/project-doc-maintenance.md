@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/project-doc-maintenance.md
+﻿# knowledge-base/agents-core-knowledge/project-doc-maintenance.md
 
 ## Agent summary
 
@@ -34,7 +34,7 @@ Update documentation immediately when any of the following occur:
 
 If the change also affects the repository shape (new/renamed top-level folders, new runtime boundary, new artifact category), update `KB_REPOSITORY_LAYOUT` via `$context-maintenance`.
 
-In normal feature work, doc updates are part of finishing the change: update the docs automatically before proposing a feature commit.
+In normal feature work, doc updates are part of finishing the change: update the docs automatically before proposing a commit.
 
 For each event, determine which files require updates and modify them to reflect:
 
@@ -162,6 +162,7 @@ Brief description of the application and its purpose.
 - Avoid redundancy
 - Prefer clarity over completeness
 - Follow the specified Markdown structure
+
 
 
 

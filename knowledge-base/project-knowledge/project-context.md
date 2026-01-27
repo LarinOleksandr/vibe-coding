@@ -21,4 +21,3 @@ It defines collaboration workflows (threads), routed knowledge, and procedural s
 Current project stack: not set yet. Until defined, use the baseline in `KB_TECH_STACK`.
 
 If the project stack changes, update this section and get user approval. If the baseline changes, update `KB_TECH_STACK` as well (also requires user approval).
-
