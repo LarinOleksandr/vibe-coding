@@ -16,7 +16,7 @@
 - `$bug-fix` - Diagnose and fix bugs or regressions. Use when a user reports broken or incorrect behavior, tests fail due to a defect, or a bug fix is requested.
 - `$code-refactoring` - Perform a structural change without altering external behavior.
 - `$code-review` - Perform a focused Codex review of the PR diff (token-efficient) and report blockers, important risks, and missing tests.
-- `$commit-push-create-pr` - Commit work, push it to GitHub, and optionally create a PR.
+- `$commit-push-create-pr` - Finish work safely: verify, update project docs, commit, push, and optionally create a PR.
 - `$coding-standards-check` - Use when reviewing changes for coding standards, consistency, and basic maintainability.
 - `$context-maintenance` - Maintain project documentation, agent knowledge, and methodology; keep routes consistent and remove duplication.
 - `$context-load` - Use when a quick, baseline repo context snapshot and routing map are needed before deeper work.
@@ -29,13 +29,10 @@
 - `$new-agent-development` - Add or modify an orchestrator agent/node/workflow with schema-first outputs, explicit state, and test coverage.
 - `$optimize-performance` - Use when reviewing code for performance bottlenecks and optimization opportunities.
 - `$plan-creation` - Create a concrete, executable plan file for large or risky changes.
-- `$project-docs-update` - Use when project context, roadmap, or insights must be updated after a change.
 - `$project-setup` - Use when a project foundation must be created or updated from a PRD or idea before any feature work.
 - `$security-check` - Use when reviewing changes for security risks in auth, data access, and input handling.
 - `$test-plan` - Use when you need a comprehensive, repo-consistent test plan for a feature or change.
 - `$testing-in-browser` - Capture the canonical steps for starting the dev stack, connecting via MCP DevTools, and iteratively resolving browser errors.
-- `$thread-closing` - Close a thread reliably with validation status, documentation updates, and a final summary.
 - `$ui-consistency-check` - Use when reviewing UI changes for consistency with the UI and UX baselines.
-- `$verification-of-work` - Require fresh verification before stating work is complete or tests pass.
 
 

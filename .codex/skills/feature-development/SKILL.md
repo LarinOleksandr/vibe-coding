@@ -47,8 +47,8 @@ Invoke when any apply:
 7. Validation gate (when near done)
    - propose `/test-plan` (and `/test-in-browser` when UI is involved) and ask the user to confirm before running them
 8. Finish gate (when done)
-   - update project docs (equivalent to `/project-docs-update`)
-   - propose `/feature-commit` and ask the user to confirm before committing
+   - update project docs during `$commit-push-create-pr` (context/roadmap/insights, when needed)
+   - propose `$commit-push-create-pr` and ask the user to confirm before committing
 
 ## Acceptance checks
 

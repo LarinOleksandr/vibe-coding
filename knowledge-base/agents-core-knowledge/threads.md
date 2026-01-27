@@ -121,7 +121,7 @@ The agent should treat any clear "we are done" intent as a close request.
 Examples of intent: "Close the thread", "We are done", "Wrap up", "That is all".
 If the intent is ambiguous, ask once for confirmation.
 
-When closing, invoke `$thread-closing`.
+When closing, invoke `$commit-push-create-pr`.
 
 ---
 

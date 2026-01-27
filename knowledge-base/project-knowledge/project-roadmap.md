@@ -5,7 +5,7 @@
 ### Foundations
 - [In Progress] Skills framework consistency
   - [Completed] Brainstorming outputs PRDs to agents artifacts
-  - [Completed] Verification-of-work gate added
+  - [Completed] Verification gate added to `$commit-push-create-pr`
   - [Completed] Bug-fix requires root cause investigation
   - [Completed] Worktree workflow removed due to repo-path stability
 

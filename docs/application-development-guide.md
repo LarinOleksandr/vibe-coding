@@ -297,14 +297,13 @@ When the agent believes the feature scope is complete and validation was success
 
 What the agent will do:
 
-- Update project docs automatically (equivalent to `$project-docs-update`).
-- Propose committing the feature and ask for your approval.
+- When you run `$commit-push-create-pr`, the agent verifies, updates project docs, then commits and pushes.
 
 What you do:
 
-- Approve the commit by running `$commit-push-create-pr` (you can also run it proactively).
+- Run `$commit-push-create-pr` (you can also run it proactively).
   - After that, the agent shows a small menu (merge / create PR / start next roadmap item).
-- Close the thread.
+- Close the thread when you are satisfied.
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
 
@@ -386,7 +385,7 @@ Use the project's deployment rules:
 - Required environment variables are documented (names only) in `.env.example`
 - Deployment target is configured (Netlify or Vercel)
 - A minimal smoke check passes (app loads and core flow works)
-- The decision and any operational notes are recorded via `$project-docs-update`
+- The decision and any operational notes are recorded in project docs during `$commit-push-create-pr`
 
 ---
 
@@ -431,7 +430,6 @@ Run:
 Then:
 
 - Agent fixes the bug
-- Run `$project-docs-update` if user-facing behavior/usage changed
 - Run `$commit-push-create-pr`
 
 ---
@@ -459,7 +457,7 @@ State the constraints clearly:
 
 - If validation is unclear or multiple areas are touched, the agent should propose running `$test-plan` and ask for your approval (you can also request it directly).
 - Run `$commit-push-create-pr`
-- Run `$project-docs-update` only if the refactor changes how future work should be done (workflow/rules/important structure)
+- Project docs updates (if needed) happen during `$commit-push-create-pr`
 
 ---
 
@@ -473,9 +471,9 @@ If you need to update docs outside the current task thread, start a docs update 
 
 After any completed feature/bug/refactor that changes behavior or decisions, run:
 
-- `$project-docs-update`
+- `$commit-push-create-pr`
 
-Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$commit-push-create-pr`).
+Note: docs updates are part of finishing the change during `$commit-push-create-pr`.
 
 ### 11.2 Framework maintenance (only when framework itself changes)
 

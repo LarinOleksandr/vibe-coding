@@ -42,7 +42,6 @@ Repo slash commands (`c:\Dev\3-Projects\vibe-coding\knowledge-base\slash-command
 | `/commit` | `$commit-push-create-pr` | exists |
 | `/feature-research` | `$feature-research` | exists |
 | `/feature-start` | `$feature-start` | exists |
-| `/project-docs-update` | `$project-docs-update` | exists |
 | `/project-setup` | `$project-setup` | exists |
 | `/test-in-browser` | `$testing-in-browser` | exists |
 | `/test-plan` | `$test-plan` | exists |
@@ -59,7 +58,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 | `load-context.md` | `/load-context` | `$context-load` | exists |
 | `start-feature.md` | `/start-feature` | `$feature-start` | exists |
 | `test-browser.md` | `/test-browser` | `$testing-in-browser` | exists |
-| `update-knowledge.md` | `/update-knowledge` | `$project-docs-update` | exists |
+| `update-knowledge.md` | `/update-knowledge` | `$commit-push-create-pr` | replaced (docs updates are part of finish) |
 | `optimize-performance (test).md` | `/optimize-performance` | `$optimize-performance` | exists |
 
 **Verify:**
@@ -75,10 +74,8 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 **Planned new skills:**
 - `context-load`
 - `project-setup`
-- `project-docs-update`
 - `feature-start`
 - `test-plan`
-- `commit`
 - `optimize-performance` (if you want to keep this workflow)
 
 **Verify:**

@@ -192,7 +192,7 @@ If I approve, it runs the browser verification workflow and fixes any obvious is
 
 ## 8) Finish: docs and memory stay correct
 
-When the feature feels complete, the agent updates the project docs automatically (equivalent to running `$project-docs-update`).
+When the feature feels complete, the agent updates the project docs automatically during `$commit-push-create-pr`.
 
 If the work changed the framework itself (skills, commands, routing, AGENTS rules), the agent also performs the required framework maintenance updates in the same change set so the repo stays internally consistent.
 
@@ -200,7 +200,7 @@ Finally, the agent proposes committing and asks for my approval to run:
 
 `$commit-push-create-pr`
 
-I approve by running `$commit-push-create-pr`. The agent commits, and then I close the thread.
+I approve by running `$commit-push-create-pr`. The agent verifies, updates docs, commits, and then I close the thread.
 
 After that, the agent shows a small menu (merge / create PR / start next roadmap item).
 

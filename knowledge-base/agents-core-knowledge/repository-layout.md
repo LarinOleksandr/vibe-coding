@@ -44,7 +44,7 @@
 | Design review artifacts | `knowledge-base/agents-artifacts/design-reviews/` | created by `$design-review` |
 | PRD artifacts | `knowledge-base/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `knowledge-base/agents-artifacts/research-briefs/` | created by `$feature-research` |
-| Project context/roadmap/insights | `knowledge-base/project-knowledge/project-context.md`, `knowledge-base/project-knowledge/project-roadmap.md`, `knowledge-base/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$project-docs-update` |
+| Project context/roadmap/insights | `knowledge-base/project-knowledge/project-context.md`, `knowledge-base/project-knowledge/project-roadmap.md`, `knowledge-base/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
 | Archived legacy docs | `knowledge-base/old/` | non-canonical reference only |
 
 ---
