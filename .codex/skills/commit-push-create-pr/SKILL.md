@@ -1,6 +1,6 @@
 ﻿---
 name: commit-push-create-pr
-description: Use when work is complete and you want to commit it and publish it to GitHub (push, optional PR).
+description: Use when work is complete and you want to commit it, push it to GitHub, and optionally create a PR.
 ---
 
 # .codex/skills/commit-push-create-pr/SKILL.md
@@ -11,7 +11,7 @@ description: Use when work is complete and you want to commit it and publish it 
 
 ## Purpose
 
-Commit current work, push it to GitHub, optionally create a PR, and guide the next roadmap item selection.
+Commit current work, publish it to GitHub, then show a simple next-action menu.
 
 ## When to use
 
@@ -40,17 +40,15 @@ Invoke when any apply:
      - otherwise -> `chore: ...`
    - Create the commit.
 4. If a commit was created, publish it to GitHub (push).
-   - Ask: "Create a PR too? (Yes/No)"
-   - If Yes: push and attempt PR creation.
-   - If No: push only.
-5. In all cases (commit succeeds, fails, or nothing to commit), show the overall roadmap from `DOC_PROJECT_ROADMAP` with statuses.
-6. Ask: "Pick the next roadmap item now? (Yes/No)"
-7. If Yes:
-   - Ask what roadmap item should be developed next.
-   - Require the user to pick one item (paste the exact item line).
-   - If the selection is `In Progress` or `Completed`, inform the user and ask for another item.
-   - After a valid selection, return a compliant thread name suggestion (`KB_THREADS`) for the selected item.
-8. If No: stop after showing the roadmap.
+5. Show the overall roadmap from `DOC_PROJECT_ROADMAP` with statuses.
+6. Show the next-action menu and ask the user to pick one option:
+   - 1) Merge into `main`
+   - 2) Create PR (optional)
+   - 3) Start next roadmap item
+7. Handle the chosen option:
+   - If 1: merge the current branch into `main` and report the outcome.
+   - If 2: attempt to create a PR (if not possible automatically, explain what the user should do next in simple words).
+   - If 3: ask the user to pick the next roadmap item (paste the exact item line), then return a compliant thread name suggestion (`KB_THREADS`).
 
 ## Commands
 
@@ -59,8 +57,9 @@ Invoke when any apply:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<current thread name>"` (only if on main/master)
 - `git add .`
 - `git commit -m "<type>: <AUTO_SUMMARY_OF_COMPLETED_WORK>"`
-- Push + PR (if user says Yes): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
-- Push only (if user says No): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1 -SkipGh` (only if a commit was created)
+- Push: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1 -SkipGh` (only if a commit was created)
+- Create PR (optional): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
+- Merge into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
 
 ## User-facing output (keep it non-technical)
 
@@ -70,7 +69,9 @@ Say:
 - branch name
 - whether a commit was created (Yes/No)
 - whether the branch was pushed (Yes/No)
-- whether a PR was created (Yes/No, only if user chose Yes)
+- whether a PR was created (Yes/No, only if the user chose option 2)
+- if the user chose option 1: whether merge into main succeeded (Yes/No)
+- if the user chose option 3: suggested next thread name
 
 Avoid:
 - printing the full commit message
@@ -96,9 +97,9 @@ User: "Commit the feature."
 You:
 - Ensure branch
 - Update docs
-- Commit
-- Ask whether to create a PR
-- Show roadmap and ask for the next roadmap item
+- Commit and push
+- Show roadmap
+- Show menu: merge / create PR / start next roadmap item
 
 ## Acceptance checks
 
@@ -106,6 +107,5 @@ You:
 - Docs updated
 - Commit created or explicitly noted as nothing to commit
 - Branch pushed (when a commit exists)
-- PR created only if the user chose Yes and it was possible
 - Roadmap shown with statuses
-- Next roadmap item selection requested (or explicitly deferred by the user)
+- Menu shown and user picked an option

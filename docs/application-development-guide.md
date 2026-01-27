@@ -303,7 +303,7 @@ What the agent will do:
 What you do:
 
 - Approve the commit by running `$commit-push-create-pr` (you can also run it proactively).
-  - The agent may ask whether to create a PR (you can say No if you work solo).
+  - After that, the agent shows a small menu (merge / create PR / start next roadmap item).
 - Close the thread.
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.

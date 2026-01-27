@@ -18,6 +18,7 @@
 - Stop stack (if present): `./scripts/dev-down.sh`
 - Start a work branch from thread name: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<thread name>"`
 - Push branch + create PR (if possible): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1`
+- Merge current branch into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
 
 ## Cross-platform fallbacks
 
