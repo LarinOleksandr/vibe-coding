@@ -81,10 +81,20 @@ try {
   }
 
   if ($hasOrigin) {
-    try {
-      Invoke-Git @("pull", "--ff-only")
-    } catch {
-      throw "Cannot fast-forward '$base'. Pull has non-fast-forward changes. Resolve manually before merging."
+    # Keep base up to date when possible, but don't fail if the remote base branch doesn't exist yet.
+    Invoke-Git @("fetch", "origin", "--prune")
+
+    & git show-ref --verify --quiet ("refs/remotes/origin/" + $base)
+    $remoteBaseExists = ($LASTEXITCODE -eq 0)
+
+    if ($remoteBaseExists) {
+      try {
+        Invoke-Git @("merge", "--ff-only", ("origin/" + $base))
+      } catch {
+        throw "Cannot fast-forward '$base' from origin. Resolve base branch updates manually before merging."
+      }
+    } else {
+      Write-Host ("Remote branch 'origin/" + $base + "' not found; skipping base update.")
     }
   }
 
