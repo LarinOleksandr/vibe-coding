@@ -62,6 +62,20 @@ Invoke when any apply:
 - Push + PR (if user says Yes): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
 - Push only (if user says No): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1 -SkipGh` (only if a commit was created)
 
+## User-facing output (keep it non-technical)
+
+When reporting results to the user, prefer outcomes over commands.
+
+Say:
+- branch name
+- whether a commit was created (Yes/No)
+- whether the branch was pushed (Yes/No)
+- whether a PR was created (Yes/No, only if user chose Yes)
+
+Avoid:
+- printing the full commit message
+- printing script names or command lines
+
 ## Rules
 
 - Do not ask the user anything before the commit step.
