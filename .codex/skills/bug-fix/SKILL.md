@@ -34,24 +34,31 @@ Invoke when any apply:
    - restate expected vs actual behavior
 2. Gather missing repro details
    - ask once for missing steps, logs, or environment info
-3. Propose scope and risks
+3. Investigate root cause (before any fix)
+   - read errors and logs fully
+   - reproduce the issue
+   - check recent changes that could explain it
+   - compare against a working path or similar code
+   - state a single, clear hypothesis
+4. Propose scope and risks
    - list affected areas and likely regressions
    - confirm before edits
-4. Decide validation
+5. Decide validation
    - propose tests or smoke paths
    - confirm before edits
-5. Fix with minimal change
+6. Fix with minimal change
    - avoid unrelated refactors
-6. Verify or explain deferral
+7. Verify or explain deferral
    - run agreed tests or state why not
-7. Summarize
+8. Summarize
    - root cause, fix, and validation status
    - if there is a durable lesson learned or guardrail that will prevent repeat mistakes, add a short entry to `DOC_PROJECT_INSIGHTS` (otherwise do not)
-     - keep it 3???6 bullets and focus on why it matters, the root cause/constraint, the fix/decision, and the prevention
+     - keep it 3-6 bullets and focus on why it matters, the root cause/constraint, the fix/decision, and the prevention
 
 ## Acceptance checks
 
 - Expected behavior restored
+- Root cause investigated before fixes
 - Scope and risks confirmed before edits
 - Validation executed or explicitly deferred
 - Summary includes root cause and fix

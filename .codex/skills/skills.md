@@ -10,8 +10,9 @@
 ## Skills
 
 - `$api-endpoint-development` - Add or modify an API / Edge Function endpoint with explicit contracts, validation, and safe integration.
-- `$app-design-setup` - Initialize or update the `frontend/web` design system using a shadcn preset, in a consistent and repeatable way.
+- `$frontend-design` - Initialize or update the `frontend/web` design system using a shadcn preset, in a consistent and repeatable way.
 - `$architecture-review` - Check a proposed change for architectural compliance, surface conflicts, and propose compliant alternatives.
+- `$brainstorming` - Turn vague ideas into a PRD through step-by-step questions before any creative work.
 - `$bug-fix` - Diagnose and fix bugs or regressions. Use when a user reports broken or incorrect behavior, tests fail due to a defect, or a bug fix is requested.
 - `$code-refactoring` - Perform a structural change without altering external behavior.
 - `$code-review` - Perform a focused Codex review of the PR diff (token-efficient) and report blockers, important risks, and missing tests.
@@ -35,4 +36,6 @@
 - `$testing-in-browser` - Capture the canonical steps for starting the dev stack, connecting via MCP DevTools, and iteratively resolving browser errors.
 - `$thread-closing` - Close a thread reliably with validation status, documentation updates, and a final summary.
 - `$ui-consistency-check` - Use when reviewing UI changes for consistency with the UI and UX baselines.
+- `$verification-of-work` - Require fresh verification before stating work is complete or tests pass.
+
 

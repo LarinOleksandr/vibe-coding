@@ -1,7 +1,5 @@
 # Skills-Only Migration Plan
 
-> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
-
 **Goal:** Replace slash commands with skills while preserving all current workflow behavior.
 
 **Architecture:** Skills become the single source of procedure. Docs and rules reference skills and plain-language requests only. Legacy slash command files and install scripts are removed after parity is confirmed.
@@ -26,22 +24,22 @@
 
 ### Step 1: Inventory current commands and map to skills
 
-**Deliverable:** A mapping table of slash commands → target skills, with gaps noted.
+**Deliverable:** A mapping table of slash commands -> target skills, with gaps noted.
 
 **Integration:** Add the mapping to `c:\Dev\3-Projects\vibe-coding\knowledge-base\agents-artifacts\plans\skills-only-migration.plan.md` (this file).
 
-**Command â†’ skill mapping (current state)**
+**Command -> skill mapping (current state)**
 
 Repo slash commands (`c:\Dev\3-Projects\vibe-coding\knowledge-base\slash-commands\prompts\`):
 
 | Slash command | Target skill | Status |
 | --- | --- | --- |
-| `/app-design-setup` | `$app-design-setup` | exists |
+| `$frontend-design` | `$frontend-design` | exists |
 | `/code-review` | `$code-review` | exists |
 | `/context-load` | `$context-load` | exists |
 | `/context-maintain` | `$context-maintenance` | exists |
 | `/design-review` | `$design-review` | exists |
-| `/feature-commit` | `$feature-commit` | exists |
+| `/commit` | `$commit` | exists |
 | `/feature-research` | `$feature-research` | exists |
 | `/feature-start` | `$feature-start` | exists |
 | `/project-docs-update` | `$project-docs-update` | exists |
@@ -57,7 +55,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 | Prompt file | Slash command | Target skill | Status |
 | --- | --- | --- | --- |
-| `commit-feature.md` | `/commit-feature` | `$feature-commit` | exists |
+| `commit-feature.md` | `/commit-feature` | `$commit` | exists |
 | `load-context.md` | `/load-context` | `$context-load` | exists |
 | `start-feature.md` | `/start-feature` | `$feature-start` | exists |
 | `test-browser.md` | `/test-browser` | `$testing-in-browser` | exists |
@@ -80,7 +78,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 - `project-docs-update`
 - `feature-start`
 - `test-plan`
-- `feature-commit`
+- `commit`
 - `optimize-performance` (if you want to keep this workflow)
 
 **Verify:**
@@ -166,7 +164,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 ## Implementation plan (do X, then verify Y)
 
-1. Build the command → skill mapping table, then verify every prompt has a skill target.
+1. Build the command -> skill mapping table, then verify every prompt has a skill target.
 2. Draft missing skills, then verify `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` is complete.
 3. Replace rule and doc references, then verify no `/command` hits remain.
 4. Remove slash command assets, then verify `knowledge-base\slash-commands\` is gone.
@@ -175,7 +173,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 ## Risks
 
-- Behavior drift if a command’s exact steps are not carried into its skill.
+- Behavior drift if a command's exact steps are not carried into its skill.
 - Docs becoming inconsistent if slash command references remain.
 
 ## Validation
@@ -189,6 +187,8 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 - `c:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\roots.md`
 - `c:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\repository-layout.md`
 - `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`
+
+
 
 
 

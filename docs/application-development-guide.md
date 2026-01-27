@@ -14,6 +14,9 @@ Provide any of the following (more detail helps, but keep it simple):
 - **Notes**: bullet points of requirements, problems, and constraints
 - **PRD**: a structured requirements doc (paste sections if needed)
 
+If your input is vague or short, start with `$brainstorming` to build a PRD.  
+The PRD is saved to `knowledge-base/agents-artifacts/prds/`.
+
 Recommended minimum (copy/paste and fill):
 
 - **Product**: `<one sentence>`
@@ -28,6 +31,8 @@ Recommended minimum (copy/paste and fill):
 Run:
 
 - `$project-setup`
+
+If you just completed `$brainstorming`, use its PRD as the input.
 
 What you should expect from the agent:
 
@@ -78,6 +83,7 @@ Examples of tasks (thread types):
 If the task changes materially, start a new thread.
 
 If you don't know how to name the thread, ask the agent to propose a compliant thread name and follow it.
+
 
 ### 2.1 Thread naming (required)
 
@@ -275,15 +281,15 @@ In the same way, the agent should propose `$testing-in-browser` when UI behavior
 
 ### 5.6.1 Design system (frontend/web)
 
-When work involves `frontend/web` UI design (initial setup or a style change), the agent should run `$app-design-setup`.
+When work involves `frontend/web` UI design (initial setup or a style change), the agent should run `$frontend-design`.
 
-What happens during `$app-design-setup`:
+What happens during `$frontend-design`:
 
 - The agent asks whether to keep the current design preset (default) or switch to a new one.
 - If switching, the agent points you to `https://ui.shadcn.com/create` and asks you to return the generated `https://ui.shadcn.com/init?...` URL (and template if needed).
 - The agent updates `frontend/web/config/app-design-preset.json` (single source of truth) and applies it.
 
-You can switch the design preset again at any time by rerunning `$app-design-setup`.
+You can switch the design preset again at any time by rerunning `$frontend-design`.
 
 ### 5.7 Finish the feature (always do these)
 
@@ -296,7 +302,7 @@ What the agent will do:
 
 What you do:
 
-- Approve the commit by running `$feature-commit` (you can also run it proactively).
+- Approve the commit by running `$commit` (you can also run it proactively).
 - Close the thread.
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
@@ -425,7 +431,7 @@ Then:
 
 - Agent fixes the bug
 - Run `$project-docs-update` if user-facing behavior/usage changed
-- Run `$feature-commit`
+- Run `$commit`
 
 ---
 
@@ -451,7 +457,7 @@ State the constraints clearly:
 ### 10.3 Validate and finish
 
 - If validation is unclear or multiple areas are touched, the agent should propose running `$test-plan` and ask for your approval (you can also request it directly).
-- Run `$feature-commit`
+- Run `$commit`
 - Run `$project-docs-update` only if the refactor changes how future work should be done (workflow/rules/important structure)
 
 ---
@@ -468,7 +474,7 @@ After any completed feature/bug/refactor that changes behavior or decisions, run
 
 - `$project-docs-update`
 
-Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$feature-commit`).
+Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$commit`).
 
 ### 11.2 Framework maintenance (only when framework itself changes)
 
@@ -494,6 +500,8 @@ The agent should ask you to confirm only high-impact decisions:
 - Answer only what blocks progress.
 - Prefer short confirmations: "Yes", "No", "Out of scope", "Do option B".
 - If you want speed: explicitly say which trade-off you accept (fast vs safe vs minimal scope).
+
+
 
 
 

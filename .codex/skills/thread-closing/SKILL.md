@@ -34,6 +34,7 @@ If intent is ambiguous, ask once to confirm.
 2. Check tests/validation
    - If status unknown, ask once.
    - If failures or gaps exist, ask whether to fix now or defer.
+   - If you are about to claim completion, use `$verification-of-work` first.
 3. Update documentation
    - Update internal knowledge-base docs if rules/skills changed.
    - Update user-facing docs if behavior or usage changed.

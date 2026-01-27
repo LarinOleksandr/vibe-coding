@@ -42,6 +42,7 @@
 | Generated plans | `knowledge-base/agents-artifacts/plans/` | created by `$plan-creation` |
 | Architecture review artifacts | `knowledge-base/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
 | Design review artifacts | `knowledge-base/agents-artifacts/design-reviews/` | created by `$design-review` |
+| PRD artifacts | `knowledge-base/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `knowledge-base/agents-artifacts/research-briefs/` | created by `$feature-research` |
 | Project context/roadmap/insights | `knowledge-base/project-knowledge/project-context.md`, `knowledge-base/project-knowledge/project-roadmap.md`, `knowledge-base/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$project-docs-update` |
 | Archived legacy docs | `knowledge-base/old/` | non-canonical reference only |
@@ -54,7 +55,7 @@
 | --- | --- | --- |
 | A new routed KB doc | `knowledge-base/agents-core-knowledge/` | `repository-layout.md`, `deployment-and-cicd.md` |
 | A new skill | `.codex/skills/<skill-name>/SKILL.md` | `.codex/skills$design-review/SKILL.md` |
-| A new agent artifact type | `knowledge-base/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/` |
+| A new agent artifact type | `knowledge-base/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
 | A new project "memory" doc | `knowledge-base/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |

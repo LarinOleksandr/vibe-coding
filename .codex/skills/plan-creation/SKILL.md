@@ -56,9 +56,12 @@ Invoke when any apply:
    - for each step, include only:
      - Deliverable: what changes
      - Integration: where it is wired in (avoid orphan code)
-     - Verify: how to confirm it works (1???3 bullets)
+     - Verify: how to confirm it works (1-3 bullets)
+   - use exact file paths in Deliverables and Integration
+   - keep steps bite-sized (a few minutes each)
 4. If coding is involved, add an implementation plan
    - mirror the steps above, phrased as ???do X, then verify Y???
+   - include the exact command and expected outcome for each verify step when known
    - avoid deep test enumeration or UI review checklists; reference `/test-plan` or `/design-review` instead
 5. Add a validation section (high-signal only)
    - tests to add/update (names/locations, not full suites)
@@ -71,7 +74,7 @@ Invoke when any apply:
 
 ## Plan file structure (required)
 
-- Goal
+- Goal (one sentence)
 - Scope / Non-scope
 - Affected areas
 - Steps (ordered; each step has Deliverable + Integration + Verify)

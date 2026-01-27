@@ -102,7 +102,7 @@ This is where I notice a useful constraint: we're trying to prevent "random CSS 
 
 At the start of design work, the agent proposes running:
 
-`$app-design-setup`
+`$frontend-design`
 
 The agent looks at the single source of truth for the design preset:
 
@@ -136,7 +136,7 @@ Another day, I decide I want a different style.
 
 I rerun:
 
-`$app-design-setup`
+`$frontend-design`
 
 This time I answer: "No."
 
@@ -175,6 +175,7 @@ If requirements are unclear or risky, the agent proposes a research pass using:
 
 If I approve, it produces a timeboxed research brief and then folds the conclusions back into the feature's plan.
 
+
 ## 7) Validation happens before "done"
 
 When we're close to done, the agent asks whether to create a test plan.
@@ -197,15 +198,17 @@ If the work changed the framework itself (skills, commands, routing, AGENTS rule
 
 Finally, the agent proposes committing and asks for my approval to run:
 
-`$feature-commit`
+`$commit`
 
-I approve by running `$feature-commit`. The agent commits, and then I close the thread.
+I approve by running `$commit`. The agent commits, and then I close the thread.
 
 ## What I notice (observations)
 
 - The workflow is strong at preventing "random UI decisions," because UI/UX baselines + the preset config enforce consistency early.
 - Dependency approval is a required checkpoint; the smooth path is a single approval for the baseline bundle, recorded in `frontend/web/config/deps-approved.json`.
 - The smoothest experience is when the agent keeps the preset URL in exactly one place (`frontend/web/config/app-design-preset.json`) and references it everywhere else.
+
+
 
 
 
