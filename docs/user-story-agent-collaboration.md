@@ -198,9 +198,9 @@ If the work changed the framework itself (skills, commands, routing, AGENTS rule
 
 Finally, the agent proposes committing and asks for my approval to run:
 
-`$commit`
+`$commit-push-create-pr`
 
-I approve by running `$commit`. The agent commits, and then I close the thread.
+I approve by running `$commit-push-create-pr`. The agent commits, and then I close the thread.
 
 ## What I notice (observations)
 

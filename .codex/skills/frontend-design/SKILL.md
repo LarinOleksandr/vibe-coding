@@ -1,13 +1,13 @@
----
-name: app-design-setup
+﻿---
+name: frontend-design
 description: Initialize or update the `frontend/web` design system using a shadcn preset, in a consistent, automated way.
 ---
 
-# .codex/skills/app-design-setup/SKILL.md
+# .codex/skills/frontend-design/SKILL.md
 
 ## Name
 
-`$app-design-setup`
+`$frontend-design`
 
 ## Purpose
 
@@ -18,7 +18,7 @@ Keep `frontend/web` visually consistent by applying a shadcn preset in a repeata
 Invoke when any apply:
 
 - creating `frontend/web` for the first time
-- starting ???design work??? (design system/theme) for `frontend/web`
+- starting design work (design system/theme) for `frontend/web`
 - changing the design preset mid-stream
 
 ## Inputs
@@ -33,17 +33,17 @@ Invoke when any apply:
 1. Confirm design intent (keep vs change)
    - Read `frontend/web/config/app-design-preset.json`.
    - Ask the user:
-     - ???Use the current preset as-is???? (default), or
-     - ???Switch to a new preset????
+     - Use the current preset as-is? (default), or
+     - Switch to a new preset?
 2. If switching presets, guide the user to provide the expected input
    - Send the user to: `https://ui.shadcn.com/create`
    - Ask the user to return:
      - the generated `https://ui.shadcn.com/init?...` URL, and
      - the target template (`next` or `vite`) if it is not obvious from context
    - Update `frontend/web/config/app-design-preset.json` with the new preset (no duplication elsewhere).
-   - Record the durable decision in `knowledge-base/project-insights.md` (do not paste huge token values; reference the config path).
+   - Record the durable decision in `knowledge-base/project-knowledge/project-insights.md` (do not paste huge token values; reference the config path).
 3. Enforce the approval gate (repo rule)
-   - If applying the preset will add new npm dependencies, obtain explicit approval once for the ???design system dependency bundle???.
+   - If applying the preset will add new npm dependencies, obtain explicit approval once for the design system dependency bundle.
    - After approval, write `frontend/web/config/deps-approved.json` so the agent does not re-ask for the same bundle.
 4. Apply the preset (automated)
    - Run `frontend/web/scripts/app-design-init.ps1` (or the platform-equivalent script if added later).
@@ -55,7 +55,12 @@ Invoke when any apply:
 ## Acceptance checks
 
 - `frontend/web/config/app-design-preset.json` is the only place containing the preset URL.
-- The design preset can be updated by re-running `/app-design-setup` with a new shadcn `init` URL.
+- The design preset can be updated by re-running `$frontend-design` with a new shadcn `init` URL.
 - UI follows `KB_UI_BASELINE` and UX follows `KB_UX_BASELINE`.
 - If deps were added, a one-time approval marker exists at `frontend/web/config/deps-approved.json`.
+
+
+
+
+
 

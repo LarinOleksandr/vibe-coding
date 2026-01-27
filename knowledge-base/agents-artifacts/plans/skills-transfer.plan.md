@@ -90,7 +90,7 @@ Integrate beneficial practices from the superpowers skills repository into the V
 | brainstorming | adapt | `C:\Dev\3-Projects\vibe-coding\.codex\skills\brainstorming\SKILL.md` | update | Already adapted to PRD flow. |
 | dispatching-parallel-agents | defer | n/a | n/a | Needs multi-agent support. |
 | executing-plans | defer | n/a | n/a | Depends on subagent/parallel execution. |
-| finishing-a-development-branch | reject | n/a | n/a | Overlaps with `$commit`; keep single workflow. |
+| finishing-a-development-branch | reject | n/a | n/a | Overlaps with `$commit-push-create-pr`; keep single workflow. |
 | receiving-code-review | reject | n/a | n/a | Tone and workflow conflict with beginner-friendly style. |
 | requesting-code-review | defer | n/a | n/a | Depends on subagents and review dispatch. |
 | subagent-driven-development | defer | n/a | n/a | Requires subagent infrastructure. |

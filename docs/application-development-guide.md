@@ -302,7 +302,7 @@ What the agent will do:
 
 What you do:
 
-- Approve the commit by running `$commit` (you can also run it proactively).
+- Approve the commit by running `$commit-push-create-pr` (you can also run it proactively).
 - Close the thread.
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
@@ -431,7 +431,7 @@ Then:
 
 - Agent fixes the bug
 - Run `$project-docs-update` if user-facing behavior/usage changed
-- Run `$commit`
+- Run `$commit-push-create-pr`
 
 ---
 
@@ -457,7 +457,7 @@ State the constraints clearly:
 ### 10.3 Validate and finish
 
 - If validation is unclear or multiple areas are touched, the agent should propose running `$test-plan` and ask for your approval (you can also request it directly).
-- Run `$commit`
+- Run `$commit-push-create-pr`
 - Run `$project-docs-update` only if the refactor changes how future work should be done (workflow/rules/important structure)
 
 ---
@@ -474,7 +474,7 @@ After any completed feature/bug/refactor that changes behavior or decisions, run
 
 - `$project-docs-update`
 
-Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$commit`).
+Note: in normal feature work, docs updates are part of finishing the change (the agent should do this automatically before proposing `$commit-push-create-pr`).
 
 ### 11.2 Framework maintenance (only when framework itself changes)
 

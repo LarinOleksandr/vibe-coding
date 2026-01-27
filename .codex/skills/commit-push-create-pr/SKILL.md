@@ -1,24 +1,24 @@
----
-name: feature-commit
-description: Use when saving current work into a single feature commit and selecting the next roadmap item.
+﻿---
+name: commit-push-create-pr
+description: Use when work is complete and you want to commit it, push it to GitHub, and create a PR.
 ---
 
-# .codex/skills/feature-commit/SKILL.md
+# .codex/skills/commit-push-create-pr/SKILL.md
 
 ## Name
 
-`$feature-commit`
+`$commit-push-create-pr`
 
 ## Purpose
 
-Commit current work, open a PR, and guide the next feature selection.
+Commit current work, push it to GitHub, create a PR, and guide the next feature selection.
 
 ## When to use
 
 Invoke when any apply:
 
 - feature work is complete and ready to commit
-- user requests a feature commit
+- user requests a commit
 
 ## Inputs
 
@@ -39,9 +39,9 @@ Invoke when any apply:
      - `docs/*` -> `docs: ...`
      - otherwise -> `chore: ...`
    - Create the commit.
-4. If a commit was created, push the branch and open a PR into `main` (prefer scripts in `scripts/`).
-5. In all cases (commit succeeds, fails, or nothing to commit), show the feature list and statuses from `DOC_PRODUCT_DEVELOPMENT_ROADMAP` (Feature Development section), including subfeatures.
-   - If `DOC_PRODUCT_DEVELOPMENT_ROADMAP` is missing, fall back to `DOC_PROJECT_FEATURE_PLAN` if present.
+4. If a commit was created, push the branch and create a PR into `main` (prefer scripts in `scripts/`).
+5. In all cases (commit succeeds, fails, or nothing to commit), show the feature list and statuses from `DOC_PROJECT_ROADMAP` (Feature Development section), including subfeatures.
+   - If `DOC_PROJECT_ROADMAP` is missing, fall back to `DOC_PROJECT_FEATURE_PLAN` if present.
 6. Ask what feature should be developed next and require a feature number.
 7. If the selection is `In Progress` or `Completed`, inform the user and ask for another number.
 8. After a valid selection, return a compliant thread name suggestion (`KB_THREADS`).
@@ -75,29 +75,14 @@ User: "Commit the feature."
 You:
 - Ensure branch
 - Update docs
-- Commit and open PR
+- Commit, push, and create a PR
 - Ask for next feature number
-
-## Rationalization table
-
-| Excuse | Reality |
-| --- | --- |
-| "We can skip docs" | Doc updates are part of the commit workflow. |
-| "No need to ask for next item" | The workflow requires it. |
-
-## Red flags
-
-- "I will commit without doc updates"
-- "I will skip the next feature selection"
-
-## Common mistakes
-
-- Committing on `main`
-- Skipping the roadmap list
 
 ## Acceptance checks
 
 - Branch confirmed
 - Docs updated
 - Commit created or explicitly noted as nothing to commit
+- Branch pushed (when a commit exists)
+- PR created (when possible)
 - Next feature selection requested

@@ -1,8 +1,9 @@
-# AGENTS.md
+﻿# AGENTS.md
 
-## Routing rules
+## Routes to essential knowledge and instructions
 
-Canonical path aliases: see `knowledge-base/agents-core-knowledge/roots.md`.
+Read `knowledge-base/agents-core-knowledge/roots.md` for the routing map.
+Skills live in the repo at `.codex/skills/`.
 
 ## Automatic agentic invocation
 
@@ -20,10 +21,7 @@ Agent may automatically invoke additional steps when risk or complexity is detec
 - `$documents-export` when adding or changing export formats or templates.
 - `$test-plan <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; propose it and ask the user to confirm before generating the plan.
 - `$testing-in-browser` when UI behavior changes require manual verification; propose it and ask the user to confirm before running it.
-- `$feature-commit` when feature scope is complete and validation is acceptable; propose it and ask the user to confirm before committing.
+- `$commit-push-create-pr` when feature scope is complete and validation is acceptable; propose it and ask the user to confirm before committing.
 - `$context-maintenance` when changes touch documentation, routed knowledge, skills, or any AGENTS rules/routes; resolve routing and duplication and update project docs when needed.
 
 When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs or required approvals before running the skill.
-
----
-

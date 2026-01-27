@@ -39,7 +39,7 @@ Repo slash commands (`c:\Dev\3-Projects\vibe-coding\knowledge-base\slash-command
 | `/context-load` | `$context-load` | exists |
 | `/context-maintain` | `$context-maintenance` | exists |
 | `/design-review` | `$design-review` | exists |
-| `/commit` | `$commit` | exists |
+| `/commit` | `$commit-push-create-pr` | exists |
 | `/feature-research` | `$feature-research` | exists |
 | `/feature-start` | `$feature-start` | exists |
 | `/project-docs-update` | `$project-docs-update` | exists |
@@ -55,7 +55,7 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 | Prompt file | Slash command | Target skill | Status |
 | --- | --- | --- | --- |
-| `commit-feature.md` | `/commit-feature` | `$commit` | exists |
+| `commit-feature.md` | `/commit-feature` | `$commit-push-create-pr` | exists |
 | `load-context.md` | `/load-context` | `$context-load` | exists |
 | `start-feature.md` | `/start-feature` | `$feature-start` | exists |
 | `test-browser.md` | `/test-browser` | `$testing-in-browser` | exists |
