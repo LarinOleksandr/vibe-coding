@@ -1,4 +1,4 @@
-﻿# knowledge-base/agents-core-knowledge/project-doc-maintenance.md
+# docs-ai/agents-core-knowledge/project-doc-maintenance.md
 
 ## Agent summary
 
@@ -9,7 +9,7 @@
 
 ## Core Project Documentation Rules
 
-1. The `/knowledge-base/project-knowledge` folder **must always have** three Markdown files:
+1. The `/docs-ai/project-knowledge` folder **must always have** three Markdown files:
 
    - `DOC_PROJECT_CONTEXT`
    - `DOC_PROJECT_ROADMAP`

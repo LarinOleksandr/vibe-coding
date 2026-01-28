@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/feature-research.md
+# docs-ai/agents-core-knowledge/feature-research.md
 
 ## Agent summary
 
@@ -30,7 +30,7 @@ Timebox guidance:
 
 Write exactly one artifact per task:
 
-- Path: `knowledge-base/agents-artifacts/research-briefs/<task-slug>.research.md`
+- Path: `docs-ai/agents-artifacts/research-briefs/<task-slug>.research.md`
 - Do not overwrite existing briefs; create a new slug if needed.
 
 The brief must be concise and decision-oriented, and should update the feature brief by:

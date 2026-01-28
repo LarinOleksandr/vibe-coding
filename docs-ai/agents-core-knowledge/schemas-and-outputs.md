@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/schemas-and-outputs.md
+# docs-ai/agents-core-knowledge/schemas-and-outputs.md
 
 ## Agent summary
 

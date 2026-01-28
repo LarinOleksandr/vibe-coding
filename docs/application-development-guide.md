@@ -15,7 +15,7 @@ Provide any of the following (more detail helps, but keep it simple):
 - **PRD**: a structured requirements doc (paste sections if needed)
 
 If your input is vague or short, start with `$brainstorming` to build a PRD.  
-The PRD is saved to `knowledge-base/agents-artifacts/prds/`.
+The PRD is saved to `docs-ai/agents-artifacts/prds/`.
 
 Recommended minimum (copy/paste and fill):
 
@@ -45,9 +45,9 @@ What you should expect from the agent:
 
 During `$project-setup`, the agent drafts/updates:
 
-- `knowledge-base/project-knowledge/project-context.md` (what the product is)
-- `knowledge-base/project-knowledge/project-roadmap.md` (what we'll do next, ordered)
-- `knowledge-base/project-knowledge/project-insights.md` (key decisions and why)
+- `docs-ai/project-knowledge/project-context.md` (what the product is)
+- `docs-ai/project-knowledge/project-roadmap.md` (what we'll do next, ordered)
+- `docs-ai/project-knowledge/project-insights.md` (key decisions and why)
 
 Use `$context-load` later when you want a quick "where are we and what are the rules?" snapshot without changing any docs.
 
@@ -111,7 +111,7 @@ Thread codes (use what matches the task):
 Use this workflow when:
 
 - you finished `$project-setup` and want to confirm priorities
-- you want to reorder, split, merge, or clarify items in `knowledge-base/project-knowledge/project-roadmap.md`
+- you want to reorder, split, merge, or clarify items in `docs-ai/project-knowledge/project-roadmap.md`
 - you learned something and need to adjust the roadmap before building
 
 Start a project planning thread:
@@ -120,7 +120,7 @@ Start a project planning thread:
 
 Do this:
 
-1. Open `knowledge-base/project-knowledge/project-roadmap.md`
+1. Open `docs-ai/project-knowledge/project-roadmap.md`
 2. Confirm which roadmap item is next (topmost **[Not Started]** item)
 3. If the roadmap needs changes (reorder/split/merge), tell the agent what to change and why
 4. Proceed with the next item:
@@ -155,7 +155,7 @@ What you should expect:
 
 - A timebox (so the spike does not turn into a feature)
 - A recommendation and concrete next steps (what to build next, and what not to do)
-- A short update in `knowledge-base/project-knowledge/project-insights.md` if a decision was made
+- A short update in `docs-ai/project-knowledge/project-insights.md` if a decision was made
 
 ### 4.2 Architecture Review & Decision Workflow (A-###)
 
@@ -174,7 +174,7 @@ What you should expect:
 
 - A short decision/review note: options, risks, and a recommendation
 - Clear follow-up steps that feed back into feature/bug/refactor work
-- An artifact saved to: `knowledge-base/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
+- An artifact saved to: `docs-ai/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
 
 ### 4.3 Design Review Workflow (DR-###)
 
@@ -195,7 +195,7 @@ Then run:
 What you should expect:
 
 - A short, actionable list of recommendations
-- An artifact saved to: `knowledge-base/agents-artifacts/design-reviews/<task-slug>.design-review.md`
+- An artifact saved to: `docs-ai/agents-artifacts/design-reviews/<task-slug>.design-review.md`
 
 ---
 
@@ -204,7 +204,7 @@ What you should expect:
 ### 5.1 Start the feature
 
 1. Start a new feature thread named like: `<project name> | F-###: <feature name>`.
-   Exact feature number and name can be found in `knowledge-base/project-knowledge/project-roadmap.md` (Feature Development section).
+   Exact feature number and name can be found in `docs-ai/project-knowledge/project-roadmap.md` (Feature Development section).
 2. Run:
    - `$feature-start`
 
@@ -236,7 +236,7 @@ The agent will trigger a plan when the change is large or risky (multi-area, new
 
 What you should expect:
 
-- A plan artifact under `knowledge-base/agents-artifacts/plans/`
+- A plan artifact under `docs-ai/agents-artifacts/plans/`
 - Clear steps with a validation/checkpoint per step
 
 Your job:
@@ -378,7 +378,7 @@ Start a dedicated deploy thread:
 
 Use the project's deployment rules:
 
-- `KB_DEPLOYMENT_CICD` (see `knowledge-base/agents-core-knowledge/deployment-and-cicd.md`)
+- `KB_DEPLOYMENT_CICD` (see `docs-ai/agents-core-knowledge/deployment-and-cicd.md`)
 
 ### 8.3 Minimum go-live checklist
 

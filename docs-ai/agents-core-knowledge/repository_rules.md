@@ -4,7 +4,7 @@
 
 - Canonical repository constraints and practices.
 - Rule priorities determine how strictly to follow each rule.
-- For placement (ìwhere should this go?î), consult `KB_REPOSITORY_LAYOUT`.
+- For placement (‚Äúwhere should this go?‚Äù), consult `KB_REPOSITORY_LAYOUT`.
 
 ---
 
@@ -37,7 +37,7 @@ If a component scales, deploys, or runs independently, it must live in its own s
 
 Treat `docs/` as human-facing documentation only.
 
-- Agent-oriented knowledge and prompts belong under `knowledge-base/`.
+- Agent-oriented knowledge and prompts belong under `docs-ai/`.
 - Keep `docs/` focused on onboarding and developer documentation.
 
 ### scoped-agents-only-when-needed (should)

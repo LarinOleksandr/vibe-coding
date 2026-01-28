@@ -53,7 +53,7 @@ Later layers may extend but must not contradict earlier ones.
 **Non-responsibilities:**
 
 - Detailed architecture
-- Command lists or tool catalogs (live in knowledge-base/agents-core-knowledge/tools.md)
+- Command lists or tool catalogs (live in docs-ai/agents-core-knowledge/tools.md)
 - Step-by-step procedures
 
 ---
@@ -80,7 +80,7 @@ Later layers may extend but must not contradict earlier ones.
 ### 3) Routed reference documentation
 
 **Role:** On-demand knowledge  
-**Location:** Dedicated folder (e.g. `knowledge-base/agents-core-knowledge/`)
+**Location:** Dedicated folder (e.g. `docs-ai/agents-core-knowledge/`)
 
 **Characteristics:**
 
@@ -157,7 +157,7 @@ Later layers may extend but must not contradict earlier ones.
 | ---------------------- | ------------------------------------ |
 | Hard constraints       | AGENTS.md                            |
 | Local rules/exceptions | Scoped AGENTS.md                     |
-| Knowledge/reference    | knowledge-base/agents-core-knowledge |
+| Knowledge/reference    | docs-ai/agents-core-knowledge |
 | Procedures             | Skills                               |
 | Large change intent    | Planning artifact                    |
 

@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/external-specs.md
+# docs-ai/agents-core-knowledge/external-specs.md
 
 ## Agent summary
 

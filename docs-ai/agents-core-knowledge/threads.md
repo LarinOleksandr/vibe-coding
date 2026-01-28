@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/threads.md
+# docs-ai/agents-core-knowledge/threads.md
 
 ## Agent summary
 
@@ -109,9 +109,9 @@ Use the git helper scripts in `scripts/` for branch/PR automation (see `KB_TOOLS
 
 If a thread is based on an existing plan or architecture review, include the artifact path in the request:
 
-- `knowledge-base/agents-artifacts/plans/<task-slug>.plan.md`
-- `knowledge-base/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
-- `knowledge-base/agents-artifacts/design-reviews/<task-slug>.design-review.md`
+- `docs-ai/agents-artifacts/plans/<task-slug>.plan.md`
+- `docs-ai/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
+- `docs-ai/agents-artifacts/design-reviews/<task-slug>.design-review.md`
 
 ---
 

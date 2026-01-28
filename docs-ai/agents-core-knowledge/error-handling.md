@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/error-handling.md
+# docs-ai/agents-core-knowledge/error-handling.md
 
 ## Agent summary
 

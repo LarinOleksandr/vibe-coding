@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/supabase.md
+# docs-ai/agents-core-knowledge/supabase.md
 
 ## Agent summary
 
@@ -35,8 +35,8 @@
 ## Operational workflow (agent rule)
 
 - The agent operates Supabase through the **Supabase CLI** and migration files (plus repo scripts when present).
-- Do not delegate routine DB operations to the user (e.g., “click this in Studio”) as a substitute for migrations.
-- If required CLI scaffolding or scripts are missing, add them in-repo (per `KB_REPOSITORY_RULES` “scripts-not-raw-commands”) instead of asking the user to do manual steps.
+- Do not delegate routine DB operations to the user (e.g., â€œclick this in Studioâ€) as a substitute for migrations.
+- If required CLI scaffolding or scripts are missing, add them in-repo (per `KB_REPOSITORY_RULES` â€œscripts-not-raw-commandsâ€) instead of asking the user to do manual steps.
 
 ---
 

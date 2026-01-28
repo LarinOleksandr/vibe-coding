@@ -1,4 +1,4 @@
-﻿# knowledge-base/agents-core-knowledge/deployment-and-cicd.md
+# docs-ai/agents-core-knowledge/deployment-and-cicd.md
 
 ## Agent summary
 

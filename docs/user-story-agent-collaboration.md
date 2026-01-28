@@ -29,9 +29,9 @@ I run:
 
 The agent reads the existing project docs, then drafts/updates the canonical foundation files:
 
-- `knowledge-base/project-knowledge/project-context.md`
-- `knowledge-base/project-knowledge/project-roadmap.md`
-- `knowledge-base/project-knowledge/project-insights.md`
+- `docs-ai/project-knowledge/project-context.md`
+- `docs-ai/project-knowledge/project-roadmap.md`
+- `docs-ai/project-knowledge/project-insights.md`
 
 Then the agent asks me to confirm only the important gates:
 
@@ -61,7 +61,7 @@ This prevents me from guessing or inventing structure.
 
 ## 3) I do roadmap items first (then features)
 
-I pick the topmost **[Not Started]** item in `knowledge-base/project-knowledge/project-roadmap.md`.
+I pick the topmost **[Not Started]** item in `docs-ai/project-knowledge/project-roadmap.md`.
 
 If it is a foundation/capability item, I start a project planning thread for that item:
 
@@ -75,9 +75,9 @@ Later, when the next item is a feature under **Feature Development**, I start a 
 
 The agent reads:
 
-- `knowledge-base/project-knowledge/project-context.md`
-- `knowledge-base/project-knowledge/project-insights.md`
-- `knowledge-base/project-knowledge/project-roadmap.md`
+- `docs-ai/project-knowledge/project-context.md`
+- `docs-ai/project-knowledge/project-insights.md`
+- `docs-ai/project-knowledge/project-roadmap.md`
 
 Then it asks: "Starting feature: web UI foundation. Proceed?"
 
@@ -87,8 +87,8 @@ I say "Proceed."
 
 When the feature includes UI work under `frontend/web`, the agent routes itself to the existing UI/UX baselines:
 
-- `knowledge-base/agents-core-knowledge/ui-baseline.md`
-- `knowledge-base/agents-core-knowledge/ux-baseline.md`
+- `docs-ai/agents-core-knowledge/ui-baseline.md`
+- `docs-ai/agents-core-knowledge/ux-baseline.md`
 
 It explains (briefly) what that means in practice:
 
@@ -157,7 +157,7 @@ If the preset implies new dependencies beyond what I approved before, the agent 
 
 Finally, the agent records the durable decision (without duplicating the preset URL all over the repo) in:
 
-- `knowledge-base/project-knowledge/project-insights.md`
+- `docs-ai/project-knowledge/project-insights.md`
 
 It references the config path rather than scattering copies of the URL in multiple docs.
 

@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/repository-layout.md
+# docs-ai/agents-core-knowledge/repository-layout.md
 
 ## Agent summary
 
@@ -13,7 +13,7 @@
 | --- | --- | --- |
 | `AGENTS.md` | Root rules + routing | non-negotiables and which KB doc to consult |
 | `scripts/` | Canonical scripts | repeatable repo workflows (git helpers, dev/up/down, etc.) |
-| `knowledge-base/` | Agent knowledge, prompts, artifacts, and project docs | any agent workflow, prompt, artifact, or project state |
+| `docs-ai/` | Agent knowledge, prompts, artifacts, and project docs | any agent workflow, prompt, artifact, or project state |
 | `.codex/skills/` | Procedural skills | a repeatable multi-step procedure (`$<skill>`) |
 | `docs/` | Human-facing docs | application development guidance and collaboration docs |
 | `frontend/` | Frontend runtime boundary | the user-facing web/mobile client code (`frontend/web`, when it exists) |
@@ -28,24 +28,24 @@
 
 | If you need... | Look in... | Notes |
 | --- | --- | --- |
-| Repo structure rules / boundaries / config rules | `knowledge-base/agents-core-knowledge/repository_rules.md` | canonical constraints |
-| Where does X belong? (routing) | `knowledge-base/agents-core-knowledge/repository-layout.md` | this document |
+| Repo structure rules / boundaries / config rules | `docs-ai/agents-core-knowledge/repository_rules.md` | canonical constraints |
+| Where does X belong? (routing) | `docs-ai/agents-core-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
-| Thread naming + codes | `knowledge-base/agents-core-knowledge/threads.md` | canonical thread rules |
-| UI/UX baseline invariants and guidelines | `knowledge-base/agents-core-knowledge/ui-baseline.md`, `knowledge-base/agents-core-knowledge/ux-baseline.md` | framework-level defaults for consistent UI behavior |
-| Feature brief template | `knowledge-base/agents-core-knowledge/feature-template.md` | used by `$feature-start` |
-| Feature research expectations | `knowledge-base/agents-core-knowledge$feature-research.md` | timeboxed research brief |
-| Testing strategy and gates | `knowledge-base/agents-core-knowledge/testing.md` | no new deps without approval |
-| Deployment/CI "DNA" rules | `knowledge-base/agents-core-knowledge/deployment-and-cicd.md` | Netlify/Vercel rules, branch policy |
+| Thread naming + codes | `docs-ai/agents-core-knowledge/threads.md` | canonical thread rules |
+| UI/UX baseline invariants and guidelines | `docs-ai/agents-core-knowledge/ui-baseline.md`, `docs-ai/agents-core-knowledge/ux-baseline.md` | framework-level defaults for consistent UI behavior |
+| Feature brief template | `docs-ai/agents-core-knowledge/feature-template.md` | used by `$feature-start` |
+| Feature research expectations | `docs-ai/agents-core-knowledge$feature-research.md` | timeboxed research brief |
+| Testing strategy and gates | `docs-ai/agents-core-knowledge/testing.md` | no new deps without approval |
+| Deployment/CI "DNA" rules | `docs-ai/agents-core-knowledge/deployment-and-cicd.md` | Netlify/Vercel rules, branch policy |
 | Skills list | `.codex/skills/skills.md` | canonical list + when to use |
 | A specific skill procedure | `.codex/skills/<skill-name>/SKILL.md` | step-by-step procedure |
-| Generated plans | `knowledge-base/agents-artifacts/plans/` | created by `$plan-creation` |
-| Architecture review artifacts | `knowledge-base/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
-| Design review artifacts | `knowledge-base/agents-artifacts/design-reviews/` | created by `$design-review` |
-| PRD artifacts | `knowledge-base/agents-artifacts/prds/` | created by `$brainstorming` |
-| Research brief artifacts | `knowledge-base/agents-artifacts/research-briefs/` | created by `$feature-research` |
-| Project context/roadmap/insights | `knowledge-base/project-knowledge/project-context.md`, `knowledge-base/project-knowledge/project-roadmap.md`, `knowledge-base/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
-| Archived legacy docs | `knowledge-base/old/` | non-canonical reference only |
+| Generated plans | `docs-ai/agents-artifacts/plans/` | created by `$plan-creation` |
+| Architecture review artifacts | `docs-ai/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
+| Design review artifacts | `docs-ai/agents-artifacts/design-reviews/` | created by `$design-review` |
+| PRD artifacts | `docs-ai/agents-artifacts/prds/` | created by `$brainstorming` |
+| Research brief artifacts | `docs-ai/agents-artifacts/research-briefs/` | created by `$feature-research` |
+| Project context/roadmap/insights | `docs-ai/project-knowledge/project-context.md`, `docs-ai/project-knowledge/project-roadmap.md`, `docs-ai/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
+| Archived legacy docs | `docs-ai/old/` | non-canonical reference only |
 
 ---
 
@@ -53,10 +53,10 @@
 
 | If you are adding... | Put it in... | Example name(s) |
 | --- | --- | --- |
-| A new routed KB doc | `knowledge-base/agents-core-knowledge/` | `repository-layout.md`, `deployment-and-cicd.md` |
+| A new routed KB doc | `docs-ai/agents-core-knowledge/` | `repository-layout.md`, `deployment-and-cicd.md` |
 | A new skill | `.codex/skills/<skill-name>/SKILL.md` | `.codex/skills$design-review/SKILL.md` |
-| A new agent artifact type | `knowledge-base/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
-| A new project "memory" doc | `knowledge-base/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
+| A new agent artifact type | `docs-ai/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
+| A new project "memory" doc | `docs-ai/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |
 

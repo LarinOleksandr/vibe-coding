@@ -20,8 +20,8 @@ Integrate beneficial practices from the superpowers skills repository into the V
 ## Affected areas
 - `C:\Dev\3-Projects\vibe-coding\.codex\skills\` (skills to update or add)
 - `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` (skills index)
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\repository-layout.md` (artifact category references)
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-artifacts\readme.md` (artifact naming and lists)
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md` (artifact category references)
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\readme.md` (artifact naming and lists)
 - `C:\Dev\3-Projects\vibe-coding\docs\application-development-guide.md` (user-facing workflow references)
 - `C:\Dev\3-Projects\vibe-coding\AGENTS.md` (only if routing or trigger rules change)
 
@@ -29,13 +29,13 @@ Integrate beneficial practices from the superpowers skills repository into the V
 
 ### Step 1: Inventory and classify superpowers skills
 **Deliverable:** A short table listing each superpowers skill with a decision: adopt, adapt, defer, or reject.
-**Integration:** Store the table in this plan file under a new “Decision Log” section.
+**Integration:** Store the table in this plan file under a new Ã¢â‚¬Å“Decision LogÃ¢â‚¬Â section.
 **Verify:** Confirm every folder under `C:\Users\oleks\.codex\superpowers\skills` is listed.
 
 ### Step 2: Map candidates to the VibeCoding skill set
-**Deliverable:** For each “adopt/adapt” skill, map to an existing skill or define a new skill name and location.
-**Integration:** Update the Decision Log with “target skill” and “change type” (update vs new).
-**Verify:** Ensure each mapped target exists or is explicitly marked “create new”.
+**Deliverable:** For each Ã¢â‚¬Å“adopt/adaptÃ¢â‚¬Â skill, map to an existing skill or define a new skill name and location.
+**Integration:** Update the Decision Log with Ã¢â‚¬Å“target skillÃ¢â‚¬Â and Ã¢â‚¬Å“change typeÃ¢â‚¬Â (update vs new).
+**Verify:** Ensure each mapped target exists or is explicitly marked Ã¢â‚¬Å“create newÃ¢â‚¬Â.
 
 ### Step 3: Apply required integration checks (must include)
 **Deliverable:** A focused checklist that covers the four requested areas.
@@ -51,7 +51,7 @@ Integrate beneficial practices from the superpowers skills repository into the V
 ### Step 4: Align terminology, paths, and triggers
 **Deliverable:** A rules checklist for translation (naming, paths, artifact locations, cross-links, style).
 **Integration:** Use this checklist when editing each target skill.
-**Verify:** Checklist includes: no “superpowers:” prefixes, no CLAUDE.md references, correct artifact paths, and correct plan locations.
+**Verify:** Checklist includes: no Ã¢â‚¬Å“superpowers:Ã¢â‚¬Â prefixes, no CLAUDE.md references, correct artifact paths, and correct plan locations.
 
 ### Step 5: Update existing skills
 **Deliverable:** Updated skill files in `C:\Dev\3-Projects\vibe-coding\.codex\skills\` reflecting adopted practices.
@@ -61,26 +61,26 @@ Integrate beneficial practices from the superpowers skills repository into the V
 ### Step 6: Create new skills (if needed)
 **Deliverable:** New skill folders with `SKILL.md` under `C:\Dev\3-Projects\vibe-coding\.codex\skills\`.
 **Integration:** Add each new skill to the index at `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`.
-**Verify:** Each new skill has valid frontmatter and a clear “Use when…” description.
+**Verify:** Each new skill has valid frontmatter and a clear Ã¢â‚¬Å“Use whenÃ¢â‚¬Â¦Ã¢â‚¬Â description.
 
 ### Step 7: Update framework documentation
 **Deliverable:** Updated docs reflecting skill changes.
 **Integration:**
 - `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\repository-layout.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-artifacts\readme.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\readme.md`
 - `C:\Dev\3-Projects\vibe-coding\docs\application-development-guide.md`
 - `C:\Dev\3-Projects\vibe-coding\AGENTS.md` (only if triggers/routing need changes)
 **Verify:** Each doc reflects the new skill names and any new artifact categories.
 
 ### Step 8: Cross-link and dependency audit
 **Deliverable:** A simple audit pass for broken links and stale references.
-**Integration:** Use `rg` to find “superpowers:”, “CLAUDE.md”, and legacy paths like `docs/plans/`.
+**Integration:** Use `rg` to find Ã¢â‚¬Å“superpowers:Ã¢â‚¬Â, Ã¢â‚¬Å“CLAUDE.mdÃ¢â‚¬Â, and legacy paths like `docs/plans/`.
 **Verify:** No unexpected matches. Any remaining hits must be only in plan artifacts or audit text.
 
 ### Step 9: Consistency pass
 **Deliverable:** A short consistency checklist applied across skills.
-**Integration:** Ensure skill descriptions are “Use when…” only and avoid process in descriptions.
+**Integration:** Ensure skill descriptions are Ã¢â‚¬Å“Use whenÃ¢â‚¬Â¦Ã¢â‚¬Â only and avoid process in descriptions.
 **Verify:** Sample 5 skills and confirm style, terminology, and link consistency.
 
 ## Decision Log
@@ -108,12 +108,12 @@ Integrate beneficial practices from the superpowers skills repository into the V
 - Remove any CLAUDE.md references.
 - Use current artifact paths (no `docs/plans/`).
 - Use existing skill names from `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`.
-- Keep descriptions as “Use when…” only (no workflow summary).
+- Keep descriptions as Ã¢â‚¬Å“Use whenÃ¢â‚¬Â¦Ã¢â‚¬Â only (no workflow summary).
 - Keep wording beginner-friendly and short.
 
 ## Implementation plan (docs/skills only)
 - Do Step 1 and add the Decision Log section to this plan file, then verify every superpowers skill is listed.
-- Do Step 2 by mapping each “adopt/adapt” item to a target skill, then verify target names exist or are marked “create new”.
+- Do Step 2 by mapping each Ã¢â‚¬Å“adopt/adaptÃ¢â‚¬Â item to a target skill, then verify target names exist or are marked Ã¢â‚¬Å“create newÃ¢â‚¬Â.
 - Do Step 3 by adding the required integration checklist, then verify all four requested items are covered.
 - Do Step 4 by writing the translation checklist in this plan file, then verify it covers names, paths, and cross-links.
 - Do Step 5 by editing existing skills one by one, then verify each only references valid skills and paths.
@@ -131,15 +131,15 @@ Integrate beneficial practices from the superpowers skills repository into the V
 ## Validation
 - `rg -n "superpowers:|CLAUDE.md|docs/plans/" C:\Dev\3-Projects\vibe-coding`
 - Confirm `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` lists all new/updated skills.
-- Confirm `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\repository-layout.md` reflects any new artifact category.
-- Confirm `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-artifacts\readme.md` lists any new artifact type and naming.
+- Confirm `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md` reflects any new artifact category.
+- Confirm `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\readme.md` lists any new artifact type and naming.
 
 ## References
 - `C:\Users\oleks\.codex\superpowers\skills`
 - `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`
 - `C:\Dev\3-Projects\vibe-coding\.codex\skills\plan-creation\SKILL.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\repository-layout.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-artifacts\readme.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\readme.md`
 - `C:\Dev\3-Projects\vibe-coding\docs\application-development-guide.md`
 
 ## Rollback notes

@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/architecture-principles.md
+# docs-ai/agents-core-knowledge/architecture-principles.md
 
 ## Purpose
 
@@ -49,7 +49,7 @@
 - Identify aggregates and value objects for core domain concepts.
 - Keep domain rules in domain entities/services, not in adapters or UI.
 - Use domain events for significant state changes.
-- For deeper Clean Architecture + DDD rules, consult `knowledge-base/agents-core-knowledge/clean-architecture-ddd-guidelines.md` only when the change touches domain models, value objects, or layered contracts that need detailed invariants and dependency rules. Keep this summary as your first pass; dive into the linked guide when you need explicit DDD best practices, testing expectations, or commentary discipline beyond the quick checklist.
+- For deeper Clean Architecture + DDD rules, consult `docs-ai/agents-core-knowledge/clean-architecture-ddd-guidelines.md` only when the change touches domain models, value objects, or layered contracts that need detailed invariants and dependency rules. Keep this summary as your first pass; dive into the linked guide when you need explicit DDD best practices, testing expectations, or commentary discipline beyond the quick checklist.
 
 ---
 

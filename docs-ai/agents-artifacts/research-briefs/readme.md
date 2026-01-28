@@ -1,4 +1,4 @@
-# knowledge-base/agents-artifacts/research-briefs/readme.md
+# docs-ai/agents-artifacts/research-briefs/readme.md
 
 This folder stores timeboxed feature research briefs.
 

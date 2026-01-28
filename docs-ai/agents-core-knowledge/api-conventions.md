@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/api-conventions.md
+# docs-ai/agents-core-knowledge/api-conventions.md
 
 ---
 

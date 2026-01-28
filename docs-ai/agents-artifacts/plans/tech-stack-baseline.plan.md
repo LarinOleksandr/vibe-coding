@@ -1,4 +1,4 @@
-﻿# tech-stack-baseline.plan.md
+# tech-stack-baseline.plan.md
 
 ## Goal
 
@@ -6,8 +6,8 @@ Make `KB_TECH_STACK` a baseline/default stack and place the actual project stack
 
 ## Scope
 
-- Update `knowledge-base/agents-core-knowledge/tech-stack-baseline.md` to clearly state baseline/default stack.
-- Add a project-specific stack section to `knowledge-base/project-knowledge/project-context.md`.
+- Update `docs-ai/agents-core-knowledge/tech-stack-baseline.md` to clearly state baseline/default stack.
+- Add a project-specific stack section to `docs-ai/project-knowledge/project-context.md`.
 - Update any docs that reference `KB_TECH_STACK` to clarify baseline vs project-specific overrides.
 - Update routing/index references where necessary.
 - Add user-facing notes in docs about where the real project stack lives and how to update it.
@@ -19,13 +19,13 @@ Make `KB_TECH_STACK` a baseline/default stack and place the actual project stack
 
 ## Files to touch (expected)
 
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\tech-stack-baseline.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\project-knowledge\project-context.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\tools.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\testing.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\deployment-and-cicd.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\ui-baseline.md`
-- `C:\Dev\3-Projects\vibe-coding\knowledge-base\agents-core-knowledge\roots.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\tech-stack-baseline.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\project-knowledge\project-context.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\tools.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\testing.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\deployment-and-cicd.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\ui-baseline.md`
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
 
 ## Plan
 

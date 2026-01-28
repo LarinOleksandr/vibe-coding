@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/runtime.md
+# docs-ai/agents-core-knowledge/runtime.md
 
 ## Agent summary
 

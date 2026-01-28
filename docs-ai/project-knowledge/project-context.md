@@ -13,7 +13,7 @@ It defines collaboration workflows (threads), routed knowledge, and procedural s
 ## Essential Information
 
 - Human docs live in `docs/`; the primary guide is `docs/application-development-guide.md`.
-- Agent knowledge/prompts/artifacts live in `knowledge-base/` (routed via `KB_ROOTS`).
+- Agent knowledge/prompts/artifacts live in `docs-ai/` (routed via `KB_ROOTS`).
 - Service boundaries are represented by top-level runtime folders (`frontend/`, `ai/`, `supabase/`, `infra/`) per `KB_REPOSITORY_RULES`.
 
 ## Project tech stack

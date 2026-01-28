@@ -1,4 +1,4 @@
-# knowledge-base/agents-core-knowledge/feature-template.md
+# docs-ai/agents-core-knowledge/feature-template.md
 
 ## Agent summary
 

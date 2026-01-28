@@ -1,9 +1,14 @@
-﻿# AGENTS.md
+# AGENTS.md
 
 ## Routes to essential knowledge and instructions
 
-Read `knowledge-base/agents-core-knowledge/roots.md` for the routing map.
+Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
 Skills live in the repo at `.codex/skills/`.
+
+## Verification (must)
+
+- Do not guess. If you are unsure, read the repo files or use tools to verify.
+- For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
 
 ## Automatic agentic invocation
 

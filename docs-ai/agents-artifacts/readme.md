@@ -1,4 +1,4 @@
-# knowledge-base/agents-artifacts/readme.md
+# docs-ai/agents-artifacts/readme.md
 
 This folder stores agent-generated artifacts.
 

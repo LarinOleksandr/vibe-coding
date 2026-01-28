@@ -1,4 +1,4 @@
-﻿# knowledge-base/agents-core-knowledge/tools.md
+# docs-ai/agents-core-knowledge/tools.md
 
 ## Agent summary
 
@@ -42,7 +42,7 @@
 
 ## Stack sources
 
-- Tech stack baseline: `knowledge-base/agents-core-knowledge/tech-stack-baseline.md` (project stack in `DOC_PROJECT_CONTEXT`)
+- Tech stack baseline: `docs-ai/agents-core-knowledge/tech-stack-baseline.md` (project stack in `DOC_PROJECT_CONTEXT`)
 - Do not introduce new tools without updating the stack source of truth.
 
 See stack rules in scoped instructions:
