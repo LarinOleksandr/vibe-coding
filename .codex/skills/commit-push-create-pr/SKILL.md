@@ -62,6 +62,7 @@ Invoke when any apply:
    - 3. Start next roadmap item
 8. Handle the chosen option:
    - If 1: merge the current branch into `main` and report the outcome.
+     - After a successful merge, delete the work branch locally and on `origin` (when possible). Do not ask.
    - If 2: attempt to create a PR (if not possible automatically, explain what the user should do next in simple words).
    - If 3: ask the user to pick the next roadmap item (paste the exact item line), then return a compliant thread name suggestion (`KB_THREADS`).
 
@@ -90,6 +91,7 @@ Say:
 - whether the branch was pushed (Yes/No)
 - whether a PR was created (Yes/No, only if the user chose option 2)
 - if the user chose option 1: whether merge into main succeeded (Yes/No)
+- if the user chose option 1: whether the work branch was deleted (local/origin) (Yes/No/Skipped)
 - if the user chose option 3: suggested next thread name
 
 Avoid:
