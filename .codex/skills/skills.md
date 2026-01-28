@@ -9,30 +9,30 @@
 
 ## Skills
 
-- `$api-endpoint-development` - Add or modify an API / Edge Function endpoint with explicit contracts, validation, and safe integration.
-- `$frontend-design` - Initialize or update the `frontend/web` design system using a shadcn preset, in a consistent and repeatable way.
-- `$architecture-review` - Check a proposed change for architectural compliance, surface conflicts, and propose compliant alternatives.
-- `$brainstorming` - Turn vague ideas into a PRD through step-by-step questions before any creative work.
-- `$bug-fix` - Diagnose and fix bugs or regressions. Use when a user reports broken or incorrect behavior, tests fail due to a defect, or a bug fix is requested.
-- `$code-refactoring` - Perform a structural change without altering external behavior.
-- `$code-review` - Perform a focused Codex review of the PR diff (token-efficient) and report blockers, important risks, and missing tests.
-- `$commit-push-create-pr` - Finish work safely: verify, update project docs, commit, push, and optionally create a PR.
-- `$coding-standards-check` - Use when reviewing changes for coding standards, consistency, and basic maintainability.
-- `$context-maintenance` - Maintain project documentation, agent knowledge, and methodology; keep routes consistent and remove duplication.
-- `$context-load` - Use when a quick, baseline repo context snapshot and routing map are needed before deeper work.
-- `$db-migration` - Evolve Supabase schema and data without breaking contracts or RLS.
-- `$design-review` - Review UX/flow decisions and propose improvements (timeboxed; artifact-based).
-- `$documents-export` - Export validated agent outputs into user-facing documents (PDF, DOCX, JSON, MD) in a reproducible and safe way.
-- `$feature-development` - Manage feature development readiness. Use when a user requests a new feature or behavior change, including short or vague requests that need structured clarification.
-- `$feature-research` - Produce a timeboxed research brief to surface risks, constraints, and decisions before planning.
-- `$feature-start` - Use when starting a feature thread and you need the current project context, insights, and roadmap before implementation.
-- `$new-agent-development` - Add or modify an orchestrator agent/node/workflow with schema-first outputs, explicit state, and test coverage.
-- `$optimize-performance` - Use when reviewing code for performance bottlenecks and optimization opportunities.
-- `$plan-creation` - Create a concrete, executable plan file for large or risky changes.
-- `$project-setup` - Use when a project foundation must be created or updated from a PRD or idea before any feature work.
-- `$security-check` - Use when reviewing changes for security risks in auth, data access, and input handling.
-- `$test-plan` - Use when you need a comprehensive, repo-consistent test plan for a feature or change.
-- `$testing-in-browser` - Capture the canonical steps for starting the dev stack, connecting via MCP DevTools, and iteratively resolving browser errors.
-- `$ui-consistency-check` - Use when reviewing UI changes for consistency with the UI and UX baselines.
+- `$api-endpoint-development` - Add or change an API/Edge Function endpoint. Use when the work is "add endpoint" or "change request/response". Trigger words: endpoint, API, Edge Function.
+- `$architecture-review` - Check a proposed change for architecture fit. Use when the change crosses big boundaries or feels risky. Trigger words: architecture, boundaries, service split, new service.
+- `$brainstorming` - Turn a vague idea into a PRD. Use when the user has an idea but no clear requirements. Trigger words: idea, MVP, PRD, brainstorm.
+- `$bug-fix` - Find the root cause and fix broken behavior. Use when something is wrong or failing. Trigger words: bug, broken, error, failing test, regression.
+- `$code-refactoring` - Change structure without changing behavior. Use when the user says "refactor" or "cleanup" with "no behavior change". Trigger words: refactor, cleanup, restructure.
+- `$code-review` - Review a diff/change set and report issues. Use when the user asks for a review. Trigger words: review, PR review, code review.
+- `$coding-standards-check` - Check code style and basic maintainability. Use when the user asks for standards or consistency checks. Trigger words: standards, style, consistency.
+- `$commit-push-create-pr` - Finish work: verify, update docs, commit, push, and optional PR/merge. Use when the user says they are done. Trigger words: commit, push, PR, merge, finish, wrap up.
+- `$context-load` - Load a quick project snapshot. Use when we need the current rules/routes/where things are. Trigger words: context, summary, where is, routes.
+- `$context-maintenance` - Update and clean the framework docs/skills/routing. Use when rules, routes, or skills changed. Trigger words: update docs, routing, maintain, framework.
+- `$db-migration` - Change Supabase schema/RLS/migrations safely. Use when schema or policies change. Trigger words: migration, RLS, schema, table, SQL.
+- `$design-review` - Review UX/flow choices (artifact-based). Use when the user asks "is this UX good?" or "review the flow". Trigger words: UX, flow, design review.
+- `$documents-export` - Export agent outputs to user documents (PDF/DOCX/MD/JSON). Use when the user asks for export formats. Trigger words: export, PDF, DOCX, document.
+- `$feature-development` - Turn a feature request into a confirmed feature brief. Use when a new feature or behavior change is requested. Trigger words: add feature, change behavior, implement.
+- `$feature-research` - Do a short research brief before planning. Use when the feature touches risky areas (uploads, permissions, PII, integrations). Trigger words: upload, permissions, auth, PII, integration.
+- `$feature-start` - Start a feature thread using current context/roadmap/insights. Use when the user says "start feature" or picks a roadmap item. Trigger words: start feature, next feature, roadmap item.
+- `$frontend-design` - Initialize/update the `frontend/web` design system preset. Use when touching UI design system setup. Trigger words: shadcn, preset, design system.
+- `$new-agent-development` - Add or change an orchestrator agent/node/workflow. Use when changing agent graphs, nodes, or outputs. Trigger words: agent, node, workflow, LangGraph.
+- `$optimize-performance` - Find and fix performance bottlenecks. Use when the user asks to speed things up. Trigger words: performance, slow, optimize, latency.
+- `$plan-creation` - Write a concrete plan for a large/risky change. Use when the work spans many areas or has risk. Trigger words: plan, roadmap, big change.
+- `$project-setup` - Create/update project foundation docs from an idea or PRD. Use when starting a new product in this repo. Trigger words: project setup, initialize, foundation, PRD.
+- `$security-check` - Review for security risks in auth/data/input. Use when the change touches secrets, auth, permissions, or untrusted input. Trigger words: security, auth, permissions, secrets.
+- `$test-plan` - Create a repo-consistent test plan. Use when validation is unclear or needs structure. Trigger words: test plan, validation, how to test.
+- `$testing-in-browser` - Run UI checks with browser tooling. Use when UI changes need real browser verification. Trigger words: browser test, UI test, devtools.
+- `$ui-consistency-check` - Check UI against baseline rules. Use when the user asks for UI consistency. Trigger words: UI consistency, baseline, UX baseline.
 
 

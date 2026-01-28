@@ -10,6 +10,14 @@ Skills live in the repo at `.codex/skills/`.
 - Do not guess. If you are unsure, read the repo files or use tools to verify.
 - For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
 
+## Skill routing (must)
+
+- When the user asks you to **do work** (implement, fix, investigate, run, test, build, configure, refactor, review, plan, export, migrate, deploy, commit, push, PR, merge), you must:
+  1. Check `C:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` and pick the best matching skill.
+  2. Open and follow that skill's `C:\Dev\3-Projects\vibe-coding\.codex\skills\<skill-name>\SKILL.md` step-by-step.
+- Do not answer with generic advice when a matching skill exists.
+- If no skill matches, proceed with the simplest safe approach and explain the assumption.
+
 ## Automatic agentic invocation
 
 Agent may automatically invoke additional steps when risk or complexity is detected:
