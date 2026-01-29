@@ -42,6 +42,7 @@
 | Generated plans | `docs-ai/agents-artifacts/plans/` | created by `$plan-creation` |
 | Architecture review artifacts | `docs-ai/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
 | Design review artifacts | `docs-ai/agents-artifacts/design-reviews/` | created by `$design-review` |
+| UI validation screenshots | `docs-ai/agents-artifacts/screenshots/` | proof for UI tasks (not committed) |
 | PRD artifacts | `docs-ai/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `docs-ai/agents-artifacts/research-briefs/` | created by `$feature-research` |
 | Conversation summaries (opt-in) | `docs-ai/agents-artifacts/conversations/` | created by `$conversation-save` |

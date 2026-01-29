@@ -20,6 +20,11 @@
 - Push branch + create PR (if possible): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1`
 - Merge current branch into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
 
+## UI testing (Playwright, on demand)
+
+- Ensure Playwright + browsers (on demand): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/ensure-playwright.ps1`
+- Quick headless screenshot (optional): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/playwright-screenshot.ps1 -Url "<url>" -OutFile "docs-ai/agents-artifacts/screenshots/<task-slug>/page.png"`
+
 ## Cross-platform fallbacks
 
 - If `pnpm` is unavailable, use `npm run dev` or `yarn dev` for UI start.

@@ -34,6 +34,7 @@ Applies to `frontend/**`.
 
 - Update tests for behavior changes.
 - For flow changes, include at least one UI-level smoke path when available.
+- For any UI-related task, do not consider the task complete until `$testing-in-browser` is run and screenshots are captured (see `KB_UI_TESTING_PLAYWRIGHT`), unless the user explicitly asks to skip UI validation.
 
 
 

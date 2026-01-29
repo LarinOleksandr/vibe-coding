@@ -4,7 +4,7 @@ This folder holds **opt-in** conversation summaries for long-term memory (create
 
 Rules:
 
-- Create a summary only when the user asks to save a conversation.
+- Create/update/delete summaries only when the user asks to save a conversation (`$conversation-save`).
 - Keep summaries short and searchable.
 - Do not commit full transcripts by default (see `.gitignore`).
 

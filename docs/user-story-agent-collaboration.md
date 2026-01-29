@@ -188,7 +188,16 @@ If the change affects UI behavior, the agent proposes:
 
 `$testing-in-browser`
 
-If I approve, it runs the browser verification workflow and fixes any obvious issues found.
+For UI-related tasks, it runs the browser verification workflow by default:
+
+- DevTools to debug (console errors, failed network requests)
+- Playwright to prove it works (repeat actions + screenshots)
+
+It saves screenshots under:
+
+- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`
+
+If I want to skip UI validation, I must say so explicitly.
 
 ## 8) Finish: docs and memory stay correct
 

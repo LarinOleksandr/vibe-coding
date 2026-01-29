@@ -35,7 +35,8 @@ Skills live in the repo at `.codex/skills/`.
 ## Conversation summaries (opt-in)
 
 - Do not save conversation summaries by default.
-- Save a summary only when the user explicitly asks (use `$conversation-save`).
+- Create/update/delete a summary only when the user explicitly asks (use `$conversation-save`).
+- Never delete or edit existing files under `docs-ai/agents-artifacts/conversations/` unless the user explicitly asks.
 - During `$commit-push-create-pr`, the agent may propose saving a short summary, but must wait for a clear Yes/No.
 
 ## Automatic agentic invocation
@@ -53,7 +54,8 @@ Agent may automatically invoke additional steps when risk or complexity is detec
 - `$new-agent-development` when orchestrator workflows/nodes or output schemas change.
 - `$documents-export` when adding or changing export formats or templates.
 - `$test-plan <feature>` when validation needs are unclear or when changes touch UI behavior or API endpoints; propose it and ask the user to confirm before generating the plan.
-- `$testing-in-browser` when UI behavior changes require manual verification; propose it and ask the user to confirm before running it.
+- `$testing-in-browser` when UI behavior changes require manual verification.
+  - Default for UI tasks: run it (and capture screenshots) unless the user explicitly asks to skip UI validation.
 - `$commit-push-create-pr` when feature scope is complete and validation is acceptable; propose it and ask the user to confirm before committing.
 - `$context-maintenance` when changes touch documentation, routed knowledge, skills, or any AGENTS rules/routes; resolve routing and duplication and update project docs when needed.
 

@@ -13,6 +13,8 @@ description: Capture the canonical steps for starting the dev stack, connecting 
 
 Make the run->inspect->fix cycle explicit so every teammate follows the same scripted interaction with the local stack and DevTools.
 
+For UI-related tasks, this skill is also the place where we capture screenshots as proof.
+
 ## When to use
 
 Invoke when:
@@ -29,6 +31,8 @@ Invoke when:
 
 ## Procedure
 
+0. Ensure Playwright is ready (on demand)
+   - Run: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/ensure-playwright.ps1`
 1. Start the stack
    - Ensure dependencies are installed (run `pnpm install` if needed).
    - Run the canonical command (`pnpm dev` / `pnpm --filter web dev`) or `./scripts/dev-up.sh` for the full stack.
@@ -37,18 +41,22 @@ Invoke when:
    - Open or reload the app URL using `mcp__chrome-devtools__new_page` / `mcp__chrome-devtools__navigate_page`.
    - Call `mcp__chrome-devtools__list_console_messages` and `list_network_requests` to capture existing errors.
    - Use snapshots when DOM structure or state needs inspection.
+   - If auth is required and `C:\Dev\3-Projects\vibe-coding\auth.json` exists, try to apply it before navigating (cookies + localStorage when possible).
 3. Diagnose and fix
    - Map console/network errors to their source files.
    - Apply edits (observing AGENTS and scoped instructions) and restart/reload the app as necessary.
    - Repeat the DevTools commands to confirm the error disappears.
 4. Verify and document
    - Continue until the targeted route renders without blocking console/network errors.
+   - Take screenshots to prove the UI works as expected and save them under:
+     - `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`
    - Record any new commands, patterns, or discoveries in `KB_TOOLS`, `KB_THREADS`, or `DOC_PROJECT_INSIGHTS`.
 
 ## Acceptance checks
 
 - The documented script starts without fatal errors and remains accessible.
 - MCP DevTools show no blocking console/network errors for the inspected route.
+- Screenshots exist under `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\` proving the requirement.
 - Any new workflow notes are captured in the knowledge base or insights log so future work reuses this routine.
 
 

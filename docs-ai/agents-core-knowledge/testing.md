@@ -15,6 +15,11 @@
 
 ---
 
+## UI validation (required)
+
+- For UI-related tasks, validate using Playwright + MCP DevTools and capture screenshots as proof.
+- See `KB_UI_TESTING_PLAYWRIGHT`.
+
 ## Testing levels
 
 - **Unit**: isolated logic (UI components, pure functions, validators)

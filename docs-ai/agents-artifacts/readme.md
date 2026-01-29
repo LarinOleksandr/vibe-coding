@@ -9,6 +9,10 @@ This folder stores agent-generated artifacts.
 - `design-reviews/` contains design review artifacts from `$design-review`
 - `prds/` contains PRDs created by `$brainstorming`
 - `research-briefs/` contains research briefs created by `$feature-research`
+- `screenshots/` stores UI validation screenshots (not committed; README only)
+- `traces/` stores Playwright traces (not committed; README only)
+- `videos/` stores Playwright videos (not committed; README only)
+- `playwright-report/` stores generated Playwright reports (not committed; README only)
 - `conversations/` contains opt-in conversation summaries created by `$conversation-save`
 
 ## Rules

@@ -57,6 +57,7 @@
 - `KB_TOOLS` -> `./docs-ai/agents-core-knowledge/tools.md` - Canonical tools and commands.
 - `KB_TECH_STACK` -> `./docs-ai/agents-core-knowledge/tech-stack-baseline.md` - Tech stack baseline (default).
 - `KB_API_CONVENTIONS` -> `./docs-ai/agents-core-knowledge/api-conventions.md` - REST/API conventions, pagination, and HTTP error mapping.
+- `KB_UI_TESTING_PLAYWRIGHT` -> `./docs-ai/agents-core-knowledge/ui-testing-playwright.md` - UI validation rules: Playwright + screenshots + auth state.
 
 ## Project Docs (human-oriented)
 

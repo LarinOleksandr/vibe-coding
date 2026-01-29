@@ -298,7 +298,18 @@ If the feature affects the UI, also run:
 
 - `$testing-in-browser`
 
-In the same way, the agent should propose `$testing-in-browser` when UI behavior changed or needs manual verification. You approve, then the agent runs it.
+For UI-related tasks, the agent should run `$testing-in-browser` by default and capture screenshots as proof (unless you explicitly ask to skip UI validation).
+
+What you should expect during UI validation:
+
+- Playwright “appears” only at validation time (it is installed on demand when needed).
+- DevTools is used to debug (console errors, failed network requests, DOM snapshots).
+- Playwright is used to prove the UI works (repeat the user action + screenshots).
+- Screenshots are saved under `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`.
+
+If login is required, the agent may reuse `C:\Dev\3-Projects\vibe-coding\auth.json` if it exists.
+
+If you want to skip UI validation, you must say so explicitly (example: “skip UI validation for this change”).
 
 ### 5.6.1 Design system (frontend/web)
 
