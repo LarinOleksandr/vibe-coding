@@ -23,3 +23,9 @@
 - Root cause / constraint: Free-form PRDs cause duplication (product vs feature) and miss key inputs (users, JTBD, baselines).
 - Fix / decision: Standardize Product PRD and Feature PRD templates; Product PRD is the single source of truth, Feature PRDs reference it.
 - Prevention: Use proactive PRD interviews (agent drafts + recommends + asks for approvals) and keep absolute OS paths out of instructions (use `KB_ROOTS` aliases).
+
+## [5]
+- Why it matters: People should not need to guess what is “safe to change”; the agent must prevent accidental breaking changes.
+- Root cause / constraint: “Do not change” constraints can be missed in bug/refactor threads unless they are routed and always checked.
+- Fix / decision: Add `DOC_PROJECT_PROTECTED_CONTRACTS` as the single source of truth, and require the agent to proactively propose updates (user approves/rejects).
+- Prevention: Route the doc via `KB_ROOTS` and include it in `$context-load` and `$feature-start` baseline reads.

@@ -22,6 +22,7 @@ Project Knowledge and Artifacts
 - `DOC_PROJECT_CONTEXT`
 - `DOC_PROJECT_ROADMAP`
 - `DOC_PROJECT_INSIGHTS`
+- `DOC_PROJECT_PROTECTED_CONTRACTS`
 
 Knowledge routes
 

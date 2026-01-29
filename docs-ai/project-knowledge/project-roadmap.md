@@ -12,6 +12,7 @@
   - [Completed] Bug-fix requires root cause investigation
   - [Completed] Worktree workflow removed due to repo-path stability
   - [Completed] Skill routing rule added to prevent generic advice
+  - [Completed] Add protected contracts doc + proactive proposal workflow
 
 ### Feature Development
 - 1. [Not Started] TBD

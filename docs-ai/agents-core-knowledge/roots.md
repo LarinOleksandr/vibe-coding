@@ -30,6 +30,7 @@
 - `DOC_PROJECT_CONTEXT` -> `./docs-ai/project-knowledge/project-context.md` - Canonical project overview.
 - `DOC_PROJECT_ROADMAP` -> `./docs-ai/project-knowledge/project-roadmap.md` - Project roadmap and status tracking.
 - `DOC_PROJECT_INSIGHTS` -> `./docs-ai/project-knowledge/project-insights.md` - Durable insights, decisions, and lessons learned.
+- `DOC_PROJECT_PROTECTED_CONTRACTS` -> `./docs-ai/project-knowledge/project-protected-contracts.md` - Project-level protected contracts (must-not-break without approval).
 
 ## Knowledge routes
 

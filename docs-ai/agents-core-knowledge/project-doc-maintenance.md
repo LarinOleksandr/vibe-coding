@@ -47,6 +47,7 @@ Files to consider:
 - `DOC_PROJECT_CONTEXT`
 - `DOC_PROJECT_ROADMAP`
 - `DOC_PROJECT_INSIGHTS`
+- `DOC_PROJECT_PROTECTED_CONTRACTS` (when stable contracts are added/updated or when an approved breaking change changes what must be protected)
 
 ---
 

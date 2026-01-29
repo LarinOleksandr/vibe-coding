@@ -30,6 +30,9 @@ Invoke when any apply:
 
 ## Procedure
 
+0. Review protected contracts
+   - read `DOC_PROJECT_PROTECTED_CONTRACTS`
+   - treat it as must-not-break unless the user explicitly approves a breaking change
 1. Confirm the bug statement
    - restate expected vs actual behavior
 2. Gather missing repro details
@@ -52,6 +55,7 @@ Invoke when any apply:
    - run agreed tests or state why not
 8. Summarize
    - root cause, fix, and validation status
+   - if this bug fix revealed a new stable contract people will rely on, propose adding it to `DOC_PROJECT_PROTECTED_CONTRACTS` (simple words; user approves/rejects)
    - if there is a durable lesson learned or guardrail that will prevent repeat mistakes, add a short entry to `DOC_PROJECT_INSIGHTS` (otherwise do not)
      - keep it 3-6 bullets and focus on why it matters, the root cause/constraint, the fix/decision, and the prevention
 

@@ -29,6 +29,9 @@ Invoke when any apply:
 
 ## Procedure
 
+0. Review protected contracts
+   - read `DOC_PROJECT_PROTECTED_CONTRACTS`
+   - treat it as the default must-not-change set for refactors
 1. Confirm intent
    - verify behavior must remain unchanged
 2. Propose scope and risks
@@ -45,6 +48,7 @@ Invoke when any apply:
 6. Summarize and report
    - what changed
    - validation status
+   - if the refactor introduced or clarified a stable contract people will rely on, propose adding it to `DOC_PROJECT_PROTECTED_CONTRACTS` (simple words; user approves/rejects)
 
 ## Acceptance checks
 

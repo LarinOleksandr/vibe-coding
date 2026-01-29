@@ -194,6 +194,13 @@ If I approve, it runs the browser verification workflow and fixes any obvious is
 
 When the feature feels complete, the agent updates the project docs automatically during `$commit-push-create-pr`.
 
+It also checks if we created something people will rely on long-term (a “protected contract”).
+If yes, it proposes additions in simple words and asks me to approve or reject.
+
+If I approve, it updates:
+
+- `docs-ai/project-knowledge/project-protected-contracts.md`
+
 If the work changed the framework itself (skills, commands, routing, AGENTS rules), the agent also performs the required framework maintenance updates in the same change set so the repo stays internally consistent.
 
 Finally, the agent proposes committing and asks for my approval to run:

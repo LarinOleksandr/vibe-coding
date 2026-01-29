@@ -44,6 +44,7 @@ Invoke when any apply:
 1. Identify change boundaries
    - list touched components/layers
    - list contracts/schemas/data affected
+   - review `DOC_PROJECT_PROTECTED_CONTRACTS` and call out any protected items the plan might impact
    - if scope/areas/risks are unclear, propose and confirm before finalizing the plan
 2. Add design system initialization steps when UI is involved
    - If the plan touches `frontend/web/**` or includes UI work:
@@ -68,6 +69,7 @@ Invoke when any apply:
    - smoke path(s)
    - schema validation points (if any)
 6. Add rollback notes (only if data/schema involved)
+   - if the plan breaks a protected contract, include the user approval gate + migration + rollback here
 7. Write or update the plan file
    - minimal and executable
    - reflects current intended approach

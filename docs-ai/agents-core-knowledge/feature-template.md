@@ -21,6 +21,9 @@
 - Default delivery approach: ship the simplest solution that meets acceptance criteria.
 - Proactively highlight likely issues, risks, and edge cases (including failure modes) before implementation.
 - If the validation plan is unclear, propose generating a test plan (`$test-plan <short feature description>`) and ask the user to confirm before doing so.
+- Always check protected contracts (`DOC_PROJECT_PROTECTED_CONTRACTS`):
+  - call out if the feature impacts them
+  - if the feature introduces a new stable contract people will rely on, propose adding it (simple words; user approves/rejects)
 
 ---
 
@@ -81,6 +84,12 @@ Folders, services, or modules expected to change.
 ## Constraints
 
 Hard limits that must be respected (performance, security, API compatibility, architectural rules).
+
+## Protected contracts (project-level)
+
+- Read `DOC_PROJECT_PROTECTED_CONTRACTS`.
+- State: "Impacts protected contracts: Yes/No".
+- If "Yes": list the exact contract(s) and ask for explicit approval before proceeding.
 
 ## Assumptions
 

@@ -45,12 +45,14 @@ Invoke when any apply:
    - `DOC_PROJECT_CONTEXT`
    - `DOC_PROJECT_ROADMAP`
    - `DOC_PROJECT_INSIGHTS`
+   - `DOC_PROJECT_PROTECTED_CONTRACTS`
 2. If inputs are missing, ask once for the minimum list and stop.
 3. Restate the product input in 3-7 bullets (what it is, who it is for, why it matters).
 4. Draft or update foundation docs:
    - `DOC_PROJECT_CONTEXT`
    - `DOC_PROJECT_ROADMAP`
    - `DOC_PROJECT_INSIGHTS`
+   - `DOC_PROJECT_PROTECTED_CONTRACTS`
 5. Ask for confirmations (single pass):
    - scope in/out
    - success criteria

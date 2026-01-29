@@ -39,6 +39,9 @@ Invoke when any apply:
 
 ## Procedure
 
+0. Review protected contracts
+   - read `DOC_PROJECT_PROTECTED_CONTRACTS`
+   - list which protected contracts are impacted (if any)
 1. Map changes to layers
    - domain / application / adapters / frameworks
    - verify dependency direction
@@ -59,7 +62,10 @@ Invoke when any apply:
    - approve, approve with changes, or block with rationale
 8. Write the review file
    - summary, conflicts, alternatives, and outcome
-   - include suggested follow-up work if a refactor is recommended
+   - include a "Protected contracts impact" section:
+     - not impacted / impacted (list)
+     - if impacted: what would break, and what user approval is required before implementation
+    - include suggested follow-up work if a refactor is recommended
 
 ## Acceptance checks
 

@@ -104,6 +104,27 @@ Thread codes (use what matches the task):
 - Design review: `DR-###`
 - Deploy & publish: `DP-###`
 
+### 2.2 Protected contracts (safety defaults)
+
+Protected contracts are parts of the product that should not change by accident.
+
+Examples:
+
+- stored data shape (database tables/columns)
+- API shape (a URL path and what it accepts/returns)
+- login/session behavior
+
+Single source of truth:
+
+- `docs-ai/project-knowledge/project-protected-contracts.md`
+
+How it works:
+
+1. The agent reads this list before work.
+2. When the agent sees a likely “contract moment”, it proposes updates in simple words.
+3. You answer: Approve / Reject / Approve with changes.
+4. If you approve a breaking change, the agent must also write a short migration plan and rollback plan.
+
 ---
 
 ## 3) Project Planning Workflow (Choose what to build next)

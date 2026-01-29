@@ -44,7 +44,7 @@
 | Design review artifacts | `docs-ai/agents-artifacts/design-reviews/` | created by `$design-review` |
 | PRD artifacts | `docs-ai/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `docs-ai/agents-artifacts/research-briefs/` | created by `$feature-research` |
-| Project context/roadmap/insights | `docs-ai/project-knowledge/project-context.md`, `docs-ai/project-knowledge/project-roadmap.md`, `docs-ai/project-knowledge/project-insights.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
+| Project context/roadmap/insights/contracts | `docs-ai/project-knowledge/project-context.md`, `docs-ai/project-knowledge/project-roadmap.md`, `docs-ai/project-knowledge/project-insights.md`, `docs-ai/project-knowledge/project-protected-contracts.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
 | Archived legacy docs | `docs-ai/old/` | non-canonical reference only |
 
 ---
