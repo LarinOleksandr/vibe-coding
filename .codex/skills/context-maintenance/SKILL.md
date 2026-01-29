@@ -63,7 +63,13 @@ Invoke when any apply:
    - if the same rule appears in multiple layers, keep it in the correct layer and replace others with a reference
    - if guidance conflicts, pick a single source of truth and update references accordingly
 7. Update project documents when the decision/change affects project state
-   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_ROADMAP`, and append to `DOC_PROJECT_INSIGHTS`
+   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_ROADMAP`, `DOC_PROJECT_PROTECTED_CONTRACTS` (when relevant), and append to `DOC_PROJECT_INSIGHTS`
+   - PRD sync rule:
+     - If a Product PRD was created/updated, ensure `DOC_PROJECT_CONTEXT` and `DOC_PROJECT_ROADMAP` reflect it (product scope, baselines, and the derived backlog).
+     - If the Product PRD user profile(s) were created/updated, ensure `DOC_PROJECT_CONTEXT` stays consistent about the intended primary users and constraints (high level).
+     - If the Product PRD jobs-to-be-done were created/updated, ensure `DOC_PROJECT_CONTEXT` stays consistent about the primary job and the product positioning (high level).
+     - If Feature PRDs were created/updated, ensure `DOC_PROJECT_ROADMAP` reflects the next feature work and links/notes are consistent with the Product PRD (no duplicated product-level decisions).
+     - If the PRD methodology changed (templates, interview guide, rules), append a short entry to `DOC_PROJECT_INSIGHTS` so future work follows the same PRD workflow.
 8. Ensure indices remain accurate
    - `DOC_SKILLS_LIST` reflects the current skills
    - No `ROOT_KNOWLEDGE_BASE/slash-commands/` folder exists in this repo (skills are the canonical entrypoint).

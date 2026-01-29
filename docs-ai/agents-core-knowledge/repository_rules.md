@@ -40,6 +40,14 @@ Treat `docs/` as human-facing documentation only.
 - Agent-oriented knowledge and prompts belong under `docs-ai/`.
 - Keep `docs/` focused on onboarding and developer documentation.
 
+### routed-aliases-over-absolute-paths (must)
+
+In agent instructions (AGENTS, routed docs, skills, templates), prefer `KB_ROOTS` aliases and repo-relative paths.
+
+- Use `ROOT_*`, `KB_*`, and `DOC_*` routes instead of absolute OS paths (like `C:\\...`).
+- Rationale: absolute paths are machine-specific and cause broken links and inconsistent behavior.
+- Exception: in scripts and commands, use relative paths from the repo root when possible (for example `scripts/...`).
+
 ### scoped-agents-only-when-needed (should)
 
 Add scoped `AGENTS.md` only when local constraints differ from root.
