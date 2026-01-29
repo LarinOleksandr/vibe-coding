@@ -45,7 +45,7 @@ Integrate beneficial practices from the superpowers skills repository into the V
 **Required items:**
 - **Systematic debugging integration:** Add root-cause-first workflow into `C:\Dev\3-Projects\vibe-coding\.codex\skills\bug-fix\SKILL.md` (either by direct steps or a dedicated skill cross-link).
 - **Verification overlap check:** Compare with `C:\Dev\3-Projects\vibe-coding\.codex\skills\commit-push-create-pr\SKILL.md` to avoid duplicate rules; embed the gate there.
-- **Worktree removal audit:** Ensure no worktree workflow references remain in user docs or skills.
+- **Worktree workflow audit:** Ensure worktree guidance is path-stable (`.worktrees/`) and consistent across docs and tools.
 - **Writing-plans extraction:** Identify transferable practices from `C:\Users\oleks\.codex\superpowers\skills\writing-plans\SKILL.md` and fold the useful ones into `C:\Dev\3-Projects\vibe-coding\.codex\skills\plan-creation\SKILL.md` (or a new skill if needed).
 
 ### Step 4: Align terminology, paths, and triggers
@@ -96,7 +96,7 @@ Integrate beneficial practices from the superpowers skills repository into the V
 | subagent-driven-development | defer | n/a | n/a | Requires subagent infrastructure. |
 | systematic-debugging | adapt | `C:\Dev\3-Projects\vibe-coding\.codex\skills\bug-fix\SKILL.md` | update | Add root-cause-first workflow. |
 | test-driven-development | defer | n/a | n/a | Too strict for current framework; revisit later. |
-| using-git-worktrees | reject | n/a | n/a | Removed from framework to avoid repo-structure confusion. |
+| using-git-worktrees | adapt | `C:\Dev\3-Projects\vibe-coding\scripts\git-worktree-start.ps1` and `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\git-worktrees.md` | update | Reintroduced with `.worktrees/` convention to keep repo paths stable. |
 | using-superpowers | reject | n/a | n/a | Conflicts with current framework flow. |
 | verification gate | adapt | `C:\Dev\3-Projects\vibe-coding\.codex\skills\commit-push-create-pr\SKILL.md` | update | Keep a minimal verification gate inside the finish workflow. |
 | writing-plans | adapt | `C:\Dev\3-Projects\vibe-coding\.codex\skills\plan-creation\SKILL.md` | update | Fold useful ideas into plan-creation. |

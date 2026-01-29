@@ -83,6 +83,12 @@ Then it asks: "Starting feature: web UI foundation. Proceed?"
 
 I say "Proceed."
 
+Before writing code, the agent automatically sets up safe Git isolation for this thread:
+
+- creates a branch from the thread name
+- creates a Git worktree folder under `C:\Dev\3-Projects\vibe-coding\.worktrees\...`
+- works only inside that worktree folder so parallel threads do not overwrite each other
+
 ## 4) The agent sets the UI rules before building UI screens
 
 When the feature includes UI work under `frontend/web`, the agent routes itself to the existing UI/UX baselines:
@@ -216,9 +222,18 @@ Finally, the agent proposes committing and asks for my approval to run:
 
 `$commit-push-create-pr`
 
-I approve by running `$commit-push-create-pr`. The agent verifies, updates docs, commits, and then I close the thread.
+I don’t need to remember Git steps. I just say: “Wrap up / we are done.”
 
-After that, the agent shows a small menu (merge / create PR / start next roadmap item).
+The agent runs `$commit-push-create-pr` and:
+
+- verifies and updates docs
+- commits and pushes
+- creates a PR automatically (when possible)
+- asks one simple question: “Merge into `main` now? (Yes/No)”
+
+If I say Yes and the merge succeeds, the agent cleans up the thread automatically (remove worktree + delete branch).
+
+If I say No, the PR and worktree stay as-is so we can continue later.
 
 ## What I notice (observations)
 

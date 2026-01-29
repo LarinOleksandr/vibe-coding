@@ -84,6 +84,18 @@ If the task changes materially, start a new thread.
 
 If you don't know how to name the thread, ask the agent to propose a compliant thread name and follow it.
 
+### 2.3 Git setup (agent does this automatically)
+
+You should not think about Git commands.
+
+What you should expect when you start a thread that changes files (feature/bug/refactor/docs/deploy):
+
+- The agent creates a branch from the thread name.
+- The agent creates an isolated work folder (Git worktree) under `c:\Dev\3-Projects\vibe-coding\.worktrees\...` so parallel threads do not overwrite each other.
+- The agent works only inside that worktree folder for the rest of the thread.
+
+If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (“no worktree for this thread”).
+
 
 ### 2.1 Thread naming (required)
 
@@ -329,13 +341,15 @@ When the agent believes the feature scope is complete and validation was success
 
 What the agent will do:
 
-- When you run `$commit-push-create-pr`, the agent verifies, updates project docs, then commits and pushes.
+- The agent runs the finish workflow (`$commit-push-create-pr`) automatically when you say “wrap up / we are done / close the thread”.
+- It verifies, updates project docs, commits, pushes, and attempts to create a PR automatically.
+- Then it asks one simple question: “Merge into `main` now? (Yes/No)”
+- If you say Yes and the merge succeeds, it cleans up the thread automatically (remove worktree + delete branch).
 
 What you do:
 
-- Run `$commit-push-create-pr` (you can also run it proactively).
-  - After that, the agent shows a small menu (merge / create PR / start next roadmap item).
-- Close the thread when you are satisfied.
+- Reply with “Yes” or “No” to the merge question.
+- If there are merge conflicts, answer in plain words (example: “prefer the docs version”).
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
 
@@ -404,6 +418,8 @@ Start a dedicated deploy thread:
 - Work happens on branches via PRs (no direct pushes to `main`)
 - Branch names are derived from the active thread name (see `KB_THREADS`)
 - The agent uses `scripts/git-task-start.ps1` to create/switch branches and `scripts/git-pr-create.ps1` to push/open PRs when possible
+- If you run multiple threads in parallel, use Git worktrees so each thread has its own folder (see `KB_GIT_WORKTREES` and `scripts/git-worktree-start.ps1`)
+- After you merge a PR from a worktree branch, clean up the worktree folder using `scripts/git-worktree-remove.ps1` (see `KB_GIT_WORKTREES`)
 - Publishing happens from `main` after required checks pass
 
 ### 8.2 Choose Netlify vs Vercel (rule-based)

@@ -10,7 +10,7 @@
   - [Completed] Make PRD interview proactive (agent drafts + recommends)
   - [Completed] Verification gate added to `$commit-push-create-pr`
   - [Completed] Bug-fix requires root cause investigation
-  - [Completed] Worktree workflow removed due to repo-path stability
+  - [Completed] Git worktrees reintroduced with path-stable `.worktrees/` convention
   - [Completed] Skill routing rule added to prevent generic advice
   - [Completed] Add protected contracts doc + proactive proposal workflow
   - [Completed] Add opt-in conversation summaries artifact + `$conversation-save` skill

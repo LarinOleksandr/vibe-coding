@@ -92,6 +92,12 @@ When a thread implies code changes (feature/bug/refactor/docs/deploy), the agent
 3. Open a PR back to `main`.
 4. Merge, then delete the branch.
 
+## Parallel threads (Git worktrees)
+
+If you want multiple threads to run in parallel without overwriting each other’s files, use Git worktrees.
+
+This repo’s worktree rules are defined in `KB_GIT_WORKTREES`.
+
 Branch prefix mapping (from thread code):
 
 - `F-###` -> `feature/<code>-<goal>`

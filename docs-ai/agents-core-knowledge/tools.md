@@ -17,6 +17,8 @@
 - Start stack (if present): `./scripts/dev-up.sh`
 - Stop stack (if present): `./scripts/dev-down.sh`
 - Start a work branch from thread name: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<thread name>"`
+- Start a worktree (parallel threads) from thread name: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-start.ps1 -ThreadName "<thread name>"`
+- Remove a worktree (cleanup): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>"`
 - Push branch + create PR (if possible): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1`
 - Merge current branch into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
 

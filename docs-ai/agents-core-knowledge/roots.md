@@ -58,6 +58,7 @@
 - `KB_TECH_STACK` -> `./docs-ai/agents-core-knowledge/tech-stack-baseline.md` - Tech stack baseline (default).
 - `KB_API_CONVENTIONS` -> `./docs-ai/agents-core-knowledge/api-conventions.md` - REST/API conventions, pagination, and HTTP error mapping.
 - `KB_UI_TESTING_PLAYWRIGHT` -> `./docs-ai/agents-core-knowledge/ui-testing-playwright.md` - UI validation rules: Playwright + screenshots + auth state.
+- `KB_GIT_WORKTREES` -> `./docs-ai/agents-core-knowledge/git-worktrees.md` - Git worktrees workflow for safe parallel threads.
 
 ## Project Docs (human-oriented)
 

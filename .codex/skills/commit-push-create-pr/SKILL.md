@@ -11,7 +11,7 @@ description: Use when work is complete and you want to commit it, push it to Git
 
 ## Purpose
 
-Commit current work, publish it to GitHub, update documentation, then show a simple next-action menu.
+Commit current work, publish it to GitHub, update documentation, then ask whether to merge into `main`.
 
 ## When to use
 
@@ -56,19 +56,21 @@ Invoke when any apply:
      - otherwise -> `chore: ...`
    - Create the commit.
 5. If a commit was created, publish it to GitHub (push).
+   - Default behavior: push and attempt to create a PR automatically.
 6. Show the overall roadmap from `DOC_PROJECT_ROADMAP` with statuses.
 7. Propose saving a short conversation summary (optional).
    - Ask: “Do you want me to save a short summary of this discussion to `ROOT_AGENTS_ARTIFACTS/conversations/`? (Yes/No)”
    - If Yes: invoke `$conversation-save`.
-8. Show the next-action menu and ask the user to pick one option:
-   - 1. Merge into `main`
-   - 2. Create PR (optional)
-   - 3. Start next roadmap item
-9. Handle the chosen option:
-   - If 1: merge the current branch into `main` and report the outcome.
-     - After a successful merge, delete the work branch locally and on `origin` (when possible). Do not ask.
-   - If 2: attempt to create a PR (if not possible automatically, explain what the user should do next in simple words).
-   - If 3: ask the user to pick the next roadmap item (paste the exact item line), then return a compliant thread name suggestion (`KB_THREADS`).
+8. Ask one simple question:
+   - “Do you want me to merge this into `main` now? (Yes/No)”
+9. Handle the answer:
+   - If Yes:
+     - Merge the current branch into `main` and report the outcome.
+     - After a successful merge:
+       - If this work was done in a worktree under `.worktrees/`, remove that worktree folder.
+       - Delete the work branch locally and on `origin` (when possible). Do not ask.
+   - If No:
+     - Leave the branch, PR (if created), and worktree as-is so the user can continue later.
 
 ## Commands
 
@@ -78,9 +80,9 @@ Invoke when any apply:
 - `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<current thread name>"` (only if on main/master)
 - `git add .`
 - `git commit -m "<type>: <AUTO_SUMMARY_OF_COMPLETED_WORK>"`
-- Push: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1 -SkipGh` (only if a commit was created)
-- Create PR (optional): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
+- Push + create PR (best effort): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
 - Merge into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
+- Remove worktree (only if this work was done under `.worktrees/`): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>"`
 
 ## User-facing output (keep it non-technical)
 
@@ -93,10 +95,10 @@ Say:
 - branch name
 - whether a commit was created (Yes/No)
 - whether the branch was pushed (Yes/No)
-- whether a PR was created (Yes/No, only if the user chose option 2)
-- if the user chose option 1: whether merge into main succeeded (Yes/No)
-- if the user chose option 1: whether the work branch was deleted (local/origin) (Yes/No/Skipped)
-- if the user chose option 3: suggested next thread name
+- whether a PR was created (Yes/No)
+- whether merge into main happened (Yes/No)
+- if merge happened: whether the work branch was deleted (local/origin) (Yes/No/Skipped)
+- if merge happened: whether the worktree was cleaned up (Yes/No/Skipped)
 
 Avoid:
 
@@ -124,9 +126,9 @@ You:
 
 - Ensure branch
 - Update docs
-- Commit and push
+- Commit, push, and create PR (best effort)
 - Show roadmap
-- Show menu: merge / create PR / start next roadmap item
+- Ask: merge into main? (Yes/No)
 
 ## Acceptance checks
 
@@ -136,4 +138,4 @@ You:
 - Commit created or explicitly noted as nothing to commit
 - Branch pushed (when a commit exists)
 - Roadmap shown with statuses
-- Menu shown and user picked an option
+- Merge question asked and handled (Yes/No)

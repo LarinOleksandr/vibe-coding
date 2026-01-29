@@ -32,6 +32,7 @@
 | Where does X belong? (routing) | `docs-ai/agents-core-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
 | Thread naming + codes | `docs-ai/agents-core-knowledge/threads.md` | canonical thread rules |
+| Parallel threads (Git worktrees) | `docs-ai/agents-core-knowledge/git-worktrees.md` | one thread = one branch = one worktree |
 | UI/UX baseline invariants and guidelines | `docs-ai/agents-core-knowledge/ui-baseline.md`, `docs-ai/agents-core-knowledge/ux-baseline.md` | framework-level defaults for consistent UI behavior |
 | Feature brief template | `docs-ai/agents-core-knowledge/feature-template.md` | used by `$feature-start` |
 | Feature research expectations | `docs-ai/agents-core-knowledge$feature-research.md` | timeboxed research brief |

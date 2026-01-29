@@ -35,3 +35,16 @@
 - Root cause / constraint: Full chat transcripts can be large and may include secrets; we still want traceable decisions.
 - Fix / decision: Add opt-in conversation summaries under `ROOT_AGENTS_ARTIFACTS/conversations/` via `$conversation-save`.
 - Prevention: Ignore `*.transcript.md` by default and only create summaries when the user explicitly asks (or confirms after `$commit-push-create-pr`).
+
+## [7]
+- Why it matters: Parallel agent threads must not overwrite each other’s files.
+- Root cause / constraint: A “no worktrees” rule forced parallel work into one folder or full clones, which caused confusion and lost work.
+- Fix / decision: Reintroduce Git worktrees with a path-stable convention: all worktrees live under `.worktrees/` in the repo root (ignored by git).
+- Prevention: Use `scripts/git-worktree-start.ps1` for parallel threads and keep “one thread = one branch = one worktree”.
+- Notes: This supersedes insight **[1]** for the current workflow.
+
+## [8]
+- Why it matters: Users should not have to remember Git steps (branch, PR, cleanup) to avoid losing work.
+- Root cause / constraint: Manual “create PR / merge / cleanup” decisions add confusion and lead to unfinished branches/worktrees.
+- Fix / decision: Make the default finish flow agent-led: on “wrap up / close thread”, run `$commit-push-create-pr`, create PR automatically (best effort), ask only “merge now? Yes/No”, and auto-clean after merge.
+- Prevention: Keep user-facing docs aligned and keep one finish workflow (`$commit-push-create-pr`) as the single source of truth.

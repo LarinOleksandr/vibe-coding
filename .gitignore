@@ -21,3 +21,6 @@ docs-ai/agents-artifacts/playwright-report/*
 !docs-ai/agents-artifacts/playwright-report/README.md
 test-results/
 
+# Git worktrees (do not commit)
+.worktrees/
+
