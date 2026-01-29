@@ -48,7 +48,7 @@ Default: 30 minutes (or the smallest useful scope). If the review grows, propose
    - concrete recommendations (copy, layout, steps)
    - ???good/better/best??? options only if requested
 4. Produce the artifact
-   - write `knowledge-base/agents-artifacts/design-reviews/<task-slug>.design-review.md`
+   - write `ROOT_AGENTS_ARTIFACTS/design-reviews/<task-slug>.design-review.md`
    - keep it short and implementable
 
 ## Artifact format (required)

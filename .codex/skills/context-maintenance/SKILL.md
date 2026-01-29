@@ -53,20 +53,20 @@ Invoke when any apply:
    - update it when any apply:
      - a top-level folder is added/removed/renamed
      - a runtime boundary/service folder is added/removed/renamed
-     - a new agent-artifact category is added under `knowledge-base/agents-artifacts/`
+     - a new agent-artifact category is added under `ROOT_AGENTS_ARTIFACTS`
      - shared conventions are introduced (`shared/`, `scripts/`, `tests/`, `config/`)
 5. Update the framework with correct layering
    - keep rules in AGENTS and scoped AGENTS only
-   - keep knowledge in `knowledge-base/agents-knowledge/` and referenced by route
+   - keep knowledge in `ROOT_AGENTS_KNOWLEDGE` and referenced by route
    - keep procedures in `.codex/skills/` and slash commands, referencing routed docs instead of duplicating them
 6. Remove duplication and resolve conflicts
    - if the same rule appears in multiple layers, keep it in the correct layer and replace others with a reference
    - if guidance conflicts, pick a single source of truth and update references accordingly
 7. Update project documents when the decision/change affects project state
-   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PRODUCT_DEVELOPMENT_ROADMAP`, and append to `DOC_PROJECT_INSIGHTS`
+   - apply `KB_PROJECT_DOC_MAINTENANCE` to update `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_ROADMAP`, and append to `DOC_PROJECT_INSIGHTS`
 8. Ensure indices remain accurate
    - `DOC_SKILLS_LIST` reflects the current skills
-   - `knowledge-base/slash-commands/README.md` lists existing commands and brief purpose lines
+   - No `ROOT_KNOWLEDGE_BASE/slash-commands/` folder exists in this repo (skills are the canonical entrypoint).
 9. Report results
    - what changed, why, and any remaining follow-ups
 

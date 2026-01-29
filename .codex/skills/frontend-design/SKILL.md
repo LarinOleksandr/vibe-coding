@@ -41,7 +41,7 @@ Invoke when any apply:
      - the generated `https://ui.shadcn.com/init?...` URL, and
      - the target template (`next` or `vite`) if it is not obvious from context
    - Update `frontend/web/config/app-design-preset.json` with the new preset (no duplication elsewhere).
-   - Record the durable decision in `knowledge-base/project-knowledge/project-insights.md` (do not paste huge token values; reference the config path).
+  - Record the durable decision in `DOC_PROJECT_INSIGHTS` (do not paste huge token values; reference the config path).
 3. Enforce the approval gate (repo rule)
    - If applying the preset will add new npm dependencies, obtain explicit approval once for the design system dependency bundle.
    - After approval, write `frontend/web/config/deps-approved.json` so the agent does not re-ask for the same bundle.

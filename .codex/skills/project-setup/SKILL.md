@@ -33,24 +33,24 @@ Invoke when any apply:
 ## Procedure
 
 1. Read the baseline project context, in order:
-   - `AGENTS.md`
-   - `knowledge-base/agents-knowledge/roots.md`
-   - `knowledge-base/agents-knowledge/repository_rules.md`
-   - `knowledge-base/agents-knowledge/repository-layout.md`
-   - `knowledge-base/agents-knowledge/tech_stack.md`
-   - `knowledge-base/agents-knowledge/runtime.md`
-   - `knowledge-base/agents-knowledge/tools.md`
-   - `knowledge-base/agents-knowledge/threads.md`
-   - `.codex/skills/skills.md`
-   - `knowledge-base/project-context.md`
-   - `knowledge-base/product-development-roadmap.md`
-   - `knowledge-base/project-insights.md`
+   - `ROOT_AGENTS`
+   - `KB_ROOTS`
+   - `KB_REPOSITORY_RULES`
+   - `KB_REPOSITORY_LAYOUT`
+   - `KB_TECH_STACK`
+   - `KB_RUNTIME`
+   - `KB_TOOLS`
+   - `KB_THREADS`
+   - `DOC_SKILLS_LIST`
+   - `DOC_PROJECT_CONTEXT`
+   - `DOC_PROJECT_ROADMAP`
+   - `DOC_PROJECT_INSIGHTS`
 2. If inputs are missing, ask once for the minimum list and stop.
 3. Restate the product input in 3-7 bullets (what it is, who it is for, why it matters).
 4. Draft or update foundation docs:
-   - `knowledge-base/project-context.md`
-   - `knowledge-base/product-development-roadmap.md`
-   - `knowledge-base/project-insights.md`
+   - `DOC_PROJECT_CONTEXT`
+   - `DOC_PROJECT_ROADMAP`
+   - `DOC_PROJECT_INSIGHTS`
 5. Ask for confirmations (single pass):
    - scope in/out
    - success criteria

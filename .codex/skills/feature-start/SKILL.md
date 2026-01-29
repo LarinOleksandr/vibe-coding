@@ -29,8 +29,8 @@ Invoke when any apply:
 1. Read in order:
    - `DOC_PROJECT_CONTEXT`
    - `DOC_PROJECT_INSIGHTS`
-   - `DOC_PRODUCT_DEVELOPMENT_ROADMAP`
-2. If `DOC_PRODUCT_DEVELOPMENT_ROADMAP` is missing or malformed, suggest `$project-setup` and stop.
+   - `DOC_PROJECT_ROADMAP`
+2. If `DOC_PROJECT_ROADMAP` is missing or malformed, suggest `$project-setup` and stop.
 3. If a legacy `DOC_PROJECT_FEATURE_PLAN` exists, read it only if the roadmap is missing.
 4. Ask: "Starting feature: [feature name]. Proceed?"
 5. If the selected feature has subfeatures, include them in the message.

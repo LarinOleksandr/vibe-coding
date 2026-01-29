@@ -39,9 +39,9 @@ Invoke when any apply:
    - If the proof command fails, stop. Do not commit or push.
 4. If changes exist:
    - Update project docs (minimal edits, only when needed):
-     - `knowledge-base/project-knowledge/project-context.md`
-     - `knowledge-base/project-knowledge/project-roadmap.md`
-     - `knowledge-base/project-knowledge/project-insights.md`
+     - `DOC_PROJECT_CONTEXT`
+     - `DOC_PROJECT_ROADMAP`
+     - `DOC_PROJECT_INSIGHTS`
    - Rules for doc updates:
      - Roadmap: update status lines for what you just finished.
      - Insights: add only durable decisions/lessons (not routine progress).

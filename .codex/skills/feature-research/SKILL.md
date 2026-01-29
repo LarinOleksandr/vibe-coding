@@ -31,7 +31,7 @@ Invoke when any apply:
 
 ## Output
 
-- Write: `knowledge-base/agents-artifacts/research-briefs/<task-slug>.research.md`
+- Write: `ROOT_AGENTS_ARTIFACTS/research-briefs/<task-slug>.research.md`
 - Use the template from `KB_FEATURE_RESEARCH`
 - Do not overwrite an existing brief for the same slug
 

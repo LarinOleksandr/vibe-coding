@@ -38,7 +38,7 @@ Ask questions one at a time to refine the idea. Once you understand what you're 
 
 **Documentation:**
 
-- Write the validated PRD to `knowledge-base/agents-artifacts/prds/YYYY-MM-DD-<topic>-prd.md`
+- Write the validated PRD to `ROOT_AGENTS_ARTIFACTS/prds/YYYY-MM-DD-<topic>-prd.md`
 - Commit the PRD document to git
 
 **Implementation (if continuing):**
