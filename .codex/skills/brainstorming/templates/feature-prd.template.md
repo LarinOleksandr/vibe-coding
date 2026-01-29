@@ -5,6 +5,7 @@ Use this when you are adding or changing one feature inside an existing product.
 ## Product context (reference)
 
 - Product PRD reference: `ROOT_AGENTS_ARTIFACTS/prds/<product-prd-file>.md` (or write "Unknown")
+- Supported Product PRD capability: (copy the capability name; or write "Unknown")
 - Product baseline to follow: scope boundaries, success metrics, and non-functional baselines from the Product PRD
 - Deviations: if this feature changes a product-level decision, update the Product PRD first
 
@@ -55,6 +56,8 @@ One sentence is enough. This is the outcome we expect after release.
 ## Acceptance criteria
 
 Write measurable pass/fail statements (so tests can be written without guessing).
+
+These must satisfy (or refine) the capability-level acceptance criteria from the Product PRD.
 
 Prefer criteria that include:
 

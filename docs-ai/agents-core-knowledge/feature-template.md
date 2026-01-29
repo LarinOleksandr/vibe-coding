@@ -77,6 +77,29 @@ What is explicitly excluded. Prevents accidental expansion.
 
 Observable conditions that must be met for the feature to be considered complete.
 
+### Keep it consistent with the Product PRD (important)
+
+Acceptance criteria exist at two levels. They are the same concept ("what done means"), but different detail.
+
+1) Product PRD (capability-level)
+
+- Short and outcome-focused (usually 1-3 bullets).
+- Tied to the capability and its priority.
+- Avoid test-level details (no deep API status code lists unless the PRD is purely API).
+
+2) Feature (feature-level)
+
+- Detailed enough to build and test without guessing.
+- Includes inputs, expected results, limits (when they matter), and failure behavior.
+
+### Linkage rule (to avoid confusion)
+
+Every feature must say which Product PRD capability it delivers.
+
+- The feature-level acceptance criteria must satisfy (or refine) the capability-level acceptance criteria.
+- They must not contradict the Product PRD.
+- If you discover the Product PRD criteria are wrong, update the Product PRD first, then continue.
+
 ## Affected areas
 
 Folders, services, or modules expected to change.

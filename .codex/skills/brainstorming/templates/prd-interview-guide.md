@@ -140,7 +140,7 @@ Ask user:
 ### 8) Product scope and backlog outline
 
 Agent does:
-- Draft high-level capabilities (no test-level acceptance criteria here).
+- Draft high-level capabilities with capability-level acceptance criteria (short, outcome-focused; no test-level detail).
 - Draft key use cases.
 - Draft a backlog outline of features that will each need a Feature PRD.
 - Identify the smallest viable v1 and recommend.
@@ -238,6 +238,7 @@ Ask user:
 
 Agent does:
 - Draft in-scope/out-of-scope.
+- Confirm which Product PRD capability this feature delivers (or record as Unknown).
 - Draft acceptance criteria as pass/fail with inputs/outputs/limits and failure behavior.
 - Identify missing details that block testability and propose defaults.
 

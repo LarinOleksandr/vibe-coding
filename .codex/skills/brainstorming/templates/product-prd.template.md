@@ -211,12 +211,15 @@ Use this only if positioning matters right now.
 
 ### In scope (high-level capabilities)
 
-List 5-12 capabilities at a high level (no detailed acceptance criteria here).
+List 5-12 capabilities at a high level.
+
+Acceptance criteria here are **capability-level** (short, outcome-focused). Feature PRDs will refine them with build/test-level detail.
 
 For each capability:
 
 - Capability:
 - Intended user outcome:
+- Acceptance criteria (capability-level; 1-3 pass/fail outcome checks):
 - Priority: P0 / P1 / P2 (rough)
 
 ### Out of scope
