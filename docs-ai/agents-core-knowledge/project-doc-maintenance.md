@@ -9,17 +9,18 @@
 
 ## Core Project Documentation Rules
 
-1. The `/docs-ai/project-knowledge` folder **must always have** three Markdown files:
+1. The `/docs-ai/project-knowledge` folder **must always have** four Markdown files:
 
    - `DOC_PROJECT_CONTEXT`
    - `DOC_PROJECT_ROADMAP`
    - `DOC_PROJECT_INSIGHTS`
+   - `DOC_PROJECT_PROTECTED_CONTRACTS`
 
 If the project is starting from an idea/PRD and these docs are missing, empty, or clearly outdated, run `$project-setup` to draft them before any feature work.
 
 2. **Before any substantial work**, memory compaction, refactor, or feature development:
 
-   - Review `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_INSIGHTS` and `DOC_PROJECT_ROADMAP` to ensure alignment with how we work and the latest project state.
+   - Review `DOC_PROJECT_CONTEXT`, `DOC_PROJECT_INSIGHTS`, `DOC_PROJECT_ROADMAP`, and `DOC_PROJECT_PROTECTED_CONTRACTS` to ensure alignment with how we work and the latest project state.
 
 ---
 
@@ -109,6 +110,17 @@ Use this file to capture decisions, constraints, and debugging learnings that wi
 
 ---
 
+### project-protected-contracts.md
+
+**Purpose:** The “must not break” contracts for this project.
+
+**Rules:**
+
+- Only add or change a contract with explicit user approval.
+- Keep contracts short, clear, and testable.
+
+---
+
 ## Required Markdown Structure
 
 ### project-context.md
@@ -153,6 +165,17 @@ Brief description of the application and its purpose.
 - Root cause / constraint: <one line>
 - Fix / decision: <one line>
 - Prevention: <test/guardrail/check>
+</pre>
+
+---
+
+### project-protected-contracts.md
+
+<pre>
+# Project Protected Contracts
+
+## Current protected contracts
+- (bullets)
 </pre>
 
 ---

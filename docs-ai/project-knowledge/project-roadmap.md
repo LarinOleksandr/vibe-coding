@@ -13,6 +13,7 @@
   - [Completed] Worktree workflow removed due to repo-path stability
   - [Completed] Skill routing rule added to prevent generic advice
   - [Completed] Add protected contracts doc + proactive proposal workflow
+  - [Completed] Add opt-in conversation summaries artifact + `$conversation-save` skill
 
 ### Feature Development
 - 1. [Not Started] TBD

@@ -112,6 +112,7 @@ If a thread is based on an existing plan or architecture review, include the art
 - `docs-ai/agents-artifacts/plans/<task-slug>.plan.md`
 - `docs-ai/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
 - `docs-ai/agents-artifacts/design-reviews/<task-slug>.design-review.md`
+- `docs-ai/agents-artifacts/conversations/YYYY-MM-DD__<thread-code>__<slug>.summary.md` (opt-in)
 
 ---
 

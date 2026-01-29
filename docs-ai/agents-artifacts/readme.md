@@ -9,6 +9,7 @@ This folder stores agent-generated artifacts.
 - `design-reviews/` contains design review artifacts from `$design-review`
 - `prds/` contains PRDs created by `$brainstorming`
 - `research-briefs/` contains research briefs created by `$feature-research`
+- `conversations/` contains opt-in conversation summaries created by `$conversation-save`
 
 ## Rules
 
@@ -19,6 +20,7 @@ This folder stores agent-generated artifacts.
   - design reviews: `<task-slug>.design-review.md`
   - prds: `YYYY-MM-DD-<topic>-prd.md`
   - research briefs: `<task-slug>.research.md`
+  - conversation summaries: `YYYY-MM-DD__<thread-code>__<slug>.summary.md`
 - Do not delete or overwrite old artifacts.
 
 

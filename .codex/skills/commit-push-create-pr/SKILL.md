@@ -42,6 +42,7 @@ Invoke when any apply:
      - `DOC_PROJECT_CONTEXT`
      - `DOC_PROJECT_ROADMAP`
      - `DOC_PROJECT_INSIGHTS`
+     - `DOC_PROJECT_PROTECTED_CONTRACTS` (only if a contract was added/changed)
    - Rules for doc updates:
      - Roadmap: update status lines for what you just finished.
      - Insights: add only durable decisions/lessons (not routine progress).
@@ -56,11 +57,14 @@ Invoke when any apply:
    - Create the commit.
 5. If a commit was created, publish it to GitHub (push).
 6. Show the overall roadmap from `DOC_PROJECT_ROADMAP` with statuses.
-7. Show the next-action menu and ask the user to pick one option:
+7. Propose saving a short conversation summary (optional).
+   - Ask: “Do you want me to save a short summary of this discussion to `ROOT_AGENTS_ARTIFACTS/conversations/`? (Yes/No)”
+   - If Yes: invoke `$conversation-save`.
+8. Show the next-action menu and ask the user to pick one option:
    - 1. Merge into `main`
    - 2. Create PR (optional)
    - 3. Start next roadmap item
-8. Handle the chosen option:
+9. Handle the chosen option:
    - If 1: merge the current branch into `main` and report the outcome.
      - After a successful merge, delete the work branch locally and on `origin` (when possible). Do not ask.
    - If 2: attempt to create a PR (if not possible automatically, explain what the user should do next in simple words).

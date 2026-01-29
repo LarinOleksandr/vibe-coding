@@ -17,6 +17,7 @@
 - `$code-review` - Review a diff/change set and report issues. Use when the user asks for a review. Trigger words: review, PR review, code review.
 - `$coding-standards-check` - Check code style and basic maintainability. Use when the user asks for standards or consistency checks. Trigger words: standards, style, consistency.
 - `$commit-push-create-pr` - Finish work: verify, update docs, commit, push, and optional PR/merge. Use when the user says they are done. Trigger words: commit, push, PR, merge, finish, wrap up.
+- `$conversation-save` - Save a short, opt-in conversation summary as an artifact. Use when the user asks to save the discussion. Trigger words: save conversation, save discussion, conversation summary, capture decisions.
 - `$context-load` - Load a quick project snapshot. Use when we need the current rules/routes/where things are. Trigger words: context, summary, where is, routes.
 - `$context-maintenance` - Update and clean the framework docs/skills/routing. Use when rules, routes, or skills changed. Trigger words: update docs, routing, maintain, framework.
 - `$db-migration` - Change Supabase schema/RLS/migrations safely. Use when schema or policies change. Trigger words: migration, RLS, schema, table, SQL.

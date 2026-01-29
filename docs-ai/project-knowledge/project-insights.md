@@ -29,3 +29,9 @@
 - Root cause / constraint: “Do not change” constraints can be missed in bug/refactor threads unless they are routed and always checked.
 - Fix / decision: Add `DOC_PROJECT_PROTECTED_CONTRACTS` as the single source of truth, and require the agent to proactively propose updates (user approves/rejects).
 - Prevention: Route the doc via `KB_ROOTS` and include it in `$context-load` and `$feature-start` baseline reads.
+
+## [6]
+- Why it matters: We need searchable “long-term memory” for valuable discussions without bloating Git or leaking sensitive text.
+- Root cause / constraint: Full chat transcripts can be large and may include secrets; we still want traceable decisions.
+- Fix / decision: Add opt-in conversation summaries under `ROOT_AGENTS_ARTIFACTS/conversations/` via `$conversation-save`.
+- Prevention: Ignore `*.transcript.md` by default and only create summaries when the user explicitly asks (or confirms after `$commit-push-create-pr`).
