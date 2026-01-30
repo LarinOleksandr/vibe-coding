@@ -27,6 +27,7 @@ Each worktree:
 2. **All worktrees must live under** `.worktrees/` **inside the repo root.**
 3. **`.worktrees/` must be ignored by git.** (This repo’s `.gitignore` includes it.)
 4. **One worktree per branch.** Do not open the same branch in two worktrees.
+5. **Pre-work branch check.** Before any task work, check the current branch. If it is `main`, create a new worktree + branch and work only there.
 
 ---
 

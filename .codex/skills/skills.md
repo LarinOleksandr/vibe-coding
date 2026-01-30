@@ -20,6 +20,7 @@
 - `$conversation-save` - Save a short, opt-in conversation summary as an artifact. Use when the user asks to save the discussion. Trigger words: save conversation, save discussion, conversation summary, capture decisions.
 - `$context-load` - Load a quick project snapshot. Use when we need the current rules/routes/where things are. Trigger words: context, summary, where is, routes.
 - `$context-maintenance` - Update and clean the framework docs/skills/routing. Use when rules, routes, or skills changed. Trigger words: update docs, routing, maintain, framework.
+- `$critical-review` - Provide a brutally honest critique of an idea or pitch to surface weak points early. Use when asked to critique a concept, product, startup, feature, or business plan. Trigger words: critique, harsh review, devil's advocate, red team, brutal feedback.
 - `$db-migration` - Change Supabase schema/RLS/migrations safely. Use when schema or policies change. Trigger words: migration, RLS, schema, table, SQL.
 - `$design-review` - Review UX/flow choices (artifact-based). Use when the user asks "is this UX good?" or "review the flow". Trigger words: UX, flow, design review.
 - `$documents-export` - Export agent outputs to user documents (PDF/DOCX/MD/JSON). Use when the user asks for export formats. Trigger words: export, PDF, DOCX, document.

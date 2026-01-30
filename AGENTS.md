@@ -4,25 +4,7 @@
 
 Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
 Skills live in the repo at `.codex/skills/`.
-
-## Protected contracts (must)
-
-- Before any work that changes behavior (feature, bug fix, refactor), review `DOC_PROJECT_PROTECTED_CONTRACTS` and treat it as hard constraints.
-- Be proactive:
-  - when you see a likely “contract moment” (stored data shape, API shape, auth flow, shared schema, export format), propose updates to `DOC_PROJECT_PROTECTED_CONTRACTS`
-  - explain in simple words and avoid jargon
-  - ask for a simple decision: Approve / Reject / Approve with changes
-  - if approved, the agent updates the doc and records the decision in `DOC_PROJECT_INSIGHTS`
-
-## Verification (must)
-
-- Do not guess. If you are unsure, read the repo files or use tools to verify.
-- For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
-
-## Discussion vs action (must)
-
-- Default to discussion (no file edits, no command/tool runs).
-- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
+Worktree rules (including the pre-work branch check) live in `KB_GIT_WORKTREES`.
 
 ## Skill routing (must)
 
@@ -61,3 +43,22 @@ Agent may automatically invoke additional steps when risk or complexity is detec
 
 When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs or required approvals before running the skill.
 Auto-invocation must still respect **Discussion vs action** above.
+
+## Protected contracts (must)
+
+- Before any work that changes behavior (feature, bug fix, refactor), review `DOC_PROJECT_PROTECTED_CONTRACTS` and treat it as hard constraints.
+- Be proactive:
+  - when you see a likely “contract moment” (stored data shape, API shape, auth flow, shared schema, export format), propose updates to `DOC_PROJECT_PROTECTED_CONTRACTS`
+  - explain in simple words and avoid jargon
+  - ask for a simple decision: Approve / Reject / Approve with changes
+  - if approved, the agent updates the doc and records the decision in `DOC_PROJECT_INSIGHTS`
+
+## Verification (must)
+
+- Do not guess. If you are unsure, read the repo files or use tools to verify.
+- For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
+
+## Discussion vs action (must)
+
+- Default to discussion (no file edits, no command/tool runs).
+- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"

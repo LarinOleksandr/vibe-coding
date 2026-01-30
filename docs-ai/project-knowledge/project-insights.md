@@ -48,3 +48,9 @@
 - Root cause / constraint: Manual “create PR / merge / cleanup” decisions add confusion and lead to unfinished branches/worktrees.
 - Fix / decision: Make the default finish flow agent-led: on “wrap up / close thread”, run `$commit-push-create-pr`, create PR automatically (best effort), ask only “merge now? Yes/No”, and auto-clean after merge.
 - Prevention: Keep user-facing docs aligned and keep one finish workflow (`$commit-push-create-pr`) as the single source of truth.
+
+## [9]
+- Why it matters: Working on `main` causes accidental changes in the wrong place.
+- Root cause / constraint: The agent can start work without a branch check.
+- Fix / decision: Add a pre-work branch check to the worktree rules; if on `main`, create a worktree + branch first.
+- Prevention: Treat the branch check as required before any task work.
