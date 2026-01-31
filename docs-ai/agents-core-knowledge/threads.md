@@ -118,7 +118,7 @@ If a thread is based on an existing plan or architecture review, include the art
 - `docs-ai/agents-artifacts/plans/<task-slug>.plan.md`
 - `docs-ai/agents-artifacts/architectural-reviews/<task-slug>.arch-review.md`
 - `docs-ai/agents-artifacts/design-reviews/<task-slug>.design-review.md`
-- `docs-ai/agents-artifacts/conversations/YYYY-MM-DD__<thread-code>__<slug>.summary.md` (opt-in)
+- `docs-ai/agents-artifacts/conversations/YYYY-MM-DD__<thread-code>__<slug>.summary.md` (created via `$conversation-save`)
 
 ---
 
@@ -138,6 +138,3 @@ When closing, invoke `$commit-push-create-pr`.
 - Goal met.
 - Definition of done validated.
 - No unfinished decisions left implicit.
-
-
-

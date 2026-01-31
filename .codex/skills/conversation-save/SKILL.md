@@ -1,6 +1,6 @@
 ---
 name: conversation-save
-description: Save an opt-in conversation summary as a searchable artifact, and optionally link it from project insights.
+description: Save a conversation summary as a searchable artifact, and optionally link it from project insights.
 ---
 
 # .codex/skills/conversation-save/SKILL.md
@@ -13,24 +13,19 @@ description: Save an opt-in conversation summary as a searchable artifact, and o
 
 Create a short, searchable conversation summary under `ROOT_AGENTS_ARTIFACTS/conversations/`.
 
-This is **opt-in**:
-
-- Run it only when the user explicitly asks to save the conversation.
-- Or when the user explicitly says “Yes” to the prompt during `$commit-push-create-pr`.
-
 ## When to use
 
 Invoke when any apply:
 
-- user says: “save this conversation”, “save this discussion”, “capture this decision”, “write a conversation summary”
-- user confirms “Yes” when asked during `$commit-push-create-pr`
+- user says: "save this conversation", "save this discussion", "capture this decision", "write a conversation summary"
+- user confirms "Yes" when asked during `$commit-push-create-pr`
 
 ## Inputs
 
 - Thread name (preferred; `KB_THREADS` format)
-- Short slug (2–5 words)
+- Short slug (2-5 words)
 - Optional: tags (comma-separated)
-- Optional: “Also add to insights?” (Yes/No)
+- Optional: "Also add to insights?" (Yes/No)
 
 ## Procedure
 
@@ -44,12 +39,11 @@ Invoke when any apply:
    - `ROOT_SKILLS/conversation-save/templates/conversation-summary.template.md`
 3. Append a link entry to:
    - `ROOT_AGENTS_ARTIFACTS/conversations/index.md`
-4. If the user said “Also add to insights: Yes” and the summary contains a durable decision:
+4. If the user said "Also add to insights: Yes" and the summary contains a durable decision:
    - Append a short entry to `DOC_PROJECT_INSIGHTS` and link the summary.
-5. Do not create or commit transcripts by default.
-   - If the user provides a transcript and explicitly asks to store it, write:
-     - `ROOT_AGENTS_ARTIFACTS/conversations/YYYY-MM-DD__<thread-code>__<slug>.transcript.md`
-   - Reminder: transcripts are ignored by default via `.gitignore`.
+5. If the user explicitly asks to store a transcript, write:
+   - `ROOT_AGENTS_ARTIFACTS/conversations/YYYY-MM-DD__<thread-code>__<slug>.transcript.md`
+6. Never delete or edit existing files under `ROOT_AGENTS_ARTIFACTS/conversations/` unless the user explicitly asks.
 
 ## Outputs
 

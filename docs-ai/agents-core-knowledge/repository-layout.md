@@ -46,7 +46,7 @@
 | UI validation screenshots | `docs-ai/agents-artifacts/screenshots/` | proof for UI tasks (not committed) |
 | PRD artifacts | `docs-ai/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `docs-ai/agents-artifacts/research-briefs/` | created by `$feature-research` |
-| Conversation summaries (opt-in) | `docs-ai/agents-artifacts/conversations/` | created by `$conversation-save` |
+| Conversation summaries | `docs-ai/agents-artifacts/conversations/` | created by `$conversation-save` |
 | Project context/roadmap/insights/contracts | `docs-ai/project-knowledge/project-context.md`, `docs-ai/project-knowledge/project-roadmap.md`, `docs-ai/project-knowledge/project-insights.md`, `docs-ai/project-knowledge/project-protected-contracts.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
 | Archived legacy docs | `docs-ai/old/` | non-canonical reference only |
 
@@ -59,7 +59,7 @@
 | A new routed KB doc | `docs-ai/agents-core-knowledge/` | `repository-layout.md`, `deployment-and-cicd.md` |
 | A new skill | `.codex/skills/<skill-name>/SKILL.md` | `.codex/skills$design-review/SKILL.md` |
 | A new agent artifact type | `docs-ai/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
-| Conversation summaries (opt-in) | `docs-ai/agents-artifacts/conversations/` | `YYYY-MM-DD__D-012__topic.summary.md` |
+| Conversation summaries | `docs-ai/agents-artifacts/conversations/` | `YYYY-MM-DD__D-012__topic.summary.md` |
 | A new project "memory" doc | `docs-ai/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |

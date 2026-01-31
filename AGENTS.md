@@ -3,23 +3,17 @@
 ## Routes to essential knowledge and instructions
 
 Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
-Skills live in the repo at `.codex/skills/`.
-Worktree rules (including the pre-work branch check) live in `KB_GIT_WORKTREES`.
 
 ## Skill routing (must)
 
+Skills live in the repo at `.codex/skills/`.
+
 - When the user asks you to **do work** (implement, fix, investigate, run, test, build, configure, refactor, review, plan, export, migrate, deploy, commit, push, PR, merge), you must:
-  1. Check `DOC_SKILLS_LIST` and pick the best matching skill.
-  2. Open and follow that skill's `ROOT_SKILLS/<skill-name>/SKILL.md` step-by-step.
+  1. Consider Worktree rules (including the pre-work branch check) in `KB_GIT_WORKTREES`.
+  2. Check `DOC_SKILLS_LIST` and pick the best matching skill.
+  3. Open and follow that skill's `ROOT_SKILLS/<skill-name>/SKILL.md` step-by-step.
 - Do not answer with generic advice when a matching skill exists.
 - If no skill matches, proceed with the simplest safe approach and explain the assumption.
-
-## Conversation summaries (opt-in)
-
-- Do not save conversation summaries by default.
-- Create/update/delete a summary only when the user explicitly asks (use `$conversation-save`).
-- Never delete or edit existing files under `docs-ai/agents-artifacts/conversations/` unless the user explicitly asks.
-- During `$commit-push-create-pr`, the agent may propose saving a short summary, but must wait for a clear Yes/No.
 
 ## Automatic agentic invocation
 
@@ -39,10 +33,16 @@ Agent may automatically invoke additional steps when risk or complexity is detec
 - `$testing-in-browser` when UI behavior changes require manual verification.
   - Default for UI tasks: run it (and capture screenshots) unless the user explicitly asks to skip UI validation.
 - `$commit-push-create-pr` when feature scope is complete and validation is acceptable; propose it and ask the user to confirm before committing.
+- `$conversation-save` when the user explicitly asks to save the conversation summary, or confirms "Yes" when asked during `$commit-push-create-pr`.
 - `$context-maintenance` when changes touch documentation, routed knowledge, skills, or any AGENTS rules/routes; resolve routing and duplication and update project docs when needed.
 
 When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs or required approvals before running the skill.
-Auto-invocation must still respect **Discussion vs action** above.
+Auto-invocation must still respect **Discussion vs action** rules.
+
+## Discussion vs action (must)
+
+- Default to discussion (no file edits, no command/tool runs).
+- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
 
 ## Protected contracts (must)
 
@@ -57,8 +57,3 @@ Auto-invocation must still respect **Discussion vs action** above.
 
 - Do not guess. If you are unsure, read the repo files or use tools to verify.
 - For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
-
-## Discussion vs action (must)
-
-- Default to discussion (no file edits, no command/tool runs).
-- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"

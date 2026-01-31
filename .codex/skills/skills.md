@@ -17,7 +17,7 @@
 - `$code-review` - Review a diff/change set and report issues. Use when the user asks for a review. Trigger words: review, PR review, code review.
 - `$coding-standards-check` - Check code style and basic maintainability. Use when the user asks for standards or consistency checks. Trigger words: standards, style, consistency.
 - `$commit-push-create-pr` - Finish work: verify, update docs, commit, push, and optional PR/merge. Use when the user says they are done. Trigger words: commit, push, PR, merge, finish, wrap up.
-- `$conversation-save` - Save a short, opt-in conversation summary as an artifact. Use when the user asks to save the discussion. Trigger words: save conversation, save discussion, conversation summary, capture decisions.
+- `$conversation-save` - Save a short conversation summary as an artifact. Use when the user asks to save the discussion. Trigger words: save conversation, save discussion, conversation summary, capture decisions.
 - `$context-load` - Load a quick project snapshot. Use when we need the current rules/routes/where things are. Trigger words: context, summary, where is, routes.
 - `$context-maintenance` - Update and clean the framework docs/skills/routing. Use when rules, routes, or skills changed. Trigger words: update docs, routing, maintain, framework.
 - `$critical-review` - Provide a brutally honest critique of an idea or pitch to surface weak points early. Use when asked to critique a concept, product, startup, feature, or business plan. Trigger words: critique, harsh review, devil's advocate, red team, brutal feedback.

@@ -13,7 +13,7 @@ This folder stores agent-generated artifacts.
 - `traces/` stores Playwright traces (not committed; README only)
 - `videos/` stores Playwright videos (not committed; README only)
 - `playwright-report/` stores generated Playwright reports (not committed; README only)
-- `conversations/` contains opt-in conversation summaries created by `$conversation-save`
+- `conversations/` contains conversation summaries created by `$conversation-save`
 
 ## Rules
 
