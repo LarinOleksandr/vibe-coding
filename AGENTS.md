@@ -4,6 +4,20 @@
 
 Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
 
+## Discussion vs action (must)
+
+- Default to discussion (no file edits, no command/tool runs).
+- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
+
+## Protected contracts (must)
+
+- Before any work that changes behavior (feature, bug fix, refactor), review `DOC_PROJECT_PROTECTED_CONTRACTS` and treat it as hard constraints.
+- Be proactive:
+  - when you see a likely “contract moment” (stored data shape, API shape, auth flow, shared schema, export format), propose updates to `DOC_PROJECT_PROTECTED_CONTRACTS`
+  - explain in simple words and avoid jargon
+  - ask for a simple decision: Approve / Reject / Approve with changes
+  - if approved, the agent updates the doc and records the decision in `DOC_PROJECT_INSIGHTS`
+
 ## Skill routing (must)
 
 Skills live in the repo at `.codex/skills/`.
@@ -14,6 +28,11 @@ Skills live in the repo at `.codex/skills/`.
   3. Open and follow that skill's `ROOT_SKILLS/<skill-name>/SKILL.md` step-by-step.
 - Do not answer with generic advice when a matching skill exists.
 - If no skill matches, proceed with the simplest safe approach and explain the assumption.
+
+## Verification (must)
+
+- Do not guess. If you are unsure, read the repo files or use tools to verify.
+- For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
 
 ## Automatic agentic invocation
 
@@ -38,22 +57,3 @@ Agent may automatically invoke additional steps when risk or complexity is detec
 
 When auto-invoked, the agent pauses implementation, explains why, and asks for any missing inputs or required approvals before running the skill.
 Auto-invocation must still respect **Discussion vs action** rules.
-
-## Discussion vs action (must)
-
-- Default to discussion (no file edits, no command/tool runs).
-- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
-
-## Protected contracts (must)
-
-- Before any work that changes behavior (feature, bug fix, refactor), review `DOC_PROJECT_PROTECTED_CONTRACTS` and treat it as hard constraints.
-- Be proactive:
-  - when you see a likely “contract moment” (stored data shape, API shape, auth flow, shared schema, export format), propose updates to `DOC_PROJECT_PROTECTED_CONTRACTS`
-  - explain in simple words and avoid jargon
-  - ask for a simple decision: Approve / Reject / Approve with changes
-  - if approved, the agent updates the doc and records the decision in `DOC_PROJECT_INSIGHTS`
-
-## Verification (must)
-
-- Do not guess. If you are unsure, read the repo files or use tools to verify.
-- For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
