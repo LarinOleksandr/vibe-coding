@@ -1,4 +1,4 @@
-# UI Testing (Playwright + MCP DevTools)
+﻿# UI Testing (Playwright + MCP DevTools)
 
 ## Agent summary
 
@@ -13,7 +13,7 @@
 
 Use this for any task that changes UI behavior or UI layout in:
 
-- `C:\Dev\3-Projects\vibe-coding\frontend\`
+- `frontend\`
 
 ---
 
@@ -21,7 +21,7 @@ Use this for any task that changes UI behavior or UI layout in:
 
 Run:
 
-- `powershell -NoProfile -ExecutionPolicy Bypass -File C:\Dev\3-Projects\vibe-coding\scripts\ensure-playwright.ps1`
+- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\ensure-playwright.ps1`
 
 This fetches Playwright via `npm exec` only when needed and installs browser binaries.
 
@@ -30,9 +30,9 @@ This fetches Playwright via `npm exec` only when needed and installs browser bin
 ## What to capture (required)
 
 - Save screenshots under:
-  - `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`
+  - `docs-ai\agents-artifacts\screenshots\`
 - Prefer a per-task folder:
-  - `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\<task-slug>\`
+  - `docs-ai\agents-artifacts\screenshots\<task-slug>\`
 
 Do not mark a UI task as done without screenshots.
 
@@ -42,8 +42,9 @@ Do not mark a UI task as done without screenshots.
 
 If the UI requires login:
 
-- If `C:\Dev\3-Projects\vibe-coding\auth.json` exists, treat it as a Playwright `storageState` file.
+- If `auth.json` exists, treat it as a Playwright `storageState` file.
 - If possible, apply auth (localStorage + cookies) before navigating.
 - If auth still fails, log in through the UI and continue validation.
 
-Never commit `C:\Dev\3-Projects\vibe-coding\auth.json`.
+Never commit `auth.json`.
+

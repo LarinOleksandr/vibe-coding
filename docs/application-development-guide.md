@@ -1,4 +1,4 @@
-# Application Development Guide (with Codex + this Framework)
+﻿# Application Development Guide (with Codex + this Framework)
 
 This guide is a practical, step-by-step way to build and publish a digital product using the project's commands and collaboration rules.
 
@@ -100,7 +100,7 @@ What you should expect when you start a thread that changes files (feature/bug/r
 - The agent creates an isolated work folder (Git worktree) under `.worktrees/...` so parallel threads do not overwrite each other.
 - The agent works only inside that worktree folder for the rest of the thread.
 
-If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (“no worktree for this thread”).
+If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (â€œno worktree for this threadâ€).
 
 
 ### 2.1 Thread naming (required)
@@ -139,7 +139,7 @@ Single source of truth:
 How it works:
 
 1. The agent reads this list before work.
-2. When the agent sees a likely “contract moment”, it proposes updates in simple words.
+2. When the agent sees a likely â€œcontract momentâ€, it proposes updates in simple words.
 3. You answer: Approve / Reject / Approve with changes.
 4. If you approve a breaking change, the agent must also write a short migration plan and rollback plan.
 
@@ -320,14 +320,14 @@ For UI-related tasks, the agent should run `$testing-in-browser` by default and 
 
 What you should expect during UI validation:
 
-- Playwright “appears” only at validation time (it is installed on demand when needed).
+- Playwright â€œappearsâ€ only at validation time (it is installed on demand when needed).
 - DevTools is used to debug (console errors, failed network requests, DOM snapshots).
 - Playwright is used to prove the UI works (repeat the user action + screenshots).
-- Screenshots are saved under `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`.
+- Screenshots are saved under `docs-ai\agents-artifacts\screenshots\`.
 
-If login is required, the agent may reuse `C:\Dev\3-Projects\vibe-coding\auth.json` if it exists.
+If login is required, the agent may reuse `auth.json` if it exists.
 
-If you want to skip UI validation, you must say so explicitly (example: “skip UI validation for this change”).
+If you want to skip UI validation, you must say so explicitly (example: â€œskip UI validation for this changeâ€).
 
 ### 5.6.1 Design system (frontend/web)
 
@@ -347,15 +347,15 @@ When the agent believes the feature scope is complete and validation was success
 
 What the agent will do:
 
-- The agent runs the finish workflow (`$commit-push-create-pr`) automatically when you say “wrap up / we are done / close the thread”.
+- The agent runs the finish workflow (`$commit-push-create-pr`) automatically when you say â€œwrap up / we are done / close the threadâ€.
 - It verifies, updates project docs, commits, pushes, and attempts to create a PR automatically.
-- Then it asks one simple question: “Merge into `main` now? (Yes/No)”
+- Then it asks one simple question: â€œMerge into `main` now? (Yes/No)â€
 - If you say Yes and the merge succeeds, it cleans up the thread automatically (remove worktree + delete branch).
 
 What you do:
 
-- Reply with “Yes” or “No” to the merge question.
-- If there are merge conflicts, answer in plain words (example: “prefer the docs version”).
+- Reply with â€œYesâ€ or â€œNoâ€ to the merge question.
+- If there are merge conflicts, answer in plain words (example: â€œprefer the docs versionâ€).
 
 This is how you keep the repo "memory" correct and avoid repeating decisions.
 
@@ -553,6 +553,7 @@ The agent should ask you to confirm only high-impact decisions:
 - Answer only what blocks progress.
 - Prefer short confirmations: "Yes", "No", "Out of scope", "Do option B".
 - If you want speed: explicitly say which trade-off you accept (fast vs safe vs minimal scope).
+
 
 
 

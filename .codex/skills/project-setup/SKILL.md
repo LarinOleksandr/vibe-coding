@@ -65,6 +65,8 @@ Invoke when any apply:
 
 ## Output format
 
+Path rule (must): use `KB_ROOTS` aliases (`DOC_*`, `KB_*`, `ROOT_*`) or repo-relative paths. Do not use absolute OS paths.
+
 ### Summary
 
 - Product: `<one sentence>`

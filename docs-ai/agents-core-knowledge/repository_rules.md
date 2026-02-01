@@ -44,7 +44,7 @@ Treat `docs/` as human-facing documentation only.
 
 In agent instructions (AGENTS, routed docs, skills, templates), prefer `KB_ROOTS` aliases and repo-relative paths.
 
-- Use `ROOT_*`, `KB_*`, and `DOC_*` routes instead of absolute OS paths (like `C:\\...`).
+- Use `ROOT_*`, `KB_*`, and `DOC_*` routes instead of absolute OS paths (like `<absolute-os-path>`).
 - Rationale: absolute paths are machine-specific and cause broken links and inconsistent behavior.
 - Exception: in scripts and commands, use relative paths from the repo root when possible (for example `scripts/...`).
 

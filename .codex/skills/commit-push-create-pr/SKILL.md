@@ -97,6 +97,8 @@ Invoke when any apply:
 
 When reporting results to the user, prefer outcomes over commands.
 
+Path rule (must): when referencing files, use `KB_ROOTS` aliases (`DOC_*`, `KB_*`, `ROOT_*`) or repo-relative paths. Do not use absolute OS paths.
+
 Say:
 
 - whether verification was run and the result (Pass/Fail/Skipped)

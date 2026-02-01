@@ -1,4 +1,4 @@
-# User Story: Building With the Agent (From Scratch)
+﻿# User Story: Building With the Agent (From Scratch)
 
 I open the repo for the first time. I have an idea in my head, but it's still fuzzy.
 
@@ -86,7 +86,7 @@ I say "Proceed."
 Before writing code, the agent automatically sets up safe Git isolation for this thread:
 
 - creates a branch from the thread name
-- creates a Git worktree folder under `C:\Dev\3-Projects\vibe-coding\.worktrees\...`
+- creates a Git worktree folder under `.worktrees\...`
 - works only inside that worktree folder so parallel threads do not overwrite each other
 
 ## 4) The agent sets the UI rules before building UI screens
@@ -201,7 +201,7 @@ For UI-related tasks, it runs the browser verification workflow by default:
 
 It saves screenshots under:
 
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\screenshots\`
+- `docs-ai\agents-artifacts\screenshots\`
 
 If I want to skip UI validation, I must say so explicitly.
 
@@ -209,7 +209,7 @@ If I want to skip UI validation, I must say so explicitly.
 
 When the feature feels complete, the agent updates the project docs automatically during `$commit-push-create-pr`.
 
-It also checks if we created something people will rely on long-term (a “protected contract”).
+It also checks if we created something people will rely on long-term (a â€œprotected contractâ€).
 If yes, it proposes additions in simple words and asks me to approve or reject.
 
 If I approve, it updates:
@@ -222,14 +222,14 @@ Finally, the agent proposes committing and asks for my approval to run:
 
 `$commit-push-create-pr`
 
-I don’t need to remember Git steps. I just say: “Wrap up / we are done.”
+I donâ€™t need to remember Git steps. I just say: â€œWrap up / we are done.â€
 
 The agent runs `$commit-push-create-pr` and:
 
 - verifies and updates docs
 - commits and pushes
 - creates a PR automatically (when possible)
-- asks one simple question: “Merge into `main` now? (Yes/No)”
+- asks one simple question: â€œMerge into `main` now? (Yes/No)â€
 
 If I say Yes and the merge succeeds, the agent cleans up the thread automatically (remove worktree + delete branch).
 
@@ -240,6 +240,7 @@ If I say No, the PR and worktree stay as-is so we can continue later.
 - The workflow is strong at preventing "random UI decisions," because UI/UX baselines + the preset config enforce consistency early.
 - Dependency approval is a required checkpoint; the smooth path is a single approval for the baseline bundle, recorded in `frontend/web/config/deps-approved.json`.
 - The smoothest experience is when the agent keeps the preset URL in exactly one place (`frontend/web/config/app-design-preset.json`) and references it everywhere else.
+
 
 
 

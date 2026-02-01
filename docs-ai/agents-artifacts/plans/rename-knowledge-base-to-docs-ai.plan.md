@@ -1,13 +1,13 @@
-# OPEN QUESTIONS (BLOCKERS)
+﻿# OPEN QUESTIONS (BLOCKERS)
 
 - None.
 
 # TASK CHECKLIST
 
 - [ ] Phase 1: Create plan + baseline checks
-- [ ] Phase 1: Rename the agent docs folder to `C:\Dev\3-Projects\vibe-coding\docs-ai\` via `git mv`
+- [ ] Phase 1: Rename the agent docs folder to `docs-ai\` via `git mv`
 - [ ] Phase 1: Confirm the folder move is staged (`git status`)
-- [ ] Phase 2: Update routed aliases in `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
+- [ ] Phase 2: Update routed aliases in `docs-ai\agents-core-knowledge\roots.md`
 - [ ] Phase 2: Update all repo references to use `docs-ai/` and `docs-ai\`
 - [ ] Phase 2: Fix any headings that embed the old path (e.g. `# docs-ai/...`)
 - [ ] Phase 3: Run repo-level checks/tests (only what exists in this repo)
@@ -17,8 +17,8 @@
 
 ## Affected files/folders
 
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\` (target folder)
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\plans\` (this plan file)
+- `docs-ai\` (target folder)
+- `docs-ai\agents-artifacts\plans\` (this plan file)
 
 ## Per-item change summary
 
@@ -41,13 +41,13 @@
 
 ## Affected files (expected; not exhaustive)
 
-- `C:\Dev\3-Projects\vibe-coding\AGENTS.md`
-- `C:\Dev\3-Projects\vibe-coding\docs\application-development-guide.md`
-- `C:\Dev\3-Projects\vibe-coding\docs\user-story-agent-collaboration.md`
-- `C:\Dev\3-Projects\vibe-coding\frontend\web\config\app-design-preset.json`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\**/*.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\project-knowledge\**/*.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\**/*.md`
+- `AGENTS.md`
+- `docs\application-development-guide.md`
+- `docs\user-story-agent-collaboration.md`
+- `frontend\web\config\app-design-preset.json`
+- `docs-ai\agents-core-knowledge\**/*.md`
+- `docs-ai\project-knowledge\**/*.md`
+- `docs-ai\agents-artifacts\**/*.md`
 
 ## Per-file change summary (high level)
 
@@ -57,7 +57,7 @@
 ## Implementation steps
 
 1. Update alias paths:
-   - Edit `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
+   - Edit `docs-ai\agents-core-knowledge\roots.md`
 2. Replace references across the repo:
    - Replace `<old-folder-name>/` -> `docs-ai/`
    - Replace `<old-folder-name>\` -> `docs-ai\`
@@ -91,3 +91,4 @@
 ## Unit tests (this phase)
 
 - Repo tests/lint only if they already exist and are runnable in this repo.
+

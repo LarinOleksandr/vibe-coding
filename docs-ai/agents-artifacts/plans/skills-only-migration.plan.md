@@ -1,4 +1,4 @@
-# Skills-Only Migration Plan
+﻿# Skills-Only Migration Plan
 
 **Goal:** Replace slash commands with skills while preserving all current workflow behavior.
 
@@ -13,12 +13,12 @@
 
 ## Affected areas
 
-- `c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\`
-- `c:\Dev\3-Projects\vibe-coding\.codex\skills\`
-- `c:\Dev\3-Projects\vibe-coding\AGENTS.md`
-- `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\`
-- `c:\Dev\3-Projects\vibe-coding\docs\`
-- `C:\Users\oleks\.codex\prompts\`
+- `docs-ai\slash-commands\`
+- `.codex\skills\`
+- `AGENTS.md`
+- `docs-ai\agents-core-knowledge\`
+- `docs\`
+- `~/.codex/prompts\`
 
 ## Steps
 
@@ -26,11 +26,11 @@
 
 **Deliverable:** A mapping table of slash commands -> target skills, with gaps noted.
 
-**Integration:** Add the mapping to `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-artifacts\plans\skills-only-migration.plan.md` (this file).
+**Integration:** Add the mapping to `docs-ai\agents-artifacts\plans\skills-only-migration.plan.md` (this file).
 
 **Command -> skill mapping (current state)**
 
-Repo slash commands (`c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\prompts\`):
+Repo slash commands (`docs-ai\slash-commands\prompts\`):
 
 | Slash command | Target skill | Status |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ Repo slash commands (`c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\promp
 | `/security-check` | `$security-check` | exists |
 | `/ui-consistency-check` | `$ui-consistency-check` | exists |
 
-Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
+Local Codex prompts (`~/.codex/prompts\`):
 
 | Prompt file | Slash command | Target skill | Status |
 | --- | --- | --- | --- |
@@ -62,14 +62,14 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 | `optimize-performance (test).md` | `/optimize-performance` | `$optimize-performance` | exists |
 
 **Verify:**
-- Every command in `c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\prompts\` has a matching skill name.
-- Every prompt in `C:\Users\oleks\.codex\prompts\` is accounted for.
+- Every command in `docs-ai\slash-commands\prompts\` has a matching skill name.
+- Every prompt in `~/.codex/prompts\` is accounted for.
 
 ### Step 2: Create missing skills for command parity
 
 **Deliverable:** New skill folders with `SKILL.md` for any command without a skill.
 
-**Integration:** Add to `c:\Dev\3-Projects\vibe-coding\.codex\skills\`.
+**Integration:** Add to `.codex\skills\`.
 
 **Planned new skills:**
 - `context-load`
@@ -80,71 +80,71 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 **Verify:**
 - Each new skill has `name` and `description` frontmatter and matches the current command behavior.
-- `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` lists every new skill.
+- `.codex\skills\skills.md` lists every new skill.
 
 ### Step 3: Update skills list and references
 
 **Deliverable:** Skills list and internal references point only to skills.
 
 **Integration:**
-- Update `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`
+- Update `.codex\skills\skills.md`
 - Replace any `$old-command` mentions with `$skill-name` in:
-  - `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\api-conventions.md` (already uses skills)
-  - `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md`
+  - `docs-ai\agents-core-knowledge\api-conventions.md` (already uses skills)
+  - `docs-ai\agents-core-knowledge\repository-layout.md`
 
 **Verify:**
-- `rg -n "/[a-z-]+" c:\Dev\3-Projects\vibe-coding\docs-ai` only finds places we still want to keep as examples (if any).
+- `rg -n "/[a-z-]+" docs-ai` only finds places we still want to keep as examples (if any).
 
 ### Step 4: Update agent rules to prefer skills
 
 **Deliverable:** Root rules stop instructing slash command usage.
 
 **Integration:**
-- Update `c:\Dev\3-Projects\vibe-coding\AGENTS.md` to reference skills instead of `/commands`.
-- Update `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\threads.md` if it references slash commands for closure or workflow.
+- Update `AGENTS.md` to reference skills instead of `/commands`.
+- Update `docs-ai\agents-core-knowledge\threads.md` if it references slash commands for closure or workflow.
 
 **Verify:**
-- All workflow triggers in `c:\Dev\3-Projects\vibe-coding\AGENTS.md` reference `$skill-name` or plain-language requests.
+- All workflow triggers in `AGENTS.md` reference `$skill-name` or plain-language requests.
 
 ### Step 5: Update human docs to skills-first language
 
 **Deliverable:** Human docs no longer instruct using slash commands.
 
 **Integration:**
-- Update `c:\Dev\3-Projects\vibe-coding\docs\application-development-guide.md`
-- Update `c:\Dev\3-Projects\vibe-coding\docs\user-story-agent-collaboration.md`
+- Update `docs\application-development-guide.md`
+- Update `docs\user-story-agent-collaboration.md`
 
 **Verify:**
-- `rg -n "/[a-z-]+" c:\Dev\3-Projects\vibe-coding\docs` returns no workflow commands, or only explicitly marked historical examples (if you keep any).
+- `rg -n "/[a-z-]+" docs` returns no workflow commands, or only explicitly marked historical examples (if you keep any).
 
 ### Step 6: Remove slash command assets from the repo
 
 **Deliverable:** Slash command prompts and installer scripts removed.
 
 **Integration:**
-- Remove `c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\prompts\`
-- Remove `c:\Dev\3-Projects\vibe-coding\docs-ai\slash-commands\README.md`
-- Update `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md` to remove `ROOT_SLASH_COMMANDS`
-- Update `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md` to remove slash command entries
+- Remove `docs-ai\slash-commands\prompts\`
+- Remove `docs-ai\slash-commands\README.md`
+- Update `docs-ai\agents-core-knowledge\roots.md` to remove `ROOT_SLASH_COMMANDS`
+- Update `docs-ai\agents-core-knowledge\repository-layout.md` to remove slash command entries
 
 **Verify:**
-- `rg -n "slash command|slash-commands" c:\Dev\3-Projects\vibe-coding --glob "!docs-ai/agents-artifacts/plans/skills-only-migration.plan.md"` returns no hits.
+- `rg -n "slash command|slash-commands"  --glob "!docs-ai/agents-artifacts/plans/skills-only-migration.plan.md"` returns no hits.
 
 ### Step 7: Clean Codex prompts folder
 
-**Deliverable:** `C:\Users\oleks\.codex\prompts\` has no obsolete slash commands.
+**Deliverable:** `~/.codex/prompts\` has no obsolete slash commands.
 
 **Integration:**
 - Remove:
-  - `C:\Users\oleks\.codex\prompts\commit-feature.md`
-  - `C:\Users\oleks\.codex\prompts\load-context.md`
-  - `C:\Users\oleks\.codex\prompts\start-feature.md`
-  - `C:\Users\oleks\.codex\prompts\test-browser.md`
-  - `C:\Users\oleks\.codex\prompts\update-knowledge.md`
-  - `C:\Users\oleks\.codex\prompts\optimize-performance (test).md`
+  - `~/.codex/prompts\commit-feature.md`
+  - `~/.codex/prompts\load-context.md`
+  - `~/.codex/prompts\start-feature.md`
+  - `~/.codex/prompts\test-browser.md`
+  - `~/.codex/prompts\update-knowledge.md`
+  - `~/.codex/prompts\optimize-performance (test).md`
 
 **Verify:**
-- `Get-ChildItem C:\Users\oleks\.codex\prompts` returns empty or only non-workflow prompts.
+- `Get-ChildItem ~/.codex/prompts` returns empty or only non-workflow prompts.
 
 ### Step 8: Context maintenance and documentation checks
 
@@ -152,20 +152,20 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 **Integration:**
 - Run a context maintenance pass (use `$context-maintenance`) and update:
-  - `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
-  - `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md`
-  - `c:\Dev\3-Projects\vibe-coding\docs-ai\project-knowledge\project-insights.md` (record decision)
+  - `docs-ai\agents-core-knowledge\roots.md`
+  - `docs-ai\agents-core-knowledge\repository-layout.md`
+  - `docs-ai\project-knowledge\project-insights.md` (record decision)
 
 **Verify:**
-- All routes in `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md` resolve.
+- All routes in `docs-ai\agents-core-knowledge\roots.md` resolve.
 
 ## Implementation plan (do X, then verify Y)
 
 1. Build the command -> skill mapping table, then verify every prompt has a skill target.
-2. Draft missing skills, then verify `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md` is complete.
+2. Draft missing skills, then verify `.codex\skills\skills.md` is complete.
 3. Replace rule and doc references, then verify no `/command` hits remain.
 4. Remove slash command assets, then verify `docs-ai\slash-commands\` is gone.
-5. Remove `C:\Users\oleks\.codex\prompts\` files, then verify folder is clean.
+5. Remove `~/.codex/prompts\` files, then verify folder is clean.
 6. Run context maintenance updates, then verify routes and docs are consistent.
 
 ## Risks
@@ -175,15 +175,17 @@ Local Codex prompts (`C:\Users\oleks\.codex\prompts\`):
 
 ## Validation
 
-- `rg -n "/[a-z-]+" c:\Dev\3-Projects\vibe-coding`
-- `rg -n "slash command|slash-commands" c:\Dev\3-Projects\vibe-coding --glob "!docs-ai/agents-artifacts/plans/skills-only-migration.plan.md"`
-- `Get-ChildItem C:\Users\oleks\.codex\prompts`
+- `rg -n "/[a-z-]+" `
+- `rg -n "slash command|slash-commands"  --glob "!docs-ai/agents-artifacts/plans/skills-only-migration.plan.md"`
+- `Get-ChildItem ~/.codex/prompts`
 
 ## References
 
-- `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
-- `c:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\repository-layout.md`
-- `c:\Dev\3-Projects\vibe-coding\.codex\skills\skills.md`
+- `docs-ai\agents-core-knowledge\roots.md`
+- `docs-ai\agents-core-knowledge\repository-layout.md`
+- `.codex\skills\skills.md`
+
+
 
 
 

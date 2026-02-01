@@ -58,7 +58,7 @@ Invoke when any apply:
      - Deliverable: what changes
      - Integration: where it is wired in (avoid orphan code)
      - Verify: how to confirm it works (1-3 bullets)
-   - use exact file paths in Deliverables and Integration
+   - use exact file paths in Deliverables and Integration (repo-relative only; no absolute OS paths)
    - keep steps bite-sized (a few minutes each)
 4. If coding is involved, add an implementation plan
    - mirror the steps above, phrased as ???do X, then verify Y???

@@ -1,4 +1,4 @@
-# tech-stack-baseline.plan.md
+﻿# tech-stack-baseline.plan.md
 
 ## Goal
 
@@ -19,13 +19,13 @@ Make `KB_TECH_STACK` a baseline/default stack and place the actual project stack
 
 ## Files to touch (expected)
 
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\tech-stack-baseline.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\project-knowledge\project-context.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\tools.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\testing.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\deployment-and-cicd.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\ui-baseline.md`
-- `C:\Dev\3-Projects\vibe-coding\docs-ai\agents-core-knowledge\roots.md`
+- `docs-ai\agents-core-knowledge\tech-stack-baseline.md`
+- `docs-ai\project-knowledge\project-context.md`
+- `docs-ai\agents-core-knowledge\tools.md`
+- `docs-ai\agents-core-knowledge\testing.md`
+- `docs-ai\agents-core-knowledge\deployment-and-cicd.md`
+- `docs-ai\agents-core-knowledge\ui-baseline.md`
+- `docs-ai\agents-core-knowledge\roots.md`
 
 ## Plan
 
@@ -64,6 +64,7 @@ Make `KB_TECH_STACK` a baseline/default stack and place the actual project stack
 
 - Minor confusion if references are not updated consistently.
 - Project stack section may be empty; must ensure it is populated.
+
 
 
 

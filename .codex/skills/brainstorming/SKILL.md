@@ -57,6 +57,7 @@ Ask questions one at a time to refine the idea. Once you understand what you're 
   - A copy/paste first message for the new thread that:
     - references the PRD artifact path, and
     - invokes exactly one required next skill (`$repo-bootstrap` or `$commit-push-create-pr`, based on the repository gate).
+  - Path rule: use `KB_ROOTS` aliases or repo-relative paths; do not use absolute OS paths.
 
 **Implementation (later):**
 
