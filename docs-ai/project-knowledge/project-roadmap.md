@@ -16,6 +16,7 @@
   - [Completed] Add opt-in conversation summaries artifact + `$conversation-save` skill
   - [Completed] Add repo gate after Product PRD + `$repo-bootstrap` skill
   - [Completed] Forbid absolute OS paths + add verification gate (`scripts/verify.ps1`)
+  - [Completed] Add git prerequisite gate rule (stop early if git is missing)
 
 ### Feature Development
 - 1. [Not Started] TBD

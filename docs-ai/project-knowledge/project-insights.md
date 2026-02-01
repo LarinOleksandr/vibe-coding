@@ -66,3 +66,9 @@
 - Root cause / constraint: The agent could output machine-specific paths (like drive-letter paths) instead of using `KB_ROOTS` aliases or repo-relative paths.
 - Fix / decision: Enforce the no-absolute-path rule across skills/docs and add a verification gate (`scripts/verify.ps1`) that fails if absolute OS paths are present.
 - Prevention: Keep all repo references as `ROOT_*` / `KB_*` / `DOC_*` routes or repo-relative paths; run verification during `$commit-push-create-pr`.
+
+## [12]
+- Why it matters: New projects often start in an empty folder; Git may not be installed yet and later steps can fail in confusing ways.
+- Root cause / constraint: Git-dependent workflows (commit/push/PR/worktrees) can be proposed before verifying `git` exists.
+- Fix / decision: Add a git prerequisite gate as a must-rule in `KB_REPOSITORY_RULES` and route it from `AGENTS.md`.
+- Prevention: When `git` is missing, stop early and route the user to `$repo-bootstrap` after installing Git.

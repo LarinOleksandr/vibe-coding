@@ -95,6 +95,7 @@ You should not think about Git commands.
 
 What you should expect when you start a thread that changes files (feature/bug/refactor/docs/deploy):
 
+- If `git` is not installed, the agent stops and asks you to install it before continuing.
 - If the folder is not a git repo yet (or `origin` is missing), the agent runs `$repo-bootstrap` first.
 - The agent creates a branch from the thread name.
 - The agent creates an isolated work folder (Git worktree) under `.worktrees/...` so parallel threads do not overwrite each other.

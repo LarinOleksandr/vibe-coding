@@ -27,6 +27,7 @@ Invoke when any apply:
 
 1. Verify prerequisites
    - Ensure `git` is available.
+   - If `git` is not available: stop and ask the user to install Git, then rerun `$repo-bootstrap`.
 2. Ensure a git repository exists
    - If not in a git repo: run `git init`.
 3. Ensure worktree safety defaults

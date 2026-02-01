@@ -33,6 +33,7 @@ Skills live in the repo at `.codex/skills/`.
 
 - Do not guess. If you are unsure, read the repo files or use tools to verify.
 - For external framework/library/platform specs, follow `KB_EXTERNAL_SPECS` (Context7 first; otherwise official docs).
+- Follow the git prerequisite gate in `KB_REPOSITORY_RULES` before workflows that expect git (commit/push/PR/worktrees).
 - Enforce the path rule from `KB_REPOSITORY_RULES`:
   - In any skill output, docs, PRDs, plans, or artifacts, use `KB_ROOTS` aliases (`ROOT_*`, `KB_*`, `DOC_*`) or repo-relative paths.
   - Do not output absolute OS paths (for example `<absolute-path>`) unless they are required inside a shell command.

@@ -61,6 +61,18 @@ Expose common workflows via scripts, not ad-hoc commands.
 
 For recurring workflows (dev server, tests, builds, migrations, seeding), add or reuse scripts in `scripts/` or in a service-local scripts folder instead of writing long shell commands in docs or comments. Prefer wiring new commands into existing package.json scripts or helper shell scripts.
 
+### git-prerequisite-gate (must)
+
+Git is a required prerequisite for this frameworkâ€™s normal workflow.
+
+Before any workflow that expects Git (branching, committing, pushing, PRs, worktrees), the agent must verify that `git` is installed and available on PATH.
+
+If `git` is not available:
+
+- Stop and explain that Git must be installed before continuing.
+- Do not propose `$commit-push-create-pr`.
+- Propose `$repo-bootstrap` as the next step to re-check and continue once Git is installed.
+
 ### dependencies-require-approval (must)
 
 No new external dependencies without explicit approval.

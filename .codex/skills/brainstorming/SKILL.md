@@ -40,6 +40,7 @@ Ask questions one at a time to refine the idea. Once you understand what you're 
 
 - Write the validated PRD to `ROOT_AGENTS_ARTIFACTS/prds/YYYY-MM-DD-<topic>-prd.md`
 - Repository gate (must, before proposing any planning or implementation):
+  - Check `git` is installed and available on PATH (see `KB_REPOSITORY_RULES`).
   - Check we are inside a git repository.
   - Check a remote `origin` exists (so work can be pushed and shared).
   - If either is missing: invoke `$repo-bootstrap` next.
