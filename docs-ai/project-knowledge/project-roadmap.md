@@ -14,6 +14,7 @@
   - [Completed] Skill routing rule added to prevent generic advice
   - [Completed] Add protected contracts doc + proactive proposal workflow
   - [Completed] Add opt-in conversation summaries artifact + `$conversation-save` skill
+  - [Completed] Add repo gate after Product PRD + `$repo-bootstrap` skill
 
 ### Feature Development
 - 1. [Not Started] TBD
