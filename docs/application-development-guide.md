@@ -28,11 +28,16 @@ Recommended minimum (copy/paste and fill):
 
 ### 1.2 First action: align with the framework
 
-Run:
+Strict order (most reliable for new projects):
 
-- `$project-setup`
+1) If you just completed `$brainstorming`, first make sure the PRD is safely saved to a real repo:
 
-If you just completed `$brainstorming`, use its PRD as the input.
+- `$repo-bootstrap` (only if the folder is not a git repo or `origin` is missing)
+- `$commit-push-create-pr` (commit + push the PRD)
+
+2) Then run:
+
+- `$project-setup` (use the PRD as input)
 
 What you should expect from the agent:
 
@@ -90,8 +95,9 @@ You should not think about Git commands.
 
 What you should expect when you start a thread that changes files (feature/bug/refactor/docs/deploy):
 
+- If the folder is not a git repo yet (or `origin` is missing), the agent runs `$repo-bootstrap` first.
 - The agent creates a branch from the thread name.
-- The agent creates an isolated work folder (Git worktree) under `c:\Dev\3-Projects\vibe-coding\.worktrees\...` so parallel threads do not overwrite each other.
+- The agent creates an isolated work folder (Git worktree) under `.worktrees/...` so parallel threads do not overwrite each other.
 - The agent works only inside that worktree folder for the rest of the thread.
 
 If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (“no worktree for this thread”).

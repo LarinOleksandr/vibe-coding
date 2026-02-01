@@ -39,12 +39,28 @@ Ask questions one at a time to refine the idea. Once you understand what you're 
 **Documentation:**
 
 - Write the validated PRD to `ROOT_AGENTS_ARTIFACTS/prds/YYYY-MM-DD-<topic>-prd.md`
-- Commit the PRD document to git
+- Repository gate (must, before proposing any planning or implementation):
+  - Check we are inside a git repository.
+  - Check a remote `origin` exists (so work can be pushed and shared).
+  - If either is missing: invoke `$repo-bootstrap` next.
+  - Otherwise: invoke `$commit-push-create-pr` next to save the PRD.
 
-**Implementation (if continuing):**
+**Strict next step (no choices):**
 
-- Ask: "Ready to set up for implementation?"
-- Use `$plan-creation` to create a detailed implementation plan (when the change is large or risky)
+- After the PRD is saved to a remote repo (commit + push), the next required step is `$project-setup`.
+- Do not propose `$plan-creation` or feature implementation from this thread.
+
+**User-facing handoff (required):**
+
+- Provide:
+  - Suggested next thread name (compliant with `KB_THREADS`), and
+  - A copy/paste first message for the new thread that:
+    - references the PRD artifact path, and
+    - invokes exactly one required next skill (`$repo-bootstrap` or `$commit-push-create-pr`, based on the repository gate).
+
+**Implementation (later):**
+
+- Planning and implementation happen only after `$project-setup` is completed and saved to the repo.
 
 ## Key Principles
 

@@ -71,6 +71,15 @@ Invoke when any apply:
        - Delete the work branch locally and on `origin` (when possible). Do not ask.
    - If No:
      - Leave the branch, PR (if created), and worktree as-is so the user can continue later.
+10. Next-step handoff (PRD bootstrap only)
+   - If this work included a Product PRD artifact update (any file under `ROOT_AGENTS_ARTIFACTS/prds/`):
+     - Propose exactly one next thread: `$project-setup`.
+     - Provide:
+       - suggested thread name (compliant with `KB_THREADS`), and
+       - a copy/paste first message that:
+         - references the PRD artifact path, and
+         - invokes `$project-setup`.
+   - Otherwise: do not propose follow-up work from this skill (leave next work to the roadmap/thread intent).
 
 ## Commands
 

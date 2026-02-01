@@ -54,3 +54,9 @@
 - Root cause / constraint: The agent can start work without a branch check.
 - Fix / decision: Add a pre-work branch check to the worktree rules; if on `main`, create a worktree + branch first.
 - Prevention: Treat the branch check as required before any task work.
+
+## [10]
+- Why it matters: PRDs and foundation work get lost if they are not saved to a real repo early.
+- Root cause / constraint: After `$brainstorming`, the agent could propose planning/implementation before confirming the folder is a git repo with a pushable `origin`.
+- Fix / decision: Add a strict repository gate after `$brainstorming` and enforce a single next step: persist to repo, then `$project-setup`, then `$plan-creation`.
+- Prevention: Add `$repo-bootstrap` for missing repo/`origin`, and require copy/paste next-thread prompts in the skills handoff.

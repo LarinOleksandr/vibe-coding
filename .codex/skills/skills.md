@@ -32,6 +32,7 @@
 - `$optimize-performance` - Find and fix performance bottlenecks. Use when the user asks to speed things up. Trigger words: performance, slow, optimize, latency.
 - `$plan-creation` - Write a concrete plan for a large/risky change. Use when the work spans many areas or has risk. Trigger words: plan, roadmap, big change.
 - `$project-setup` - Create/update project foundation docs from an idea or PRD. Use when starting a new product in this repo. Trigger words: project setup, initialize, foundation, PRD.
+- `$repo-bootstrap` - Initialize/connect a git repository and configure `origin` so work can be pushed safely. Use when a folder is not a repo or `origin` is missing. Trigger words: repo, git init, origin missing, remote, repository setup.
 - `$security-check` - Review for security risks in auth/data/input. Use when the change touches secrets, auth, permissions, or untrusted input. Trigger words: security, auth, permissions, secrets.
 - `$test-plan` - Create a repo-consistent test plan. Use when validation is unclear or needs structure. Trigger words: test plan, validation, how to test.
 - `$testing-in-browser` - Run UI checks with browser tooling. Use when UI changes need real browser verification. Trigger words: browser test, UI test, devtools.

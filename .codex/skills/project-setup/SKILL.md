@@ -59,8 +59,8 @@ Invoke when any apply:
    - first 3-10 roadmap items (ordered, with a clear next item)
 6. After confirmation:
    - Propose the next roadmap item.
-   - If it is a feature, suggest a compliant thread name and invoke `$feature-start`.
-   - If it is not a feature, suggest a compliant project-planning thread name.
+   - Strict next step (no choices): create a comprehensive implementation plan for the next roadmap item.
+   - Suggest a compliant **project-planning** thread name and provide a copy/paste first message that invokes `$plan-creation`.
    - Stop.
 
 ## Output format
@@ -82,10 +82,10 @@ Invoke when any apply:
 ### Next Step (after confirmation)
 
 - Next roadmap item: `<item name>`
-- Suggested thread name: `<project> | P-###: <short-goal>` or `<project> | F-###: <short-goal>`
+- Suggested thread name: `<project> | P-###: <short-goal>`
 - Do next:
   - Start a new thread with the suggested name
-  - If the item is a feature: invoke `$feature-start`
+  - Invoke `$plan-creation`
 
 ## Quick reference
 
