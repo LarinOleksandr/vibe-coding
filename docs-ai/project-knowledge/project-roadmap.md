@@ -15,6 +15,7 @@
   - [Completed] Add protected contracts doc + proactive proposal workflow
   - [Completed] Add opt-in conversation summaries artifact + `$conversation-save` skill
   - [Completed] Add repo gate after Product PRD + `$repo-bootstrap` skill
+  - [Completed] Forbid absolute OS paths + add verification gate (`scripts/verify.ps1`)
 
 ### Feature Development
 - 1. [Not Started] TBD

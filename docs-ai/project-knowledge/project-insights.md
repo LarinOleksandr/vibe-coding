@@ -60,3 +60,9 @@
 - Root cause / constraint: After `$brainstorming`, the agent could propose planning/implementation before confirming the folder is a git repo with a pushable `origin`.
 - Fix / decision: Add a strict repository gate after `$brainstorming` and enforce a single next step: persist to repo, then `$project-setup`, then `$plan-creation`.
 - Prevention: Add `$repo-bootstrap` for missing repo/`origin`, and require copy/paste next-thread prompts in the skills handoff.
+
+## [11]
+- Why it matters: Absolute OS paths in docs break portability and cause inconsistent agent behavior across machines.
+- Root cause / constraint: The agent could output machine-specific paths (like drive-letter paths) instead of using `KB_ROOTS` aliases or repo-relative paths.
+- Fix / decision: Enforce the no-absolute-path rule across skills/docs and add a verification gate (`scripts/verify.ps1`) that fails if absolute OS paths are present.
+- Prevention: Keep all repo references as `ROOT_*` / `KB_*` / `DOC_*` routes or repo-relative paths; run verification during `$commit-push-create-pr`.
