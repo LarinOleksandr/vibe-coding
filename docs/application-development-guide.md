@@ -454,6 +454,7 @@ Start a dedicated deploy thread:
 - Work happens on branches via PRs (no direct pushes to `main`)
 - Branch names are derived from the active thread name (see `KB_THREADS`)
 - The agent uses `scripts/git-task-start.ps1` to create/switch branches and `scripts/git-pr-create.ps1` to push/open PRs when possible
+- Optional: install GitHub CLI (`gh`) to allow automatic PR creation; if it is not installed, the agent still pushes the branch and shows a PR link.
 - If you run multiple threads in parallel, use Git worktrees so each thread has its own folder (see `KB_GIT_WORKTREES` and `scripts/git-worktree-start.ps1`)
 - After you merge a PR from a worktree branch, clean up the worktree folder using `scripts/git-worktree-remove.ps1` (see `KB_GIT_WORKTREES`)
 - Publishing happens from `main` after required checks pass
