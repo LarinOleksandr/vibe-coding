@@ -13,7 +13,11 @@ function Get-GitOutput {
   if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     throw "git is required but was not found on PATH."
   }
-  $out = & git @Args 2>&1
+  $out = & {
+    param($gitArgs)
+    $ErrorActionPreference = "Continue"
+    & git @gitArgs 2>&1
+  } $Args
   if ($LASTEXITCODE -ne 0) {
     throw ("git " + ($Args -join " ") + " failed with exit code " + $LASTEXITCODE + ": " + ($out | Out-String).Trim())
   }
@@ -36,7 +40,11 @@ function Try-Invoke-Git {
   if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     return [pscustomobject]@{ Ok = $false; Output = "git not found on PATH." }
   }
-  $out = & git @Args 2>&1
+  $out = & {
+    param($gitArgs)
+    $ErrorActionPreference = "Continue"
+    & git @gitArgs 2>&1
+  } $Args
   $ok = ($LASTEXITCODE -eq 0)
   return [pscustomobject]@{ Ok = $ok; Output = ($out | Out-String).Trim() }
 }

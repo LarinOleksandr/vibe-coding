@@ -36,7 +36,11 @@ function Try-Invoke-Git {
   if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     return [pscustomobject]@{ Ok = $false; Output = "git not found on PATH." }
   }
-  $out = & git @Args 2>&1
+  $out = & {
+    param($gitArgs)
+    $ErrorActionPreference = "Continue"
+    & git @gitArgs 2>&1
+  } $Args
   $ok = ($LASTEXITCODE -eq 0)
   return [pscustomobject]@{ Ok = $ok; Output = ($out | Out-String).Trim() }
 }
