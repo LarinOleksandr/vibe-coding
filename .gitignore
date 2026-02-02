@@ -9,6 +9,9 @@
 # Keep only curated summaries in Git.
 docs-ai/agents-artifacts/conversations/*.transcript.md
 
+# Local environment variables (do not commit)
+.env
+
 # UI testing artifacts (do not commit)
 auth.json
 docs-ai/agents-artifacts/screenshots/*
