@@ -7,7 +7,7 @@ Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
 ## Discussion vs action (must)
 
 - Default to discussion (no file edits, no command/tool runs).
-- Act only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
+- Start changing files, using tools or scripts only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
 
 ## Protected contracts (must)
 

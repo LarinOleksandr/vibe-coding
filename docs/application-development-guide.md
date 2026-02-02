@@ -4,6 +4,35 @@ This guide is a practical, step-by-step way to build and publish a digital produ
 
 ---
 
+## 0) Create a New Project From This Repo (Clone as scaffold)
+
+Use this when you want a brand new project folder that starts from this repo’s layout and setup.
+
+What you get:
+
+- A new folder with the same scaffold structure (folders, scripts, configs)
+- A fresh Git repository (new `.git/` via `git init`)
+- No secrets copied (`.env` is excluded)
+- Clean agent scaffolding docs (no legacy plans/roadmap/insights from the template repo)
+
+How to do it:
+
+1) Tell the agent you want a new project and provide the new project name.
+2) The agent runs `$project-template-clone`.
+
+Recommended message to send (example):
+
+- `Clone this repo into a new project MyNewProject`
+
+If you need to run it manually, the script is:
+
+- `.codex/skills/project-template-clone/scripts/new-project-from-template.ps1`
+
+The default clone config and scaffold skeleton are:
+
+- `.codex/skills/project-template-clone/assets/template-clone.config.json`
+- `.codex/skills/project-template-clone/assets/skeleton/`
+
 ## 1) Getting Started (Idea -> Project Setup)
 
 ### 1.1 Inputs you can start with
@@ -351,7 +380,7 @@ What the agent will do:
 - The agent runs the finish workflow (`$commit-push-create-pr`) automatically when you say â€œwrap up / we are done / close the threadâ€.
 - It verifies, updates project docs, commits, pushes, and attempts to create a PR automatically.
 - Then it asks one simple question: â€œMerge into `main` now? (Yes/No)â€
-- If you say Yes and the merge succeeds, it cleans up the thread automatically (remove worktree + delete branch).
+- If you say Yes and the merge succeeds, it cleans up the thread automatically (remove worktree + delete branch). It does not ask about deleting branches.
 
 What you do:
 

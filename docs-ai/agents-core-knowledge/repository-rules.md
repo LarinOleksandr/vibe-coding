@@ -27,6 +27,14 @@ Respect rule priorities when generating or modifying code.
 - Treat may rules as optional guidance.
 - If a requested change conflicts with a must rule, explain the conflict instead of silently ignoring the rule.
 
+### pre-work-branch-check (must)
+
+Before any task work, check the current git branch.
+
+- Do not do task work on `main` (or `master`).
+- If you are on `main`/`master`, create a work branch first (or a worktree branch if doing parallel work).
+- Rationale: prevents accidental changes on the base branch.
+
 ### service-boundary (must)
 
 One runtime boundary per service folder.
@@ -60,6 +68,10 @@ Add scoped `AGENTS.md` only when local constraints differ from root.
 Expose common workflows via scripts, not ad-hoc commands.
 
 For recurring workflows (dev server, tests, builds, migrations, seeding), add or reuse scripts in `scripts/` or in a service-local scripts folder instead of writing long shell commands in docs or comments. Prefer wiring new commands into existing package.json scripts or helper shell scripts.
+
+### worktrees-follow-kb (must)
+
+When using git worktrees, follow `KB_GIT_WORKTREES`.
 
 ### git-prerequisite-gate (must)
 
@@ -130,6 +142,7 @@ Whenever you add or remove core services that are expected in local development,
 Use a single docker-compose definition with profiles.
 
 Treat the `infra/docker/docker-compose.yml` as the main description of the local stack. New services that need to run locally should be added there, and profiles (for example dev, ci) should be used instead of creating multiple unrelated compose files.
+
 
 
 

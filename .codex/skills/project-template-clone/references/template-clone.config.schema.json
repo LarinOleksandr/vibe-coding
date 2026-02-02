@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Template clone config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "exclude": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dirs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "files": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "deleteAfterCopy": {
+      "type": "array",
+      "description": "Paths relative to the destination root to delete after copying (for example: \".env\" or \"frontend/web/.next\").",
+      "items": { "type": "string" }
+    },
+    "replacements": {
+      "type": "array",
+      "description": "Text replacements to apply in common text files. Use {{NewProjectName}} and {{TemplateName}} in the 'to' value.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" }
+        }
+      }
+    },
+    "textExtensions": {
+      "type": "array",
+      "description": "Extensions (like .md, .json) and/or exact file names (like README.md) that are safe for text replacement.",
+      "items": { "type": "string" }
+    }
+  }
+}
+

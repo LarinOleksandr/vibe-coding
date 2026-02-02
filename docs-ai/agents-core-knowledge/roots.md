@@ -45,7 +45,7 @@
 - `KB_CONTEXT_MAINTENANCE` -> `./.codex/skills/context-maintenance/SKILL.md` - Context, knowledge, and methodology maintenance skill.
 - `KB_PROJECT_DOC_MAINTENANCE` -> `./docs-ai/agents-core-knowledge/project-doc-maintenance.md` - Project documentation rules and templates.
 - `KB_REPOSITORY_LAYOUT` -> `./docs-ai/agents-core-knowledge/repository-layout.md` - Repo layout and placement index ("where to find/put things").
-- `KB_REPOSITORY_RULES` -> `./docs-ai/agents-core-knowledge/repository_rules.md` - Repo hygiene and governance rules.
+- `KB_REPOSITORY_RULES` -> `./docs-ai/agents-core-knowledge/repository-rules.md` - Repo hygiene and governance rules.
 - `KB_ROOTS` -> `./docs-ai/agents-core-knowledge/roots.md` - Canonical path alias index.
 - `KB_RUNTIME` -> `./docs-ai/agents-core-knowledge/runtime.md` - Runtime topology, ports, dependencies.
 - `KB_SCHEMAS_OUTPUTS` -> `./docs-ai/agents-core-knowledge/schemas-and-outputs.md` - Schemas, validation, structured outputs.

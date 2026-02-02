@@ -21,13 +21,12 @@ Each worktree:
 
 ---
 
-## Repo rules (must)
+## Worktree rules (must)
 
 1. **Never run parallel threads in the same folder.**
 2. **All worktrees must live under** `.worktrees/` **inside the repo root.**
 3. **`.worktrees/` must be ignored by git.** (This repo’s `.gitignore` includes it.)
 4. **One worktree per branch.** Do not open the same branch in two worktrees.
-5. **Pre-work branch check.** Before any task work, check the current branch. If it is `main`, create a new worktree + branch and work only there.
 
 ---
 
@@ -50,6 +49,10 @@ Create a worktree from a thread name:
 Remove a worktree by path:
 
 - `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>"`
+
+Remove a worktree and delete the branch (after merge):
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>" -DeleteBranch -DeleteRemoteBranch`
 
 List worktrees:
 

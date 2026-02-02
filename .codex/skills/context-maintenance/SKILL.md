@@ -73,7 +73,13 @@ Invoke when any apply:
 8. Ensure indices remain accurate
    - `DOC_SKILLS_LIST` reflects the current skills
    - No `ROOT_KNOWLEDGE_BASE/slash-commands/` folder exists in this repo (skills are the canonical entrypoint).
-9. Report results
+9. Update user-facing workflow docs when workflow changes
+   - If you add/change a skill that a user might run directly, update `docs/application-development-guide.md` so a beginner can follow it.
+   - For skills that scaffold folders or reset templates, document:
+     - the entry command/skill name
+     - where the config lives (prefer skill-local `assets/`)
+     - what gets excluded and what gets reset
+10. Report results
    - what changed, why, and any remaining follow-ups
 
 ## Outputs

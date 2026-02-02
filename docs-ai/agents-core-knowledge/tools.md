@@ -19,6 +19,8 @@
 - Start a work branch from thread name: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-task-start.ps1 -ThreadName "<thread name>"`
 - Start a worktree (parallel threads) from thread name: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-start.ps1 -ThreadName "<thread name>"`
 - Remove a worktree (cleanup): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>"`
+- Remove a worktree + delete the branch (finish cleanup): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>" -DeleteBranch -DeleteRemoteBranch`
+- Delete a branch (finish cleanup when no worktree): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-branch-remove.ps1 -BranchName "<branch-name>" -DeleteRemoteBranch`
 - Push branch + create PR (if possible): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1`
 - Merge current branch into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
 

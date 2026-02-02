@@ -231,7 +231,7 @@ The agent runs `$commit-push-create-pr` and:
 - creates a PR automatically (when possible)
 - asks one simple question: â€œMerge into `main` now? (Yes/No)â€
 
-If I say Yes and the merge succeeds, the agent cleans up the thread automatically (remove worktree + delete branch).
+If I say Yes and the merge succeeds, the agent cleans up the thread automatically (remove worktree + delete branch). It does not ask about deleting branches.
 
 If I say No, the PR and worktree stay as-is so we can continue later.
 

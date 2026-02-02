@@ -91,7 +91,8 @@ Invoke when any apply:
 - `git commit -m "<type>: <AUTO_SUMMARY_OF_COMPLETED_WORK>"`
 - Push + create PR (best effort): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-pr-create.ps1` (only if a commit was created)
 - Merge into main: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-merge-main.ps1`
-- Remove worktree (only if this work was done under `.worktrees/`): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>"`
+- Remove worktree + delete branch (only if this work was done under `.worktrees/`): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-remove.ps1 -WorktreePath ".worktrees/<branch-path>" -DeleteBranch -DeleteRemoteBranch`
+- Delete branch (only if this work was NOT done under `.worktrees/`): `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-branch-remove.ps1 -BranchName "<branch-name>" -DeleteRemoteBranch`
 
 ## User-facing output (keep it non-technical)
 

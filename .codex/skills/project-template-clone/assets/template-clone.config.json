@@ -1,0 +1,39 @@
+{
+  "exclude": {
+    "dirs": [
+      ".idea",
+      ".vscode",
+      "docs-ai/agents-artifacts",
+      "docs-ai/project-knowledge"
+    ],
+    "files": [
+      "vibecoding.xlsx",
+      "~$vibecoding.xlsx"
+    ]
+  },
+  "deleteAfterCopy": [],
+  "replacements": [
+    { "from": "vibe-coding", "to": "{{NewProjectName}}" },
+    { "from": "{{NewProjectName}}", "to": "{{NewProjectName}}" },
+    { "from": "{{TemplateName}}", "to": "{{TemplateName}}" }
+  ],
+  "textExtensions": [
+    "README.md",
+    ".md",
+    ".txt",
+    ".json",
+    ".jsonc",
+    ".yml",
+    ".yaml",
+    ".toml",
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx",
+    ".css",
+    ".scss",
+    ".html",
+    ".ps1",
+    ".sh"
+  ]
+}

@@ -1,6 +1,7 @@
 param(
   [Parameter(Mandatory = $true)][string]$WorktreePath,
   [switch]$DeleteBranch,
+  [switch]$DeleteRemoteBranch,
   [switch]$Force,
   [switch]$DryRun
 )
@@ -28,6 +29,54 @@ function Invoke-Git {
   if ($LASTEXITCODE -ne 0) {
     throw ("git " + ($Args -join " ") + " failed with exit code " + $LASTEXITCODE)
   }
+}
+
+function Try-Invoke-Git {
+  param([Parameter(Mandatory = $true)][string[]]$Args)
+  if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    return [pscustomobject]@{ Ok = $false; Output = "git not found on PATH." }
+  }
+  $out = & git @Args 2>&1
+  $ok = ($LASTEXITCODE -eq 0)
+  return [pscustomobject]@{ Ok = $ok; Output = ($out | Out-String).Trim() }
+}
+
+function Resolve-BaseBranch {
+  $branches = Get-GitOutput @("branch", "--format=%(refname:short)")
+  $list = @()
+  if (-not [string]::IsNullOrWhiteSpace($branches)) {
+    $list = $branches -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+  }
+  if ($list -contains "main") { return "main" }
+  if ($list -contains "master") { return "master" }
+  return $null
+}
+
+function Test-IsProtectedBranch {
+  param([Parameter(Mandatory = $true)][string]$Name)
+  $n = $Name.Trim()
+  if ([string]::IsNullOrWhiteSpace($n)) { return $true }
+  $protected = @(
+    "main",
+    "master",
+    "develop",
+    "dev",
+    "release/*",
+    "hotfix/*"
+  )
+  foreach ($p in $protected) {
+    if ($n -like $p) { return $true }
+  }
+  return $false
+}
+
+function Test-IsMergedIntoBase {
+  param(
+    [Parameter(Mandatory = $true)][string]$Name,
+    [Parameter(Mandatory = $true)][string]$Base
+  )
+  & git merge-base --is-ancestor $Name $Base 2>&1 | Out-Null
+  return ($LASTEXITCODE -eq 0)
 }
 
 function Resolve-RepoRoot {
@@ -149,8 +198,52 @@ try {
     if (-not $branchName) {
       throw "DeleteBranch requested, but branch name could not be detected for '$targetFull'."
     }
-    Invoke-Git @("branch", "-d", $branchName)
-    Write-Host ("Branch deleted: " + $branchName)
+
+    if (Test-IsProtectedBranch -Name $branchName) {
+      throw "Refusing to delete protected branch '$branchName'."
+    }
+
+    $base = Resolve-BaseBranch
+    if ($base) {
+      if (-not (Test-IsMergedIntoBase -Name $branchName -Base $base)) {
+        if (-not $Force) {
+          throw "Refusing to delete branch '$branchName' because it is not merged into '$base'. Use -Force to override."
+        }
+      }
+    } else {
+      if (-not $Force) {
+        throw "Base branch not found (main/master). Use -Force to delete branch '$branchName' anyway."
+      }
+    }
+
+    Invoke-Git @("branch", "-D", $branchName)
+    Write-Host ("Branch deleted (local): " + $branchName)
+
+    if ($DeleteRemoteBranch) {
+      $hasOrigin = $true
+      try {
+        [void](Get-GitOutput @("remote", "get-url", "origin"))
+      } catch {
+        $hasOrigin = $false
+      }
+
+      if (-not $hasOrigin) {
+        Write-Host "Remote 'origin' not found; skipping remote branch delete."
+      } else {
+        $res = Try-Invoke-Git @("push", "origin", "--delete", $branchName)
+        if ($res.Ok) {
+          Write-Host ("Branch deleted (origin): " + $branchName)
+          [void](Try-Invoke-Git @("fetch", "origin", "--prune"))
+        } else {
+          $text = $res.Output
+          if ($text -match "remote ref does not exist" -or $text -match "unable to delete" -or $text -match "not found") {
+            Write-Host "Remote branch not found (or already deleted); skipping remote branch delete."
+          } else {
+            Write-Host "Unable to delete remote branch (origin). Skipping."
+          }
+        }
+      }
+    }
   }
 } finally {
   Pop-Location

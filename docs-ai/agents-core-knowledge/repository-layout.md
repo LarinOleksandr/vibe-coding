@@ -28,7 +28,7 @@
 
 | If you need... | Look in... | Notes |
 | --- | --- | --- |
-| Repo structure rules / boundaries / config rules | `docs-ai/agents-core-knowledge/repository_rules.md` | canonical constraints |
+| Repo structure rules / boundaries / config rules | `docs-ai/agents-core-knowledge/repository-rules.md` | canonical constraints |
 | Where does X belong? (routing) | `docs-ai/agents-core-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
 | Thread naming + codes | `docs-ai/agents-core-knowledge/threads.md` | canonical thread rules |
@@ -40,6 +40,7 @@
 | Deployment/CI "DNA" rules | `docs-ai/agents-core-knowledge/deployment-and-cicd.md` | Netlify/Vercel rules, branch policy |
 | Skills list | `.codex/skills/skills.md` | canonical list + when to use |
 | A specific skill procedure | `.codex/skills/<skill-name>/SKILL.md` | step-by-step procedure |
+| Clone this repo into a new project scaffold | `.codex/skills/project-template-clone/` | PowerShell script + config + skeleton |
 | Generated plans | `docs-ai/agents-artifacts/plans/` | created by `$plan-creation` |
 | Architecture review artifacts | `docs-ai/agents-artifacts/architectural-reviews/` | created by `$architecture-review` |
 | Design review artifacts | `docs-ai/agents-artifacts/design-reviews/` | created by `$design-review` |
@@ -58,6 +59,7 @@
 | --- | --- | --- |
 | A new routed KB doc | `docs-ai/agents-core-knowledge/` | `repository-layout.md`, `deployment-and-cicd.md` |
 | A new skill | `.codex/skills/<skill-name>/SKILL.md` | `.codex/skills$design-review/SKILL.md` |
+| Skill templates/config/skeleton files | `.codex/skills/<skill-name>/assets/` | `.codex/skills/project-template-clone/assets/` |
 | A new agent artifact type | `docs-ai/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
 | Conversation summaries | `docs-ai/agents-artifacts/conversations/` | `YYYY-MM-DD__D-012__topic.summary.md` |
 | A new project "memory" doc | `docs-ai/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
