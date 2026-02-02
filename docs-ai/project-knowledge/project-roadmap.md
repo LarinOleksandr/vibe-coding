@@ -17,6 +17,8 @@
   - [Completed] Add repo gate after Product PRD + `$repo-bootstrap` skill
   - [Completed] Forbid absolute OS paths + add verification gate (`scripts/verify.ps1`)
   - [Completed] Add git prerequisite gate rule (stop early if git is missing)
+  - [Completed] Normalize repository rules doc naming (`repository-rules.md`)
+  - [Completed] Auto-clean merged branches without asking (safe scripts)
 
 ### Feature Development
 - 1. [Not Started] TBD
