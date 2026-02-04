@@ -64,6 +64,7 @@
 ## Project Docs (human-oriented)
 
 - `ROOT_DOCS` -> `./docs/` - Human-facing documentation root.
+- `ROOT_IDEAS` -> `./docs/ideas/` - Ideas for future work (lightweight notes).
 
 
 
