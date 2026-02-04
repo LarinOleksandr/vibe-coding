@@ -10,6 +10,7 @@
 ## Main AGENT
 
 - `ROOT_AGENTS` -> `./AGENTS.md` - Rules, Constraints and Routing for Coding Agent Behavior.
+- `DOC_REPO_README` -> `./README.md` - Project purpose and scope (first file to read when scanning the repo).
 - `ROOT_SKILLS` -> `./.codex/skills/` - Agent procedural skill definitions.
 - `DOC_SKILLS_LIST` -> `./.codex/skills/skills.md` - Canonical skill list and descriptions.
 

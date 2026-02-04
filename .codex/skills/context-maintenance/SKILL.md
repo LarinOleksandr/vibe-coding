@@ -48,6 +48,7 @@ Invoke when any apply:
 3. Validate routing and references
    - every alias in `KB_ROOTS` points to an existing file
    - every referenced `KB_*` / `DOC_*` route used in instructions resolves via `KB_ROOTS`
+   - `DOC_REPO_README` exists and still matches the current project purpose and scope
 4. Keep the repository layout index current
    - ensure `KB_REPOSITORY_LAYOUT` matches the repo shape after changes
    - update it when any apply:
@@ -91,6 +92,7 @@ Invoke when any apply:
 ## Acceptance checks
 
 - Routes resolve: `KB_ROOTS` aliases and referenced routes point to existing files
+- `DOC_REPO_README` is up to date when the project changes significantly
 - No duplicated rules across layers (AGENTS vs routed docs vs skills vs slash commands)
 - `KB_REPOSITORY_LAYOUT` matches the current repo shape when relevant changes occurred
 - Project docs updated when decisions/features changed project state
