@@ -514,6 +514,8 @@ Run:
 
 Then:
 
+- By default, the agent writes a small reproducing test first (it should fail before the fix and pass after).
+  - If a test is not a fit (example: UI layout-only change), the agent must say why and use another proof (often Playwright screenshots for UI).
 - Agent fixes the bug
 - Run `$commit-push-create-pr`
 

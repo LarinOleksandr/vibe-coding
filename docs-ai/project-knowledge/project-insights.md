@@ -72,3 +72,9 @@
 - Root cause / constraint: Git-dependent workflows (commit/push/PR/worktrees) can be proposed before verifying `git` exists.
 - Fix / decision: Add a git prerequisite gate as a must-rule in `KB_REPOSITORY_RULES` and route it from `AGENTS.md`.
 - Prevention: When `git` is missing, stop early and route the user to `$repo-bootstrap` after installing Git.
+
+## [13]
+- Why it matters: Bug fixes are safer when they come with proof and a permanent regression guard.
+- Root cause / constraint: It is easy to “fix first” and only add tests later (or never), which lets bugs return.
+- Fix / decision: Make “reproducing test first → fix → prove by passing test” the default inside `$bug-fix`, with small, explicit exceptions.
+- Prevention: If test-first is not a fit, the agent must say why and use another proof (for UI: Playwright + screenshots).

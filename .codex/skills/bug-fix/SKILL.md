@@ -47,12 +47,19 @@ Invoke when any apply:
    - list affected areas and likely regressions
    - confirm before edits
 5. Decide validation
-   - propose tests or smoke paths
+   - default (recommended): write a small reproducing test first, run it, and watch it fail for the right reason
+     - then fix the code and prove it by re-running the test and watching it pass
+     - see: `docs-ai/agents-core-knowledge/test-driven-development.md`
+   - if test-first is not a fit (example: UI layout-only change, config-only change), say why and choose another proof:
+     - UI behavior: Playwright + screenshots (see `KB_UI_TESTING_PLAYWRIGHT`)
+     - otherwise: the smallest reliable smoke path you can run
    - confirm before edits
 6. Fix with minimal change
    - avoid unrelated refactors
 7. Verify or explain deferral
-   - run agreed tests or state why not
+   - run the agreed proof:
+     - if you wrote a reproducing test: confirm it failed before the fix and passes after
+     - otherwise: run the chosen smoke path and report results
 8. Summarize
    - root cause, fix, and validation status
    - if this bug fix revealed a new stable contract people will rely on, propose adding it to `DOC_PROJECT_PROTECTED_CONTRACTS` (simple words; user approves/rejects)
@@ -65,5 +72,6 @@ Invoke when any apply:
 - Root cause investigated before fixes
 - Scope and risks confirmed before edits
 - Validation executed or explicitly deferred
+- Reproducing test failed first (when applicable)
 - Summary includes root cause and fix
 
