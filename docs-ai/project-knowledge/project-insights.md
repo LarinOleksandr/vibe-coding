@@ -90,3 +90,22 @@
 - Root cause / constraint: Mixed “next task” headers and bullets made the handoff hard to paste as-is.
 - Fix / decision: Standardize a user-friendly preface sentence + a clean 2-line copy/paste handoff block in `KB_THREADS`, and require handoff skills to follow it.
 - Prevention: Keep the handoff format defined only in `KB_THREADS` and reference it from skills (no per-skill formatting rules).
+
+## [16]
+- Why it matters: Worktree helpers must be reliable because the framework depends on the worktree gate.
+- Root cause / constraint: `scripts/git-worktree-ensure.ps1` calls `scripts/git-worktree-start.ps1 -Json` and expects clean JSON output.
+- Fix / decision: Make `scripts/git-worktree-start.ps1 -Json` output JSON and exit before any git commands that can print extra output.
+- Prevention: Treat “JSON mode prints only JSON” as a script contract; keep human logs out of JSON paths.
+
+## [17]
+- Why it matters: Fast “capture now, build later” reduces lost ideas and context switching.
+- Root cause / constraint: Adopting upstream do-work as-is would conflict with “one thread = one task”, skill routing, and the worktree scope rule.
+- Fix / decision: Add `$do-work` as a framework-integrated task queue under `ROOT_DO_WORK_QUEUE`, with a dispatcher-style work action that routes REQs into the existing thread/skill workflow.
+- Prevention: Capture/maintenance should happen in a dedicated docs thread/branch so feature PRs don’t accidentally include unrelated queue edits.
+
+## [18]
+- Why it matters: Ideas must have one capture mechanism and one source of truth.
+- Root cause / constraint: “User requests” and UR/REQ queue structure added confusion and duplicated what `docs/ideas/` already provides.
+- Fix / decision: Make `docs/ideas/` the only place to save Ideas; add `$review-ideas` to turn Ideas into classified Requests under `ROOT_WORK_REQUESTS`.
+- Prevention: Keep Requests outcome-focused and classified so the next step is always an existing skill (example: `$feature-development`, `$bug-fix`, `$code-refactoring`).
+- Notes: This supersedes **[17]**; ignore older `ROOT_DO_WORK_QUEUE` / `$do-work` references.

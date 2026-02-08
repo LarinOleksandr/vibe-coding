@@ -31,8 +31,8 @@
 | Repo structure rules / boundaries / config rules | `docs-ai/agents-core-knowledge/repository-rules.md` | canonical constraints |
 | Where does X belong? (routing) | `docs-ai/agents-core-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
-| A place to put user-provided files/inputs for the agent | `docs/incoming/` | human-oriented inputs; no naming constraints |
-| Human-oriented deliverables created by the agent | `docs/output/` | human-oriented outputs; no naming constraints |
+| A place to put user-provided files/inputs for the agent | `docs/incoming-docs/` | human-oriented inputs; no naming constraints |
+| Human-oriented deliverables created by the agent | `docs/output-docs/` | human-oriented outputs; no naming constraints |
 | A place to collect future ideas | `docs/ideas/` | lightweight notes; workflow will be defined later |
 | Thread naming + codes | `docs-ai/agents-core-knowledge/threads.md` | canonical thread rules |
 | Parallel threads (Git worktrees) | `docs-ai/agents-core-knowledge/git-worktrees.md` | one thread = one branch = one worktree |
@@ -51,6 +51,7 @@
 | PRD artifacts | `docs-ai/agents-artifacts/prds/` | created by `$brainstorming` |
 | Research brief artifacts | `docs-ai/agents-artifacts/research-briefs/` | created by `$feature-research` |
 | Conversation summaries | `docs-ai/agents-artifacts/conversations/` | created by `$conversation-save` |
+| Work requests | `docs-ai/agents-artifacts/work-requests/` | used by `$review-ideas` |
 | Project context/roadmap/insights/contracts | `docs-ai/project-knowledge/project-context.md`, `docs-ai/project-knowledge/project-roadmap.md`, `docs-ai/project-knowledge/project-insights.md`, `docs-ai/project-knowledge/project-protected-contracts.md` | maintained by `$project-setup` and `$commit-push-create-pr` |
 | Archived legacy docs | `docs-ai/old/` | non-canonical reference only |
 
@@ -64,11 +65,12 @@
 | A new skill | `.codex/skills/<skill-name>/SKILL.md` | `.codex/skills$design-review/SKILL.md` |
 | Skill templates/config/skeleton files | `.codex/skills/<skill-name>/assets/` | `.codex/skills/project-template-clone/assets/` |
 | A new agent artifact type | `docs-ai/agents-artifacts/<category>/` | `design-reviews/`, `research-briefs/`, `prds/` |
+| Work Requests (from Ideas) | `docs-ai/agents-artifacts/work-requests/` | `REQ-001-...md` |
 | Conversation summaries | `docs-ai/agents-artifacts/conversations/` | `YYYY-MM-DD__D-012__topic.summary.md` |
 | A new project "memory" doc | `docs-ai/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
-| User-provided files/inputs for the agent | `docs/incoming/` | any file/folder names are allowed |
-| Human-oriented deliverables | `docs/output/` | any file/folder names are allowed |
+| User-provided files/inputs for the agent | `docs/incoming-docs/` | any file/folder names are allowed |
+| Human-oriented deliverables | `docs/output-docs/` | any file/folder names are allowed |
 | Idea notes for future work | `docs/ideas/` | `idea-<short-name>.md` |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |
 

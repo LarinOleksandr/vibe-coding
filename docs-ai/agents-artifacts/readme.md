@@ -14,6 +14,7 @@ This folder stores agent-generated artifacts.
 - `videos/` stores Playwright videos (not committed; README only)
 - `playwright-report/` stores generated Playwright reports (not committed; README only)
 - `conversations/` contains conversation summaries created by `$conversation-save`
+- `work-requests/` contains Requests created/used by `$review-ideas`
 
 ## Rules
 

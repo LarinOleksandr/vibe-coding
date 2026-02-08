@@ -195,6 +195,7 @@ try {
       WorktreeFullPath = $worktreeFullPath
     }
     $payload | ConvertTo-Json -Compress
+    exit 0
   } else {
     Write-Host ("Base branch: " + $base)
     Write-Host ("Target branch: " + $branchName)

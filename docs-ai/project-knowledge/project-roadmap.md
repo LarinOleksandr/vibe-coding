@@ -19,6 +19,8 @@
   - [Completed] Add git prerequisite gate rule (stop early if git is missing)
   - [Completed] Normalize repository rules doc naming (`repository-rules.md`)
   - [Completed] Auto-clean merged branches without asking (safe scripts)
+  - [Completed] Ideas-only capture + `$review-ideas` creates Requests under `ROOT_WORK_REQUESTS`
+  - [Completed] Rename `docs/incoming/` and `docs/output/` to `docs/incoming-docs/` and `docs/output-docs/`
 
 ### Feature Development
 - 1. [Not Started] TBD

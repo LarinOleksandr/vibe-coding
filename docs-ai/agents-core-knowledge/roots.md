@@ -27,6 +27,7 @@
 - `ROOT_KNOWLEDGE_BASE` -> `./docs-ai/` - Agent-oriented Project-level knowledge, prompts and artifacts.
 - `ROOT_AGENTS_KNOWLEDGE` -> `./docs-ai/agents-core-knowledge/` - Routed reference docs.
 - `ROOT_AGENTS_ARTIFACTS` -> `./docs-ai/agents-artifacts/` - Generated plans, reviews, and artifacts.
+- `ROOT_WORK_REQUESTS` -> `./docs-ai/agents-artifacts/work-requests/` - Requests created from Ideas (used by `$review-ideas`).
 - `ROOT_PROJECT_KNOWLEDGE` -> `./docs-ai/project-knowledge/` - Project context, roadmap, and insights.
 - `DOC_PROJECT_CONTEXT` -> `./docs-ai/project-knowledge/project-context.md` - Canonical project overview.
 - `DOC_PROJECT_ROADMAP` -> `./docs-ai/project-knowledge/project-roadmap.md` - Project roadmap and status tracking.
@@ -65,5 +66,5 @@
 
 - `ROOT_DOCS` -> `./docs/` - Human-facing documentation root.
 - `ROOT_IDEAS` -> `./docs/ideas/` - Ideas for future work (lightweight notes).
-- `ROOT_DOCS_INCOMING` -> `./docs/incoming/` - User-provided inputs for the agent to review/process (human-oriented).
-- `ROOT_DOCS_OUTPUT` -> `./docs/output/` - Human-oriented deliverables produced by the agent/workflows.
+- `ROOT_DOCS_INCOMING` -> `./docs/incoming-docs/` - User-provided inputs for the agent to review/process (human-oriented).
+- `ROOT_DOCS_OUTPUT` -> `./docs/output-docs/` - Human-oriented deliverables produced by the agent/workflows.

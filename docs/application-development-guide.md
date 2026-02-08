@@ -42,12 +42,12 @@ Provide any of the following (more detail helps, but keep it simple):
 - **Idea**: 5-15 lines describing what the product does and who it is for
 - **Notes**: bullet points of requirements, problems, and constraints
 - **PRD**: a structured requirements doc (paste sections if needed)
-- **Files**: if you want to give files to the agent, put them in `docs/incoming/`
+- **Files**: if you want to give files to the agent, put them in `docs/incoming-docs/`
 
 If your input is vague or short, start with `$brainstorming` to build a PRD.  
 The PRD is saved to `docs-ai/agents-artifacts/prds/`.
 
-Human-oriented deliverables produced by the agent should be created under `docs/output/`.
+Human-oriented deliverables produced by the agent should be created under `docs/output-docs/`.
 
 Recommended minimum (copy/paste and fill):
 
@@ -189,6 +189,55 @@ How it works:
 4. If you approve a breaking change, the agent must also write a short migration plan and rollback plan.
 
 ---
+
+## 2.4 Optional: Ideas → Requests (capture now, develop later)
+
+Sometimes you think of an Idea while you are busy with something else.
+
+This framework keeps one capture place:
+
+- Ideas live in `docs/ideas/`
+
+Then, when you are ready, you review Ideas and turn them into Requests.
+
+That flow is handled by:
+
+- `$review-ideas`
+
+### Save as Idea
+
+At any time, you can tell the agent:
+
+- “save as idea: …”
+
+Result:
+
+- a new Markdown file is created under `docs/ideas/`
+
+### Review Ideas into Requests
+
+When you say:
+
+- “review ideas”
+- “what ideas do we have?”
+
+The agent:
+
+1. takes the oldest Idea file first
+2. discusses it from the project/business perspective (expected result, not implementation-first)
+3. creates one or more Requests under `docs-ai/agents-artifacts/work-requests/` (see `ROOT_WORK_REQUESTS`)
+4. asks you to decide what happens to the Idea file:
+   - move to `docs/ideas/deleted/`
+   - move to `docs/ideas/snoozed/`
+   - move to `docs/ideas/processed/` (only after Requests are created and you approve any project-knowledge updates)
+
+### Develop a Request (normal workflow)
+
+After a Request exists, start a normal thread and run the right existing skill, for example:
+
+- feature -> `$feature-development` / `$feature-start`
+- bug -> `$bug-fix`
+- refactor -> `$code-refactoring`
 
 ## 3) Project Planning Workflow (Choose what to build next)
 
