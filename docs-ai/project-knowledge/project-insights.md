@@ -78,3 +78,9 @@
 - Root cause / constraint: It is easy to “fix first” and only add tests later (or never), which lets bugs return.
 - Fix / decision: Make “reproducing test first → fix → prove by passing test” the default inside `$bug-fix`, with small, explicit exceptions.
 - Prevention: If test-first is not a fit, the agent must say why and use another proof (for UI: Playwright + screenshots).
+
+## [14]
+- Why it matters: Accidental edits on `main` or outside the active worktree are dangerous and confusing.
+- Root cause / constraint: Git worktrees are separate folders, but they do not enforce filesystem isolation; the agent can still write in the wrong folder unless we gate it.
+- Fix / decision: Add a worktree gate rule: before edits, ensure a per-thread worktree under `.worktrees/...` and then work only inside that folder.
+- Prevention: Use `scripts/git-worktree-ensure.ps1` as the default entry point and treat “no edits outside worktree” + “do not scan other worktrees” as must rules.

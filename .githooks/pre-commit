@@ -1,0 +1,56 @@
+#!/bin/sh
+set -eu
+
+# Bypass (last resort). Prefer using worktrees instead.
+if [ "${VIBE_CODEX_ALLOW_UNSAFE_COMMIT:-}" = "1" ]; then
+  exit 0
+fi
+
+toplevel="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -z "$toplevel" ]; then
+  exit 0
+fi
+
+common="$(git rev-parse --git-common-dir 2>/dev/null || true)"
+if [ -z "$common" ]; then
+  exit 0
+fi
+
+case "$common" in
+  /*|[A-Za-z]:/*) common_abs="$common" ;;
+  *) common_abs="$toplevel/$common" ;;
+esac
+
+anchor="$toplevel"
+echo "$common_abs" | grep -qiE '(/|\\)\.git$' && anchor="$(dirname "$common_abs")"
+
+worktrees_root="$anchor/.worktrees"
+in_worktree=0
+case "$toplevel/" in
+  "$worktrees_root"/*) in_worktree=1 ;;
+esac
+
+branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
+
+# Allow merge commits on base branch (merge-in-progress marker exists).
+if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+  if [ -f "$common_abs/MERGE_HEAD" ]; then
+    exit 0
+  fi
+fi
+
+if [ "$in_worktree" -ne 1 ]; then
+  echo "ERROR: Commit blocked outside '.worktrees/...'" >&2
+  echo "Reason: worktree safety gate (prevents accidental commits from the main folder)." >&2
+  echo "Fix: create/use a per-thread worktree first:" >&2
+  echo "  powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName \"<thread name>\"" >&2
+  exit 1
+fi
+
+if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+  echo "ERROR: Commit blocked on protected base branch '$branch'." >&2
+  echo "Fix: work on a per-thread branch inside '.worktrees/...'" >&2
+  exit 1
+fi
+
+exit 0

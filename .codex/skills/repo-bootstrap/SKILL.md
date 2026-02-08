@@ -34,6 +34,8 @@ Invoke when any apply:
    - Ensure `.worktrees/` is ignored by git:
      - If `.gitignore` is missing, create it.
      - If `.gitignore` does not include `.worktrees/` (or `.worktrees`), add `.worktrees/`.
+   - Install git safety hooks (recommended):
+     - Run `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-hooks-install.ps1`
 4. Ensure the repo has at least one commit (bootstrap only)
    - If the repo has no commits yet:
      - Stage everything.

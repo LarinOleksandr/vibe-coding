@@ -30,23 +30,27 @@ Invoke when any apply:
 
 ## Procedure
 
-0. Review protected contracts
+0. Worktree gate (required)
+   - ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`)
+   - run: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<current thread name>"`
+   - after the worktree is ready, do all work only inside that worktree folder
+1. Review protected contracts
    - read `DOC_PROJECT_PROTECTED_CONTRACTS`
    - treat it as must-not-break unless the user explicitly approves a breaking change
-1. Confirm the bug statement
+2. Confirm the bug statement
    - restate expected vs actual behavior
-2. Gather missing repro details
+3. Gather missing repro details
    - ask once for missing steps, logs, or environment info
-3. Investigate root cause (before any fix)
+4. Investigate root cause (before any fix)
    - read errors and logs fully
    - reproduce the issue
    - check recent changes that could explain it
    - compare against a working path or similar code
    - state a single, clear hypothesis
-4. Propose scope and risks
+5. Propose scope and risks
    - list affected areas and likely regressions
    - confirm before edits
-5. Decide validation
+6. Decide validation
    - default (recommended): write a small reproducing test first, run it, and watch it fail for the right reason
      - then fix the code and prove it by re-running the test and watching it pass
      - see: `docs-ai/agents-core-knowledge/test-driven-development.md`
@@ -54,13 +58,13 @@ Invoke when any apply:
      - UI behavior: Playwright + screenshots (see `KB_UI_TESTING_PLAYWRIGHT`)
      - otherwise: the smallest reliable smoke path you can run
    - confirm before edits
-6. Fix with minimal change
+7. Fix with minimal change
    - avoid unrelated refactors
-7. Verify or explain deferral
+8. Verify or explain deferral
    - run the agreed proof:
      - if you wrote a reproducing test: confirm it failed before the fix and passes after
      - otherwise: run the chosen smoke path and report results
-8. Summarize
+9. Summarize
    - root cause, fix, and validation status
    - if this bug fix revealed a new stable contract people will rely on, propose adding it to `DOC_PROJECT_PROTECTED_CONTRACTS` (simple words; user approves/rejects)
    - if there is a durable lesson learned or guardrail that will prevent repeat mistakes, add a short entry to `DOC_PROJECT_INSIGHTS` (otherwise do not)

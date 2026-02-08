@@ -32,6 +32,11 @@ Invoke when any apply:
 
 ## Procedure
 
+0. Worktree gate (required)
+   - ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`)
+   - run: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<current thread name>"`
+   - after the worktree is ready, do all work only inside that worktree folder
+
 1. Define contracts first
    - request schema (input validation)
    - response schema (output contract)

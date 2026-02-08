@@ -29,23 +29,27 @@ Invoke when any apply:
 
 ## Procedure
 
-0. Review protected contracts
+0. Worktree gate (required)
+   - ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`)
+   - run: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<current thread name>"`
+   - after the worktree is ready, do all work only inside that worktree folder
+1. Review protected contracts
    - read `DOC_PROJECT_PROTECTED_CONTRACTS`
    - treat it as the default must-not-change set for refactors
-1. Confirm intent
+2. Confirm intent
    - verify behavior must remain unchanged
-2. Propose scope and risks
+3. Propose scope and risks
    - list affected areas and potential regressions
    - confirm before edits
-3. Check for existing artifacts
+4. Check for existing artifacts
    - use `ROOT_AGENTS_ARTIFACTS/plans/<task-slug>.plan.md` if present
    - use `ROOT_AGENTS_ARTIFACTS/architectural-reviews/<task-slug>.arch-review.md` if present
-4. Decide validation
+5. Decide validation
    - propose tests or smoke paths
    - confirm before edits
-5. Implement minimal changes
+6. Implement minimal changes
    - avoid unrelated refactors
-6. Summarize and report
+7. Summarize and report
    - what changed
    - validation status
    - if the refactor introduced or clarified a stable contract people will rely on, propose adding it to `DOC_PROJECT_PROTECTED_CONTRACTS` (simple words; user approves/rejects)
