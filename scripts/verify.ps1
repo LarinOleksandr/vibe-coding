@@ -132,10 +132,28 @@ $worktreeRootFull = Resolve-FullPath $worktreeRoot
 
 $inWorktree = Test-PathIsUnder -Parent $worktreesRoot -Child $worktreeRootFull
 if (-not $inWorktree) {
-  Write-Host "Verification failed: not running inside a worktree under '.worktrees/...'."
-  Write-Host "Fix: run the worktree gate first:"
-  Write-Host '  powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"'
-  exit 1
+  # Allow verification from the repo root when there are no changes outside docs folders.
+  # This supports the "docs/ and docs-ai/ can be edited without worktrees" rule.
+  $status = Get-GitOutput @("status", "--porcelain")
+  if (-not [string]::IsNullOrWhiteSpace($status)) {
+    $lines = $status -split "`n" | ForEach-Object { $_.TrimEnd() } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+    $paths = @()
+    foreach ($line in $lines) {
+      # Porcelain format: XY<space>path (or for renames: XY<space>old -> new)
+      $payload = $line
+      if ($payload.Length -ge 4) { $payload = $payload.Substring(3) }
+      if ($payload -like "* -> *") { $payload = ($payload -split " -> ")[-1] }
+      $paths += $payload.Trim()
+    }
+
+    $nonDocs = $paths | Where-Object { -not ($_ -like "docs/*" -or $_ -like "docs-ai/*") }
+    if ($nonDocs.Count -gt 0) {
+      Write-Host "Verification failed: changes exist outside 'docs/' and 'docs-ai/' but you are not in a worktree."
+      Write-Host "Fix: run the worktree gate first:"
+      Write-Host '  powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"'
+      exit 1
+    }
+  }
 }
 
 $targets = Get-TargetFiles
