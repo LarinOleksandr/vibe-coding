@@ -31,6 +31,8 @@
 | Repo structure rules / boundaries / config rules | `docs-ai/agents-core-knowledge/repository-rules.md` | canonical constraints |
 | Where does X belong? (routing) | `docs-ai/agents-core-knowledge/repository-layout.md` | this document |
 | Application workflow guide | `docs/application-development-guide.md` | end-to-end workflow from idea -> deploy |
+| A place to put user-provided files/inputs for the agent | `docs/incoming/` | human-oriented inputs; no naming constraints |
+| Human-oriented deliverables created by the agent | `docs/output/` | human-oriented outputs; no naming constraints |
 | A place to collect future ideas | `docs/ideas/` | lightweight notes; workflow will be defined later |
 | Thread naming + codes | `docs-ai/agents-core-knowledge/threads.md` | canonical thread rules |
 | Parallel threads (Git worktrees) | `docs-ai/agents-core-knowledge/git-worktrees.md` | one thread = one branch = one worktree |
@@ -65,6 +67,8 @@
 | Conversation summaries | `docs-ai/agents-artifacts/conversations/` | `YYYY-MM-DD__D-012__topic.summary.md` |
 | A new project "memory" doc | `docs-ai/project-knowledge/` | `project-knowledge/project-context.md`, `project-knowledge/project-roadmap.md` |
 | Human-facing guidance | `docs/` | application development guide, user instructions |
+| User-provided files/inputs for the agent | `docs/incoming/` | any file/folder names are allowed |
+| Human-oriented deliverables | `docs/output/` | any file/folder names are allowed |
 | Idea notes for future work | `docs/ideas/` | `idea-<short-name>.md` |
 | A new deploy template | `infra/deploy/<provider>/` | `infra/deploy/netlify/` |
 

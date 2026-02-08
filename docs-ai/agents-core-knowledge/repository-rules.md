@@ -48,6 +48,14 @@ Treat `docs/` as human-facing documentation only.
 - Agent-oriented knowledge and prompts belong under `docs-ai/`.
 - Keep `docs/` focused on onboarding and developer documentation.
 
+### docs-incoming-output-folders (should)
+
+Use standard folders in `docs/` for human-oriented inputs and outputs.
+
+- If the user provides files or long-form inputs for the agent to explore/analyze/process, the agent should propose copying them into `ROOT_DOCS_INCOMING`.
+- If a workflow produces a human-oriented document (a deliverable intended to be read by people), it should be created under `ROOT_DOCS_OUTPUT`.
+- Keep agent workflow artifacts (plans, PRDs, internal checklists, screenshots) under `ROOT_KNOWLEDGE_BASE` / `ROOT_AGENTS_ARTIFACTS` as appropriate (not under `docs/`).
+
 ### routed-aliases-over-absolute-paths (must)
 
 In agent instructions (AGENTS, routed docs, skills, templates), prefer `KB_ROOTS` aliases and repo-relative paths.

@@ -42,9 +42,12 @@ Provide any of the following (more detail helps, but keep it simple):
 - **Idea**: 5-15 lines describing what the product does and who it is for
 - **Notes**: bullet points of requirements, problems, and constraints
 - **PRD**: a structured requirements doc (paste sections if needed)
+- **Files**: if you want to give files to the agent, put them in `docs/incoming/`
 
 If your input is vague or short, start with `$brainstorming` to build a PRD.  
 The PRD is saved to `docs-ai/agents-artifacts/prds/`.
+
+Human-oriented deliverables produced by the agent should be created under `docs/output/`.
 
 Recommended minimum (copy/paste and fill):
 

@@ -65,10 +65,5 @@
 
 - `ROOT_DOCS` -> `./docs/` - Human-facing documentation root.
 - `ROOT_IDEAS` -> `./docs/ideas/` - Ideas for future work (lightweight notes).
-
-
-
-
-
-
-
+- `ROOT_DOCS_INCOMING` -> `./docs/incoming/` - User-provided inputs for the agent to review/process (human-oriented).
+- `ROOT_DOCS_OUTPUT` -> `./docs/output/` - Human-oriented deliverables produced by the agent/workflows.
