@@ -66,6 +66,7 @@ Invoke when any apply:
    - Propose the next roadmap item.
    - Strict next step (no choices): create a comprehensive implementation plan for the next roadmap item.
    - Suggest a compliant **project-planning** thread name and provide a copy/paste first message that invokes `$plan-creation`.
+   - Format rule (must): provide the final handoff using the `KB_THREADS` new-thread handoff format (one short preface sentence, then a clean copy/paste block).
    - Stop.
 
 ## Output format

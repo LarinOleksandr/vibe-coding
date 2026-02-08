@@ -84,3 +84,9 @@
 - Root cause / constraint: Git worktrees are separate folders, but they do not enforce filesystem isolation; the agent can still write in the wrong folder unless we gate it.
 - Fix / decision: Add a worktree gate rule: before edits, ensure a per-thread worktree under `.worktrees/...` and then work only inside that folder.
 - Prevention: Use `scripts/git-worktree-ensure.ps1` as the default entry point and treat “no edits outside worktree” + “do not scan other worktrees” as must rules.
+
+## [15]
+- Why it matters: Starting a new thread should be easy to copy/paste without manual cleanup.
+- Root cause / constraint: Mixed “next task” headers and bullets made the handoff hard to paste as-is.
+- Fix / decision: Standardize a user-friendly preface sentence + a clean 2-line copy/paste handoff block in `KB_THREADS`, and require handoff skills to follow it.
+- Prevention: Keep the handoff format defined only in `KB_THREADS` and reference it from skills (no per-skill formatting rules).

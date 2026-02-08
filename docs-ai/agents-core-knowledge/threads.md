@@ -22,6 +22,29 @@
 
 ---
 
+## New thread handoff (copy/paste format)
+
+When you want the user to continue in a new thread (or the user asks “what’s next?”), provide:
+
+1. One short, user-friendly sentence that explains what to do.
+2. Then a copy/paste block in the exact format below.
+
+The copy/paste block must be clean (no headers like “Next task:”, no bullets inside the block).
+
+Preface sentence examples (pick the one that matches the situation):
+
+- Feature: “Please start a new feature by creating a new thread and pasting the text below as the first message.”
+- Bug fix: “Please start a new bug-fix thread and paste the text below as the first message.”
+- Planning: “Please start a new planning thread and paste the text below as the first message.”
+
+Copy/paste block format (required):
+
+<thread name>
+
+<first message to paste>
+
+---
+
 ## Default delivery approach
 
 - For feature work, default to the simplest solution that meets the confirmed acceptance criteria.

@@ -50,6 +50,7 @@ Invoke when any apply:
    - Push to `origin` with upstream tracking.
 7. Handoff (strict next step)
    - Provide a suggested next thread name (compliant with `KB_THREADS`) and a copy/paste first message that invokes `$project-setup`.
+   - Format rule (must): use the `KB_THREADS` new-thread handoff format (one short preface sentence, then a clean copy/paste block).
 
 ## Commands
 

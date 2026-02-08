@@ -79,6 +79,7 @@ Invoke when any apply:
        - a copy/paste first message that:
          - references the PRD artifact path, and
          - invokes `$project-setup`.
+       - Format rule (must): use the `KB_THREADS` new-thread handoff format (one short preface sentence, then a clean copy/paste block).
    - Otherwise: do not propose follow-up work from this skill (leave next work to the roadmap/thread intent).
 
 ## Commands
