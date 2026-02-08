@@ -4,6 +4,71 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+function Resolve-FullPath {
+  param([Parameter(Mandatory = $true)][string]$PathLike)
+  try {
+    return [System.IO.Path]::GetFullPath($PathLike)
+  } catch {
+    throw "Invalid path: $PathLike"
+  }
+}
+
+function Get-GitOutput {
+  param([Parameter(Mandatory = $true)][string[]]$Args)
+  if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    throw "git is required but was not found on PATH."
+  }
+
+  $out = & git @Args
+  if ($LASTEXITCODE -ne 0) { throw ("git " + ($Args -join " ") + " failed with exit code " + $LASTEXITCODE) }
+  return ($out | Out-String).Trim()
+}
+
+function Resolve-AnchorRoot {
+  $worktreeRoot = $null
+  try {
+    $worktreeRoot = Get-GitOutput @("rev-parse", "--show-toplevel")
+  } catch {
+    throw "This script must be run inside a git repository."
+  }
+
+  $commonDir = $null
+  try {
+    $commonDir = Get-GitOutput @("rev-parse", "--git-common-dir")
+  } catch {
+    return $worktreeRoot
+  }
+
+  $worktreeRootFull = Resolve-FullPath $worktreeRoot
+  $commonDirFull = $commonDir
+  if (-not [System.IO.Path]::IsPathRooted($commonDirFull)) {
+    $commonDirFull = Resolve-FullPath (Join-Path $worktreeRootFull $commonDirFull)
+  } else {
+    $commonDirFull = Resolve-FullPath $commonDirFull
+  }
+
+  if ($commonDirFull.ToLowerInvariant().EndsWith("\.git") -or $commonDirFull.ToLowerInvariant().EndsWith("/.git")) {
+    return (Split-Path $commonDirFull -Parent)
+  }
+
+  return $worktreeRoot
+}
+
+function Test-PathIsUnder {
+  param(
+    [Parameter(Mandatory = $true)][string]$Parent,
+    [Parameter(Mandatory = $true)][string]$Child
+  )
+
+  $p = Resolve-FullPath $Parent
+  $c = Resolve-FullPath $Child
+
+  $pNorm = $p.TrimEnd("\", "/") + "\"
+  $cNorm = $c.TrimEnd("\", "/") + "\"
+
+  return $cNorm.ToLowerInvariant().StartsWith($pNorm.ToLowerInvariant())
+}
+
 function Get-GitFiles {
   if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     throw "git is required but was not found on PATH."
@@ -57,6 +122,20 @@ function Find-AbsolutePaths {
   }
 
   return $hits
+}
+
+$anchorRoot = Resolve-AnchorRoot
+$worktreeRoot = Get-GitOutput @("rev-parse", "--show-toplevel")
+$anchorRootFull = Resolve-FullPath $anchorRoot
+$worktreesRoot = Resolve-FullPath (Join-Path $anchorRootFull ".worktrees")
+$worktreeRootFull = Resolve-FullPath $worktreeRoot
+
+$inWorktree = Test-PathIsUnder -Parent $worktreesRoot -Child $worktreeRootFull
+if (-not $inWorktree) {
+  Write-Host "Verification failed: not running inside a worktree under '.worktrees/...'."
+  Write-Host "Fix: run the worktree gate first:"
+  Write-Host '  powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"'
+  exit 1
 }
 
 $targets = Get-TargetFiles

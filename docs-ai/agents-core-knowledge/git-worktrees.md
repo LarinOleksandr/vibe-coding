@@ -27,6 +27,12 @@ Each worktree:
 2. **All worktrees must live under** `.worktrees/` **inside the repo root.**
 3. **`.worktrees/` must be ignored by git.** (This repo’s `.gitignore` includes it.)
 4. **One worktree per branch.** Do not open the same branch in two worktrees.
+5. **Worktree gate: no edits outside a worktree.**
+   - Before any file edits or commands that can change files, ensure the current working folder is a worktree under `.worktrees/...`.
+   - If not inside a worktree, create one first (from the thread name) and then continue work only in that worktree folder.
+6. **Scope rule: ignore other worktrees.**
+   - Do not scan, report, or modify files outside the current worktree folder.
+   - Only mention other worktrees if it directly blocks the requested task (example: you are merging branches and see a conflict).
 
 ---
 
@@ -41,6 +47,14 @@ Each worktree:
 ---
 
 ## Canonical commands (PowerShell)
+
+Ensure you are in a safe per-thread worktree (recommended default):
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"`
+
+Install git safety hooks (recommended, one-time per clone):
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-hooks-install.ps1`
 
 Create a worktree from a thread name:
 

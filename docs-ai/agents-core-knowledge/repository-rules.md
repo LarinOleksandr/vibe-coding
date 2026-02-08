@@ -69,9 +69,21 @@ Expose common workflows via scripts, not ad-hoc commands.
 
 For recurring workflows (dev server, tests, builds, migrations, seeding), add or reuse scripts in `scripts/` or in a service-local scripts folder instead of writing long shell commands in docs or comments. Prefer wiring new commands into existing package.json scripts or helper shell scripts.
 
+### git-hooks-safety (should)
+
+Install the repository's git hooks for extra safety.
+
+- Install once per repo clone: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-hooks-install.ps1`
+- This enables a guard that blocks commits from outside `.worktrees/...` (and blocks non-merge commits on `main`/`master`).
+
 ### worktrees-follow-kb (must)
 
 When using git worktrees, follow `KB_GIT_WORKTREES`.
+
+In practice:
+
+- Before doing any edits, run the worktree gate (`scripts/git-worktree-ensure.ps1`) and do all work inside the returned `.worktrees/...` folder.
+- Do not scan or modify files outside the current worktree folder.
 
 ### git-prerequisite-gate (must)
 

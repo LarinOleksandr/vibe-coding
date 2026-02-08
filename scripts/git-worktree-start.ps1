@@ -2,7 +2,8 @@ param(
   [Parameter(Mandatory = $true)][string]$ThreadName,
   [string]$BaseBranch,
   [switch]$NoPull,
-  [switch]$DryRun
+  [switch]$DryRun,
+  [switch]$Json
 )
 
 $ErrorActionPreference = "Stop"
@@ -183,10 +184,22 @@ try {
   $worktreePath = Join-Path ".worktrees" $branchName
 
   $anchorRootFull = Resolve-FullPath $anchorRoot
+  $worktreeFullPath = Resolve-FullPath (Join-Path $anchorRootFull $worktreePath)
 
-  Write-Host ("Base branch: " + $base)
-  Write-Host ("Target branch: " + $branchName)
-  Write-Host ("Worktree path: " + (Join-Path $anchorRootFull $worktreePath))
+  if ($Json) {
+    $payload = [pscustomobject]@{
+      AnchorRoot = $anchorRootFull
+      BaseBranch = $base
+      BranchName = $branchName
+      WorktreePath = $worktreePath
+      WorktreeFullPath = $worktreeFullPath
+    }
+    $payload | ConvertTo-Json -Compress
+  } else {
+    Write-Host ("Base branch: " + $base)
+    Write-Host ("Target branch: " + $branchName)
+    Write-Host ("Worktree path: " + $worktreeFullPath)
+  }
 
   $ignored = $false
   & git check-ignore -q ".worktrees/" | Out-Null
@@ -226,8 +239,10 @@ try {
   New-Item -ItemType Directory -Force -Path (Split-Path $worktreePath -Parent) | Out-Null
   Invoke-Git @("worktree", "add", "-b", $branchName, $worktreePath, $base)
 
-  Write-Host "Worktree created."
-  Write-Host ("Next: cd " + (Join-Path $anchorRootFull $worktreePath))
+  if (-not $Json) {
+    Write-Host "Worktree created."
+    Write-Host ("Next: cd " + $worktreeFullPath)
+  }
 } finally {
   Pop-Location
 }

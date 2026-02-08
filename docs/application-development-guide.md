@@ -132,6 +132,18 @@ What you should expect when you start a thread that changes files (feature/bug/r
 
 If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (â€œno worktree for this threadâ€).
 
+Additional safety rule:
+
+- The agent must not edit files until a worktree is ready (worktree gate).
+
+Recommended one-time setup (extra safety):
+
+- Install git safety hooks: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-hooks-install.ps1`
+
+Manual (optional) command to start a safe worktree:
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"`
+
 
 ### 2.1 Thread naming (required)
 

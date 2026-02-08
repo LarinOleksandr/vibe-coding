@@ -29,6 +29,15 @@ Skills live in the repo at `.codex/skills/`.
 - Do not answer with generic advice when a matching skill exists.
 - If no skill matches, proceed with the simplest safe approach and explain the assumption.
 
+## Worktree gate (must)
+
+Before any file edits or commands that can change files:
+
+1. Ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`).
+   - Preferred: run `scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"`.
+2. After the worktree is ready, do all work only inside that worktree folder.
+3. Do not scan, report, or modify files outside the current worktree folder unless it directly blocks the requested task.
+
 ## Verification (must)
 
 - Do not guess. If you are unsure, read the repo files or use tools to verify.
