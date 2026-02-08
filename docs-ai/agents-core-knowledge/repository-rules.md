@@ -90,8 +90,10 @@ When using git worktrees, follow `KB_GIT_WORKTREES`.
 
 In practice:
 
-- Before doing any edits, run the worktree gate (`scripts/git-worktree-ensure.ps1`) and do all work inside the returned `.worktrees/...` folder.
+- If you will modify anything outside `docs/` and `docs-ai/`, run the worktree gate (`scripts/git-worktree-ensure.ps1`) and do all work inside the returned `.worktrees/...` folder.
+- If you will modify only `docs/` and/or `docs-ai/`, a worktree is not required.
 - Do not scan or modify files outside the current worktree folder.
+- See `KB_EDITING_PROTOCOL` for the full permission + worktree rules.
 
 ### git-prerequisite-gate (must)
 

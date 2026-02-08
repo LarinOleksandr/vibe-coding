@@ -27,8 +27,8 @@ Each worktree:
 2. **All worktrees must live under** `.worktrees/` **inside the repo root.**
 3. **`.worktrees/` must be ignored by git.** (This repo’s `.gitignore` includes it.)
 4. **One worktree per branch.** Do not open the same branch in two worktrees.
-5. **Worktree gate: no edits outside a worktree.**
-   - Before any file edits or commands that can change files, ensure the current working folder is a worktree under `.worktrees/...`.
+5. **Worktree gate: worktree required outside docs folders.**
+   - If you will modify anything outside `docs/` and `docs-ai/`, ensure the current working folder is a worktree under `.worktrees/...`.
    - If not inside a worktree, create one first (from the thread name) and then continue work only in that worktree folder.
 6. **Scope rule: ignore other worktrees.**
    - Do not scan, report, or modify files outside the current worktree folder.

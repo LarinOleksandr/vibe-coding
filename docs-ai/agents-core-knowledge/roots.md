@@ -40,6 +40,7 @@
 - `KB_BEHAVIOUR_ARCHITECTURE` -> `./docs-ai/agents-core-knowledge/agent-behaviour-architecture.md` - Blueprint for agent behaviour instructions framework design.
 - `KB_CLEAN_ARCHITECTURE_DDD` -> `./docs-ai/agents-core-knowledge/clean-architecture-ddd-guidelines.md` - Deep Clean Architecture and DDD guidance.
 - `KB_DEPLOYMENT_CICD` -> `./docs-ai/agents-core-knowledge/deployment-and-cicd.md` - Deployment and CI/CD DNA-level rules.
+- `KB_EDITING_PROTOCOL` -> `./docs-ai/agents-core-knowledge/editing-protocol.md` - Permission + worktree rules for safe editing.
 - `KB_ERROR_HANDLING` -> `./docs-ai/agents-core-knowledge/error-handling.md` - Canonical error taxonomy, normalization, and boundary translation rules.
 - `KB_EXTERNAL_SPECS` -> `./docs-ai/agents-core-knowledge/external-specs.md` - External specs and resolution rules.
 - `KB_FEATURE_TEMPLATE` -> `./docs-ai/agents-core-knowledge/feature-template.md` - Required feature brief template.

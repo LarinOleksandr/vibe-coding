@@ -8,6 +8,8 @@ Read `docs-ai/agents-core-knowledge/roots.md` for the routing map.
 
 - Default to discussion (no file edits, no command/tool runs).
 - Start changing files, using tools or scripts only when the user explicitly asks to act (for example: "implement", "perform", "act", "go ahead"). If unclear, ask: "Do you want me to implement this now?"
+- Do not assume you have permission to edit files. If the user did not clearly ask for changes, ask one short question.
+- If the user asks to "write down an idea" (or "save as idea"), use `$review-ideas` (save action) and only write an Idea file under `ROOT_IDEAS` (`docs/ideas/`).
 
 ## Protected contracts (must)
 
@@ -33,10 +35,11 @@ Skills live in the repo at `.codex/skills/`.
 
 Before any file edits or commands that can change files:
 
-1. Ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`).
+1. If you will modify anything outside `docs/` and `docs-ai/`, ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`).
    - Preferred: run `scripts/git-worktree-ensure.ps1 -ThreadName "<thread name>"`.
 2. After the worktree is ready, do all work only inside that worktree folder.
 3. Do not scan, report, or modify files outside the current worktree folder unless it directly blocks the requested task.
+4. For the full permission + worktree rules, see `KB_EDITING_PROTOCOL`.
 
 ## Verification (must)
 
