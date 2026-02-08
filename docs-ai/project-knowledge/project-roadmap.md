@@ -21,6 +21,7 @@
   - [Completed] Auto-clean merged branches without asking (safe scripts)
   - [Completed] Ideas-only capture + `$review-ideas` creates Requests under `ROOT_WORK_REQUESTS`
   - [Completed] Rename `docs/incoming/` and `docs/output/` to `docs/incoming-docs/` and `docs/output-docs/`
+  - [Completed] Editing protocol: permission first + docs-only edits without worktrees
 
 ### Feature Development
 - 1. [Not Started] TBD

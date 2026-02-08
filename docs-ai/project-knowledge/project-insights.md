@@ -109,3 +109,9 @@
 - Fix / decision: Make `docs/ideas/` the only place to save Ideas; add `$review-ideas` to turn Ideas into classified Requests under `ROOT_WORK_REQUESTS`.
 - Prevention: Keep Requests outcome-focused and classified so the next step is always an existing skill (example: `$feature-development`, `$bug-fix`, `$code-refactoring`).
 - Notes: This supersedes **[17]**; ignore older `ROOT_DO_WORK_QUEUE` / `$do-work` references.
+
+## [19]
+- Why it matters: The user must stay in control of edits; the agent must not change extra files “because it seems helpful”.
+- Root cause / constraint: A worktree rule alone does not prevent unwanted edits; we also need an explicit permission rule and a clear exception for docs-only edits.
+- Fix / decision: Require explicit user permission before any file edits; allow edits in `docs/` and `docs-ai/` without a worktree; require worktrees for all other repo changes.
+- Prevention: Route the rules via `KB_EDITING_PROTOCOL` and keep `AGENTS.md` minimal (only the essentials + links).
