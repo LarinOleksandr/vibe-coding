@@ -13,7 +13,7 @@ description: Turn Ideas in `docs/ideas/` into classified Requests in `ROOT_WORK_
 
 Convert Ideas into Requests in a consistent, framework-native way.
 
-This skill does not create or use “user requests”.
+This skill does not create or use "user requests".
 
 ## Entities
 
@@ -39,15 +39,15 @@ Invoke when any apply:
 
 Supported intents:
 
-- save as idea: “save as idea: …”
-- review ideas: “review ideas” / “what ideas do we have?”
+- save as idea: "save as idea: ..."
+- review ideas: "review ideas" / "what ideas do we have?"
 
 ## Procedure
 
-0. Worktree gate (required)
-   - ensure you are working inside a Git worktree under `.worktrees/...` (see `KB_GIT_WORKTREES`)
-   - run: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/git-worktree-ensure.ps1 -ThreadName "<current thread name>"`
-   - after the worktree is ready, do all work only inside that worktree folder
+0. Location gate (must)
+   - This skill only writes to `docs/` and `docs-ai/`, so a worktree is not required (see `KB_EDITING_PROTOCOL`).
+   - Do not create a worktree just to save/review Ideas.
+   - If you are already inside a worktree, that's fine: continue working only inside that folder.
 
 1. Route to the right action
    - use `ROOT_SKILLS/review-ideas/actions/router.md`
@@ -63,4 +63,5 @@ Supported intents:
 - Requests are written only under `ROOT_WORK_REQUESTS`
 - Project knowledge files are edited only after explicit approval
 - The user decides: delete / snooze / process
+- This skill does not create a worktree
 

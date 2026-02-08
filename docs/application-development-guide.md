@@ -130,14 +130,15 @@ What you should expect when you start a thread that changes files (feature/bug/r
 - If `git` is not installed, the agent stops and asks you to install it before continuing.
 - If the folder is not a git repo yet (or `origin` is missing), the agent runs `$repo-bootstrap` first.
 - The agent creates a branch from the thread name.
-- The agent creates an isolated work folder (Git worktree) under `.worktrees/...` so parallel threads do not overwrite each other.
-- The agent works only inside that worktree folder for the rest of the thread.
+- If the change touches files outside `docs/` and `docs-ai/`, the agent creates an isolated work folder (Git worktree) under `.worktrees/...` so parallel threads do not overwrite each other.
+- If the change is only inside `docs/` and/or `docs-ai/`, a worktree is not required and the agent may work in the main repo folder.
+- If a worktree is created, the agent works only inside that worktree folder for the rest of the thread.
 
-If you want to keep work in the main repo folder for a simple one-off change, say so explicitly (â€œno worktree for this threadâ€).
+If you want to keep work in the main repo folder for a simple one-off change, say so explicitly ("no worktree for this thread").
 
 Additional safety rule:
 
-- The agent must not edit files until a worktree is ready (worktree gate).
+- The agent must not edit files until a worktree is ready when a worktree is required (worktree gate).
 
 Recommended one-time setup (extra safety):
 
@@ -213,6 +214,8 @@ At any time, you can tell the agent:
 Result:
 
 - a new Markdown file is created under `docs/ideas/`
+- no worktree is created for this action
+- no other files are changed
 
 ### Review Ideas into Requests
 
